@@ -1,18 +1,23 @@
 {
-  "name": "electron-tutorial",
+  "name": "2048",
+  "windowtitle": "2048",
   "version": "1.0.0",
-  "description": "Develop cross-platform application with Electron",
+  "description": "Popular 2048 Number Puzzle Game",
+  "homepage": "https://github.com/jojozhuang/Portfolio",
   "main": "main.js",
-  "author": "Rong Zhuang",
+  "author": {
+    "name": "Rong Zhuang",
+    "email": "jojozhuang@gmail.com"
+  },
   "license": "GPL-3.0",
   "scripts": {
     "postinstall": "install-app-deps",
-    "start": "npm install && electron ./app",
+    "start": "electron ./main.js",
     "pack": "build --dir",
     "dist": "build"
   },
   "build": {
-    "appId": "yourappid",
+    "appId": "johnny.portfolio.game2048",
     "dmg": {
       "contents": [
         {
@@ -25,7 +30,8 @@
           "type": "link",
           "path": "/Applications"
         }
-      ]
+      ],
+      "icon": "build/icon.icns"
     },
     "linux": {
       "target": [
@@ -39,7 +45,7 @@
     }
   },
   "devDependencies": {
-    "electron": "^1.4.13",
+    "electron": "^1.7.6",
     "electron-builder": "^19.26.3"
   }
 }
