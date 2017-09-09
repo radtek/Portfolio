@@ -2,6 +2,7 @@ const {app, BrowserWindow, Menu, MenuItem} = require('electron')
 const url = require('url')
 const path = require('path')
 const config = require('./package.json')
+const electron = require('electron')
 
 let win
 
@@ -10,17 +11,14 @@ app.on('ready', () => {
 })
 
 function createWindow() {
-   win = new BrowserWindow({//titleBarStyle: 'hidden',
+   win = new BrowserWindow({
         width: 530, 
         height: 740, 
         minWidth: 530,
         minHeight: 740,
         resizable: false,
         title: config.windowtitle,
-        //backgroundColor: '#312450',
-        //show: false,
         icon: path.join(__dirname, 'build/icon.icns') })
-   //win.setTitle(require('./package.json').name);
    win.loadURL(url.format ({
       pathname: path.join(__dirname, 'index.html'),
       protocol: 'file:',
@@ -28,17 +26,13 @@ function createWindow() {
    }))
    setMainMenu();
 }
+function addUpdateMenuItems (items, position) {
+    if (process.mas) return
+    items.splice.apply(items, [position, 0])
+  }
 
 function setMainMenu() {
-    const template = [
-        {
-            label: '2048',
-            submenu: [
-                {
-                    role: 'undo'
-                }
-            ]
-        },
+    let template = [
         {
             label: 'View',
             submenu: [
@@ -81,6 +75,43 @@ function setMainMenu() {
             }]
        }
     ];
+
+    if (process.platform === 'darwin') {
+        const name = config.windowtitle;
+        template.unshift({
+          label: name,
+          submenu: [{
+            label: `About ${name}`,
+            role: 'about'
+          }, {
+            type: 'separator'
+          }, {
+            type: 'separator'
+          }, {
+            label: `Hide ${name}`,
+            accelerator: 'Command+H',
+            role: 'hide'
+          }, {
+            label: 'Hide Others',
+            accelerator: 'Command+Alt+H',
+            role: 'hideothers'
+          }, {
+            label: 'Show All',
+            role: 'unhide'
+          }, {
+            type: 'separator'
+          }, {
+            label: 'Quit',
+            accelerator: 'Command+Q',
+            click: function () {
+              app.quit()
+            }
+          }]
+        })
+            
+        addUpdateMenuItems(template[0].submenu, 1)
+    }
     const menu = Menu.buildFromTemplate(template)
     Menu.setApplicationMenu(menu)
 }
+
