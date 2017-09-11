@@ -18,7 +18,7 @@ function createWindow() {
         minHeight: 740,
         resizable: false,
         title: config.windowtitle,
-        icon: path.join(__dirname, 'build/icon.icns') })
+        icon: path.join(__dirname, 'build/icons/64x64.png') })
    win.loadURL(url.format ({
       pathname: path.join(__dirname, 'index.html'),
       protocol: 'file:',
