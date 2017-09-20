@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<ZrAssistant>
+  <Proxy Enable="False">
+    <ProxyServer>
+    </ProxyServer>
+    <ProxyPort>
+    </ProxyPort>
+    <ProxyUser>
+    </ProxyUser>
+    <ProxyPass>
+    </ProxyPass>    
+  </Proxy>
+  <Delay>
+    <DelayedTime>1
+    </DelayedTime>
+    <TimeOut>30</TimeOut>
+    <TryTimes>3</TryTimes>
+  </Delay>
+  <Smtp>
+    <SmtpHost></SmtpHost>
+    <SmtpPort>25</SmtpPort>
+    <SenderName></SenderName>
+    <SenderEmail></SenderEmail>
+    <Username></Username>
+    <Password></Password>
+  </Smtp>
+  <Tasks>
+  </Tasks>
+</ZrAssistant>

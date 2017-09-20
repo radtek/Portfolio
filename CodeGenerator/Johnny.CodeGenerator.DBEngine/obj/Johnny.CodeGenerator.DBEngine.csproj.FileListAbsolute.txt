@@ -1,0 +1,32 @@
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\bin\Debug\Johnny.CodeGenerator.DBEngine.dll
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\bin\Debug\Johnny.CodeGenerator.DBEngine.pdb
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\bin\Debug\Johnny.Library.dll
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\bin\Debug\log4net.dll
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\bin\Debug\log4net.pdb
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\bin\Debug\Johnny.Library.pdb
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\ResolveAssemblyReference.cache
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.DatabaseAllQuery.sql
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.DatabaseQuery.sql
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.TableQuery.sql
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.ViewQuery.sql
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.ColumnQuery.sql
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.GridColumn.sql
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.副本 ColumnQuery.sql
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.dll
+E:\WorkSpace\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.pdb
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\bin\Debug\Johnny.CodeGenerator.DBEngine.dll
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\bin\Debug\Johnny.CodeGenerator.DBEngine.pdb
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\bin\Debug\Johnny.Library.dll
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\bin\Debug\log4net.dll
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\bin\Debug\log4net.pdb
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\bin\Debug\Johnny.Library.pdb
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\ResolveAssemblyReference.cache
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.DatabaseAllQuery.sql
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.DatabaseQuery.sql
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.TableQuery.sql
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.ViewQuery.sql
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.ColumnQuery.sql
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.GridColumn.sql
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.SQL2000.副本 ColumnQuery.sql
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.dll
+E:\WorkSpace-.NET\Projects\CodeGenerator\Dev\Src\CodeGenerator\Johnny.CodeGenerator.DBEngine\obj\Debug\Johnny.CodeGenerator.DBEngine.pdb

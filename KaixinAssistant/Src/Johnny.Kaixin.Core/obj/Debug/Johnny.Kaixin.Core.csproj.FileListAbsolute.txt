@@ -1,0 +1,13 @@
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Core\bin\Debug\Johnny.Kaixin.Core.dll
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Core\bin\Debug\Johnny.Kaixin.Core.pdb
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Core\bin\Debug\Johnny.Kaixin.Helper.dll
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Core\bin\Debug\Johnny.Library.dll
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Core\bin\Debug\System.Net.Json.dll
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Core\bin\Debug\log4net.dll
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Core\bin\Debug\Johnny.Kaixin.Helper.pdb
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Core\bin\Debug\Johnny.Library.pdb
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Core\bin\Debug\System.Net.Json.pdb
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Core\bin\Debug\log4net.pdb
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Core\obj\Debug\Johnny.Kaixin.Core.csprojResolveAssemblyReference.cache
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Core\obj\Debug\Johnny.Kaixin.Core.dll
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Core\obj\Debug\Johnny.Kaixin.Core.pdb

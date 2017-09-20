@@ -1,0 +1,7 @@
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Helper\bin\Debug\Johnny.Kaixin.Helper.dll
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Helper\bin\Debug\Johnny.Kaixin.Helper.pdb
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Helper\bin\Debug\System.Net.Json.dll
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Helper\bin\Debug\System.Net.Json.pdb
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Helper\obj\Debug\Johnny.Kaixin.Helper.csprojResolveAssemblyReference.cache
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Helper\obj\Debug\Johnny.Kaixin.Helper.dll
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\Johnny.Kaixin.Helper\obj\Debug\Johnny.Kaixin.Helper.pdb

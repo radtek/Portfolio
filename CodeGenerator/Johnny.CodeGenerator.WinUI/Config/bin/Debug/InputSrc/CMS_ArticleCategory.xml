@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<entity name="CMS_ArticleCategory" modelName="MDLCMS_ArticleCategory" namespace="SouEi.SmartMoney" author="JOJOZHUANG\Administrator" createdDateTime="2009-12-22T20:55:58" schema="dbo" tableName="CMS_ArticleCategory" description="dbo.CMS_ArticleCategory" spprefix="pr_">
+  <primaryKey>
+    <column columnName="ArticleCategoryId" />
+  </primaryKey>
+  <columns>
+    <property name="ArticleCategoryId" lowerName="articlecategoryid" tableName="CMS_ArticleCategory" field="_articlecategoryid" initialValue="" columnName="ArticleCategoryId" identity="False" primaryKey="False" foreignKey="False" nullable="False" uiLength="0" description="column of dbo.CMS_ArticleCategory.ArticleCategoryId" />
+    <property name="ArticleCategoryName" lowerName="articlecategoryname" tableName="CMS_ArticleCategory" field="_articlecategoryname" initialValue="" columnName="ArticleCategoryName" identity="False" primaryKey="False" foreignKey="False" nullable="False" uiLength="0" description="column of dbo.CMS_ArticleCategory.ArticleCategoryName" />
+    <property name="Sequence" lowerName="sequence" tableName="CMS_ArticleCategory" field="_sequence" initialValue="" columnName="Sequence" identity="False" primaryKey="False" foreignKey="False" nullable="False" uiLength="0" description="column of dbo.CMS_ArticleCategory.Sequence" />
+  </columns>
+</entity>

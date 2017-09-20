@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<AutoUpdater>
+  <URLAddress URL="http://updateassistant.googlecode.com/files"/>
+  <ReleaseInfo>
+    <UpdateTime Date = "2009-04-19"/>
+    <Version Num = "2.4.4.419"/>
+  </ReleaseInfo>
+  <UpdateFileList>
+    <UpdateFile FileName = "ICSharpCode.TextEditor.dll"/>
+    <UpdateFile FileName = "Johnny.Controls.Windows.dll"/>
+    <UpdateFile FileName = "Johnny.Kaixin.Controls.dll"/>
+    <UpdateFile FileName = "Johnny.Kaixin.Core.dll"/>
+    <UpdateFile FileName = "Johnny.Kaixin.Helper.dll"/>
+    <UpdateFile FileName = "Johnny.Library.dll"/>
+    <UpdateFile FileName = "log4net.dll"/>
+    <UpdateFile FileName = "System.Net.Json.dll"/>
+    <UpdateFile FileName = "WeifenLuo.WinFormsUI.Docking.dll"/>
+    <UpdateFile FileName = "开心助手V2.4.exe"/>
+  </UpdateFileList>
+  <DeletionDirectoryList>    
+  </DeletionDirectoryList>
+  <DeletionFileList>    
+  </DeletionFileList>
+  <RestartApp>
+    <ReStart Allow = "True"/>
+    <AppName Name = "开心助手V2.4.exe"/>
+  </RestartApp>
+</AutoUpdater>

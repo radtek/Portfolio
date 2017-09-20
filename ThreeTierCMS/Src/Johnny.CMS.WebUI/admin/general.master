@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="general.master.cs" Inherits="Johnny.CMS.admin.general" %>
+<%@ Register Src="usercontrol/pagefooter.ascx" TagName="pagefooter" TagPrefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow-x:hidden;overflow-y:auto;">
+<head id="Head1" runat="server">
+    <title>无标题页</title>
+    <link rel="stylesheet" href="style/admin.css" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>    
+        <tableclass="table_main" cellSpacing="0" cellPadding="0">
+            <tr valign="top">
+                <td>                
+                    <asp:ContentPlaceHolder ID="cphPage" runat="server">
+                    </asp:ContentPlaceHolder>                    
+                </td>
+            </tr>
+            <tr><td style="height:20px"></td></tr>
+            <tr valign="top">
+                <td>
+                   <uc1:pagefooter ID="pageFooter" runat="server" />
+                </td>
+            </tr>
+        </table>
+    </div>        
+    </form>
+</body>
+</html>
+
+<!--style="padding-top:5px;padding-left:5px;padding-right:5px;padding-bottom:5px;"-->

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BDE2DFEA-8C31-41B1-B012-EBA78F489052}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Johnny.Controls.Web</RootNamespace>
+    <AssemblyName>Johnny.Controls.Web</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assembly_Resx\ControlTexts_zh.Designer.cs">
+      <DependentUpon>ControlTexts_zh.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Assembly_Resx\ControlTexts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ControlTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Button\Button.cs" />
+    <Compile Include="Button\ResetButton.cs" />
+    <Compile Include="Button\ValidationRadioButton.cs" />
+    <Compile Include="Calendar\DateTextBox.cs" />
+    <Compile Include="Calendar\DateTextboxDesigner.cs" />
+    <Compile Include="Calendar\JavaScriptWriter.cs" />
+    <Compile Include="CheckBox\CheckBox.cs" />
+    <Compile Include="CustomGrid.cs" />
+    <Compile Include="ExtjsTab\ExtjsTab.cs" />
+    <Compile Include="ExtjsTab\ExtjsTabPage.cs" />
+    <Compile Include="ExtjsTab\ExtjsTabPageCollection.cs" />
+    <Compile Include="LeftMenu\LeftMenu.cs" />
+    <Compile Include="LeftMenu\MainMenuItem.cs" />
+    <Compile Include="LeftMenu\SubMenuItem.cs" />
+    <Compile Include="LeftMenu\SubMenuItemCollection.cs" />
+    <Compile Include="Literal\Literal.cs" />
+    <Compile Include="DropDownList\DropDownList.cs" />
+    <Compile Include="TextBox\TextBox.cs" />
+    <Compile Include="WebControlLocalization.cs" />
+    <Compile Include="ManageGridView\ManageGridView.cs" />
+    <Compile Include="LeftMenu\MainMenuItemCollection.cs" />
+    <Compile Include="RepeaterGrid.cs" />
+    <Compile Include="WebMenu\Enums.cs" />
+    <Compile Include="WebMenu\Menu.cs" />
+    <Compile Include="WebMenu\MenuDesigner.cs" />
+    <Compile Include="WebMenu\MenuItem.cs" />
+    <Compile Include="WebMenu\MenuItemClickEventArgs.cs" />
+    <Compile Include="WebMenu\MenuItemCollection.cs" />
+    <Compile Include="WebMenu\RoleCollection.cs" />
+    <Compile Include="WebPager\ContentPage.cs" />
+    <Compile Include="PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebPager\WebPage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ManageGrid.cs" />
+    <Compile Include="WebPopUp\PopupWin.cs" />
+    <Compile Include="WebPopUp\PopupWinAnchor.cs" />
+    <Compile Include="WebTab\WebTabPage.cs" />
+    <Compile Include="WebTab\WebTab.cs" />
+    <Compile Include="WebTab\WebTabPageCollection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assembly_Resx\ControlTexts_zh.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ControlTexts_zh.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assembly_Resx\ControlTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ControlTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebMenu\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Button\ValidationCheckBox.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Johnny.Component.Globalization\Johnny.Component.Globalization.csproj">
+      <Project>{f342a8f0-3b06-49b6-8da1-77bc96f4b0a7}</Project>
+      <Name>Johnny.Component.Globalization</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

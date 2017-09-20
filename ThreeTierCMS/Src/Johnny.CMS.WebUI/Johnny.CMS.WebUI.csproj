@@ -1,0 +1,836 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ABE3785E-45A4-4D2E-9C85-CB45DF8C1E9C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Johnny.CMS.WebUI</RootNamespace>
+    <AssemblyName>Johnny.CMS.WebUI</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.10618.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SourceCode\Ajax\AjaxControlToolkit\AjaxControlToolkit\bin\Debug\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="FredCK.FCKeditorV2, Version=2.2.2106.29420, Culture=neutral, PublicKeyToken=4f86767c9b519a06" />
+    <Reference Include="FreeTextBox, Version=1.6.3.26073, Culture=neutral">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OpenSmtp, Version=1.0.2654.25162, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyDll\OpenSmtp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\display.aspx" />
+    <Content Include="admin\login.aspx" />
+    <Content Include="admin\logout.aspx" />
+    <Content Include="admin\index.aspx" />
+    <Content Include="admin\Admin_SendMail.aspx" />
+    <Content Include="admin\systeminfo\pagebindingadd.aspx" />
+    <Content Include="admin\systeminfo\pagebindinglist.aspx" />
+    <Content Include="admin\top.aspx" />
+    <Content Include="admin\menu.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="script\common.js" />
+    <Content Include="utility\verifycode.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin\access\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\access\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdminBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\blogcategoryadd.aspx.cs">
+      <DependentUpon>blogcategoryadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\blogcategoryadd.aspx.designer.cs">
+      <DependentUpon>blogcategoryadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\blogcategorylist.aspx.cs">
+      <DependentUpon>blogcategorylist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\blogcategorylist.aspx.designer.cs">
+      <DependentUpon>blogcategorylist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\bestpracticeadd.aspx.cs">
+      <DependentUpon>bestpracticeadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\bestpracticeadd.aspx.designer.cs">
+      <DependentUpon>bestpracticeadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\bestpracticelist.aspx.cs">
+      <DependentUpon>bestpracticelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\bestpracticelist.aspx.designer.cs">
+      <DependentUpon>bestpracticelist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\opensourceadd.aspx.cs">
+      <DependentUpon>opensourceadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\opensourceadd.aspx.designer.cs">
+      <DependentUpon>opensourceadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\opensourcelist.aspx.cs">
+      <DependentUpon>opensourcelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\opensourcelist.aspx.designer.cs">
+      <DependentUpon>opensourcelist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\releaseadd.aspx.cs">
+      <DependentUpon>releaseadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\releaseadd.aspx.designer.cs">
+      <DependentUpon>releaseadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\releaselist.aspx.cs">
+      <DependentUpon>releaselist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\releaselist.aspx.designer.cs">
+      <DependentUpon>releaselist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\softwareadd.aspx.cs">
+      <DependentUpon>softwareadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\softwareadd.aspx.designer.cs">
+      <DependentUpon>softwareadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\softwarelist.aspx.cs">
+      <DependentUpon>softwarelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\softwarelist.aspx.designer.cs">
+      <DependentUpon>softwarelist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\websiteadd.aspx.cs">
+      <DependentUpon>websiteadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\websiteadd.aspx.designer.cs">
+      <DependentUpon>websiteadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\websitelist.aspx.cs">
+      <DependentUpon>websitelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\websitelist.aspx.designer.cs">
+      <DependentUpon>websitelist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\websitecategoryadd.aspx.cs">
+      <DependentUpon>websitecategoryadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\websitecategoryadd.aspx.designer.cs">
+      <DependentUpon>websitecategoryadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\websitecategorylist.aspx.cs">
+      <DependentUpon>websitecategorylist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\websitecategorylist.aspx.designer.cs">
+      <DependentUpon>websitecategorylist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\blogadd.aspx.cs">
+      <DependentUpon>blogadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\blogadd.aspx.designer.cs">
+      <DependentUpon>blogadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\bloglist.aspx.cs">
+      <DependentUpon>bloglist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\bloglist.aspx.designer.cs">
+      <DependentUpon>bloglist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\bulletinadd.aspx.cs">
+      <DependentUpon>bulletinadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\bulletinadd.aspx.designer.cs">
+      <DependentUpon>bulletinadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\bulletinlist.aspx.cs">
+      <DependentUpon>bulletinlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\bulletinlist.aspx.designer.cs">
+      <DependentUpon>bulletinlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\systeminfo\pagebindingadd.aspx.cs">
+      <DependentUpon>pagebindingadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\systeminfo\pagebindingadd.aspx.designer.cs">
+      <DependentUpon>pagebindingadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\systeminfo\pagebindinglist.aspx.cs">
+      <DependentUpon>pagebindinglist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\systeminfo\pagebindinglist.aspx.designer.cs">
+      <DependentUpon>pagebindinglist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\systeminfo\websettings.aspx.cs">
+      <DependentUpon>websettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\systeminfo\websettings.aspx.designer.cs">
+      <DependentUpon>websettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdminAuth.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminListBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\channeladd.aspx.cs">
+      <DependentUpon>channeladd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\channeladd.aspx.designer.cs">
+      <DependentUpon>channeladd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\channellist.aspx.cs">
+      <DependentUpon>channellist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\channellist.aspx.designer.cs">
+      <DependentUpon>channellist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\articleadd.aspx.cs">
+      <DependentUpon>articleadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\articleadd.aspx.designer.cs">
+      <DependentUpon>articleadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\systeminfo\menulist.aspx.cs">
+      <DependentUpon>menulist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\systeminfo\menulist.aspx.designer.cs">
+      <DependentUpon>menulist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\systeminfo\mailsettings.aspx.cs">
+      <DependentUpon>mailsettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\systeminfo\mailsettings.aspx.designer.cs">
+      <DependentUpon>mailsettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\systeminfo\breviarysettings.aspx.cs">
+      <DependentUpon>breviarysettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\systeminfo\breviarysettings.aspx.designer.cs">
+      <DependentUpon>breviarysettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\usercontrol\pagefooter.ascx.cs">
+      <DependentUpon>pagefooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\usercontrol\pagefooter.ascx.designer.cs">
+      <DependentUpon>pagefooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\display.aspx.cs">
+      <DependentUpon>display.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\display.aspx.designer.cs">
+      <DependentUpon>display.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\logout.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\access\passwordreset.aspx.cs">
+      <DependentUpon>passwordreset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\access\passwordreset.aspx.designer.cs">
+      <DependentUpon>passwordreset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\access\permissionadd.aspx.cs">
+      <DependentUpon>permissionadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\access\permissionadd.aspx.designer.cs">
+      <DependentUpon>permissionadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\access\permissionlist.aspx.cs">
+      <DependentUpon>permissionlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\access\permissionlist.aspx.designer.cs">
+      <DependentUpon>permissionlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\access\roleadd.aspx.cs">
+      <DependentUpon>roleadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\access\roleadd.aspx.designer.cs">
+      <DependentUpon>roleadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\access\rolelist.aspx.cs">
+      <DependentUpon>rolelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\access\rolelist.aspx.designer.cs">
+      <DependentUpon>rolelist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\access\rolepermission.aspx.cs">
+      <DependentUpon>rolepermission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\access\rolepermission.aspx.designer.cs">
+      <DependentUpon>rolepermission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Admin_SendMail.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Admin_SendMail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Admin_SendMail.aspx.designer.cs">
+      <DependentUpon>Admin_SendMail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\top.aspx.cs">
+      <DependentUpon>top.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\top.aspx.designer.cs">
+      <DependentUpon>top.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\access\adminroleadd.aspx.cs">
+      <DependentUpon>adminroleadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\access\adminroleadd.aspx.designer.cs">
+      <DependentUpon>adminroleadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\access\adminrolelist.aspx.cs">
+      <DependentUpon>adminrolelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\access\adminrolelist.aspx.designer.cs">
+      <DependentUpon>adminrolelist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\general.master.cs">
+      <DependentUpon>general.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\general.master.designer.cs">
+      <DependentUpon>general.master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\usercontrol\menucontrol.ascx.cs">
+      <DependentUpon>menucontrol.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\usercontrol\menucontrol.ascx.designer.cs">
+      <DependentUpon>menucontrol.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\usercontrol\permissioncontrol.ascx.cs">
+      <DependentUpon>permissioncontrol.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\usercontrol\permissioncontrol.ascx.designer.cs">
+      <DependentUpon>permissioncontrol.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\access\permissioncategoryadd.aspx.cs">
+      <DependentUpon>permissioncategoryadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\access\permissioncategoryadd.aspx.designer.cs">
+      <DependentUpon>permissioncategoryadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\access\permissioncategorylist.aspx.cs">
+      <DependentUpon>permissioncategorylist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\access\permissioncategorylist.aspx.designer.cs">
+      <DependentUpon>permissioncategorylist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\systeminfo\menucategoryadd.aspx.cs">
+      <DependentUpon>menucategoryadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\systeminfo\menucategoryadd.aspx.designer.cs">
+      <DependentUpon>menucategoryadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\systeminfo\menucategorylist.aspx.cs">
+      <DependentUpon>menucategorylist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\systeminfo\menucategorylist.aspx.designer.cs">
+      <DependentUpon>menucategorylist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\seh\articlelist.aspx.cs">
+      <DependentUpon>articlelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\seh\articlelist.aspx.designer.cs">
+      <DependentUpon>articlelist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\systeminfo\menuadd.aspx.cs">
+      <DependentUpon>menuadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\systeminfo\menuadd.aspx.designer.cs">
+      <DependentUpon>menuadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\systeminfo\topmenuadd.aspx.cs">
+      <DependentUpon>topmenuadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\systeminfo\topmenuadd.aspx.designer.cs">
+      <DependentUpon>topmenuadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\systeminfo\topmenubinding.aspx.cs">
+      <DependentUpon>topmenubinding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\systeminfo\topmenubinding.aspx.designer.cs">
+      <DependentUpon>topmenubinding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\systeminfo\topmenulist.aspx.cs">
+      <DependentUpon>topmenulist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\systeminfo\topmenulist.aspx.designer.cs">
+      <DependentUpon>topmenulist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin.master.cs">
+      <DependentUpon>admin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin.master.designer.cs">
+      <DependentUpon>admin.master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\access\administratoradd.aspx.cs">
+      <DependentUpon>administratoradd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\access\administratoradd.aspx.designer.cs">
+      <DependentUpon>administratoradd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\access\administratorlist.aspx.cs">
+      <DependentUpon>administratorlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\access\administratorlist.aspx.designer.cs">
+      <DependentUpon>administratorlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\errorpage.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>errorpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\errorpage.aspx.designer.cs">
+      <DependentUpon>errorpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blogdetail.aspx.cs">
+      <DependentUpon>blogdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blogdetail.aspx.designer.cs">
+      <DependentUpon>blogdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Navigator.cs" />
+    <Compile Include="releasehistory.aspx.cs">
+      <DependentUpon>releasehistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="releasehistory.aspx.designer.cs">
+      <DependentUpon>releasehistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="download.aspx.cs">
+      <DependentUpon>download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="download.aspx.designer.cs">
+      <DependentUpon>download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="softwaredetail.aspx.cs">
+      <DependentUpon>softwaredetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="softwaredetail.aspx.designer.cs">
+      <DependentUpon>softwaredetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="utility\ConfigInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="websites.aspx.cs">
+      <DependentUpon>websites.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="websites.aspx.designer.cs">
+      <DependentUpon>websites.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dotnet.aspx.cs">
+      <DependentUpon>dotnet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dotnet.aspx.designer.cs">
+      <DependentUpon>dotnet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forum.aspx.cs">
+      <DependentUpon>forum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forum.aspx.designer.cs">
+      <DependentUpon>forum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="favorite.aspx.cs">
+      <DependentUpon>favorite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="favorite.aspx.designer.cs">
+      <DependentUpon>favorite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="software.aspx.cs">
+      <DependentUpon>software.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="software.aspx.designer.cs">
+      <DependentUpon>software.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="it.aspx.cs">
+      <DependentUpon>it.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="it.aspx.designer.cs">
+      <DependentUpon>it.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog.aspx.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog.aspx.designer.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sap.aspx.cs">
+      <DependentUpon>sap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sap.aspx.designer.cs">
+      <DependentUpon>sap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sehome.master.cs">
+      <DependentUpon>sehome.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sehome.master.designer.cs">
+      <DependentUpon>sehome.master</DependentUpon>
+    </Compile>
+    <Compile Include="utility\verifycode.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>verifycode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="utility\verifycode.aspx.designer.cs">
+      <DependentUpon>verifycode.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Johnny.CMS.BLL\Johnny.CMS.BLL.csproj">
+      <Project>{0984D6B7-BB88-40F2-B867-D953A25E4DA1}</Project>
+      <Name>Johnny.CMS.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.CMS.Common\Johnny.CMS.Common.csproj">
+      <Project>{8E963B14-961A-4A44-89C2-4283EDB8E527}</Project>
+      <Name>Johnny.CMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.CMS.OM\Johnny.CMS.OM.csproj">
+      <Project>{CFC484CB-747A-426B-8FC9-5B4570FB93BC}</Project>
+      <Name>Johnny.CMS.OM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.Component.Globalization\Johnny.Component.Globalization.csproj">
+      <Project>{f342a8f0-3b06-49b6-8da1-77bc96f4b0a7}</Project>
+      <Name>Johnny.Component.Globalization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.Component.Utility\Johnny.Component.Utility.csproj">
+      <Project>{4EAAECE3-6D16-4DEF-A26C-B794FB00B546}</Project>
+      <Name>Johnny.Component.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.Controls.Web\Johnny.Controls.Web.csproj">
+      <Project>{BDE2DFEA-8C31-41B1-B012-EBA78F489052}</Project>
+      <Name>Johnny.Controls.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.Library\Johnny.Library.csproj">
+      <Project>{44f4adfd-cd68-48c8-961b-dc2f1a1bb8a9}</Project>
+      <Name>Johnny.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Backstage\AdminTheme.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\access\permissionadd.aspx" />
+    <Content Include="admin\access\permissionlist.aspx" />
+    <Content Include="admin\access\roleadd.aspx" />
+    <Content Include="admin\access\rolelist.aspx" />
+    <Content Include="admin\access\rolepermission.aspx" />
+    <Content Include="admin\access\adminroleadd.aspx" />
+    <Content Include="admin\access\adminrolelist.aspx" />
+    <Content Include="admin\scripts\calendar.js" />
+    <Content Include="admin\usercontrol\menucontrol.ascx" />
+    <Content Include="admin\access\permissioncategoryadd.aspx" />
+    <Content Include="admin\access\permissioncategorylist.aspx" />
+    <Content Include="admin\systeminfo\menucategoryadd.aspx" />
+    <Content Include="admin\systeminfo\menucategorylist.aspx" />
+    <Content Include="admin\seh\articlelist.aspx" />
+    <Content Include="admin\systeminfo\menuadd.aspx" />
+    <Content Include="admin\systeminfo\topmenuadd.aspx" />
+    <Content Include="admin\systeminfo\topmenubinding.aspx" />
+    <Content Include="admin\systeminfo\topmenulist.aspx" />
+    <Content Include="admin\errorpage.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="script\CheckBox.js" />
+    <Content Include="script\img_upload.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\access\passwordreset.aspx" />
+    <Content Include="admin\general.master" />
+    <Content Include="admin\scripts\prototype.js" />
+    <Content Include="admin\scripts\validation_cn.js" />
+    <Content Include="admin\style\admin.css" />
+    <Content Include="admin\style\validation.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\admin.master" />
+    <Content Include="admin\access\administratoradd.aspx" />
+    <Content Include="admin\access\administratorlist.aspx" />
+    <Content Include="admin\images\login\bottom_bg.gif" />
+    <Content Include="admin\images\login\logo.gif" />
+    <Content Include="admin\images\login\reset.gif" />
+    <Content Include="admin\images\login\signin.gif" />
+    <Content Include="admin\images\login\top_bg.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\seh\blogcategoryadd.aspx" />
+    <Content Include="admin\seh\blogcategorylist.aspx" />
+    <Content Include="admin\seh\releaseadd.aspx" />
+    <Content Include="admin\seh\releaselist.aspx" />
+    <Content Include="admin\seh\softwareadd.aspx" />
+    <Content Include="admin\seh\softwarelist.aspx" />
+    <Content Include="admin\seh\websiteadd.aspx" />
+    <Content Include="admin\seh\websitelist.aspx" />
+    <Content Include="admin\seh\websitecategoryadd.aspx" />
+    <Content Include="admin\seh\websitecategorylist.aspx" />
+    <Content Include="admin\seh\blogadd.aspx" />
+    <Content Include="admin\seh\bloglist.aspx" />
+    <Content Include="admin\seh\bulletinadd.aspx" />
+    <Content Include="admin\seh\bulletinlist.aspx" />
+    <Content Include="admin\systeminfo\websettings.aspx" />
+    <Content Include="admin\style\errorpage.css" />
+    <Content Include="admin\seh\channeladd.aspx" />
+    <Content Include="admin\seh\channellist.aspx" />
+    <Content Include="admin\seh\articleadd.aspx" />
+    <Content Include="admin\systeminfo\menulist.aspx" />
+    <Content Include="admin\systeminfo\mailsettings.aspx" />
+    <Content Include="admin\systeminfo\breviarysettings.aspx" />
+    <Content Include="admin\usercontrol\pagefooter.ascx" />
+    <Content Include="admin\images\admin_top_bg.gif" />
+    <Content Include="admin\images\bottom_bg.gif" />
+    <Content Include="admin\images\gridview\delete.gif" />
+    <Content Include="admin\images\gridview\down.gif" />
+    <Content Include="admin\images\gridview\edit.gif" />
+    <Content Include="admin\images\gridview\titlebg.gif" />
+    <Content Include="admin\images\gridview\up.gif" />
+    <Content Include="admin\images\leftmenu\menu_category_bg.gif" />
+    <Content Include="admin\images\leftmenu\menu_collapse.gif" />
+    <Content Include="admin\images\leftmenu\menu_expand.gif" />
+    <Content Include="admin\images\leftmenu\menu_item.gif" />
+    <Content Include="admin\images\login\input_password.gif" />
+    <Content Include="admin\images\login\input_username.gif" />
+    <Content Include="admin\images\login\input_vercode.gif" />
+    <Content Include="admin\images\topmenu\button_select.jpg" />
+    <Content Include="admin\images\topmenu\button_unselect.jpg" />
+    <Content Include="admin\images\topmenu\logo.gif" />
+    <Content Include="admin\images\topmenu\logo_bg.jpg" />
+    <Content Include="admin\images\topmenu\topmenu_bg.jpg" />
+    <Content Include="admin\images\validation\validate_error.gif" />
+    <Content Include="admin\images\validation\validate_normal.gif" />
+    <Content Include="admin\images\validation\validate_success.gif" />
+    <Content Include="admin\images\validation\validate_waring.gif" />
+    <Content Include="admin\scripts\multiselector.js" />
+    <Content Include="admin\style\login.css" />
+    <Content Include="admin\style\leftmenu.css" />
+    <Content Include="admin\style\topmenu.css" />
+    <Content Include="admin\scripts\checkbox.js" />
+    <Content Include="admin\usercontrol\permissioncontrol.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\access\profile.aspx" />
+    <Content Include="admin\seh\bestpracticeadd.aspx" />
+    <Content Include="admin\seh\bestpracticelist.aspx" />
+    <Content Include="admin\seh\opensourceadd.aspx" />
+    <Content Include="admin\seh\opensourcelist.aspx" />
+    <Content Include="config\books.xml" />
+    <Content Include="config\TabPages.xml" />
+    <Content Include="about.aspx" />
+    <Content Include="blogdetail.aspx" />
+    <Content Include="releasehistory.aspx" />
+    <Content Include="download.aspx" />
+    <Content Include="softwaredetail.aspx" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="websites.aspx" />
+    <Content Include="dotnet.aspx" />
+    <Content Include="forum.aspx" />
+    <Content Include="favorite.aspx" />
+    <Content Include="software.aspx" />
+    <Content Include="it.aspx" />
+    <Content Include="blog.aspx" />
+    <Content Include="sap.aspx" />
+    <Content Include="css\index.css" />
+    <Content Include="css\sehome.css" />
+    <Content Include="index.aspx" />
+    <Content Include="script\ext\extjs.js" />
+    <Content Include="script\sehome.js" />
+    <Content Include="sehome.master" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>1923</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/hrhunter</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

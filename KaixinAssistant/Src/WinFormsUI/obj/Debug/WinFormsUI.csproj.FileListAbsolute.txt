@@ -1,0 +1,7 @@
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.Resources.resources
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.Strings.resources
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\WinFormsUI\obj\Debug\WinFormsUI.csproj.GenerateResource.Cache
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.dll
+D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.pdb

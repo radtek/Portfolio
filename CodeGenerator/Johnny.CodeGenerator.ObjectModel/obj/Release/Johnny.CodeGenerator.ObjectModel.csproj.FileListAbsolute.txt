@@ -1,0 +1,4 @@
+D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.CodeGenerator.ObjectModel\bin\Release\Johnny.CodeGenerator.ObjectModel.dll
+D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.CodeGenerator.ObjectModel\bin\Release\Johnny.CodeGenerator.ObjectModel.pdb
+D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.CodeGenerator.ObjectModel\obj\Release\Johnny.CodeGenerator.ObjectModel.dll
+D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.CodeGenerator.ObjectModel\obj\Release\Johnny.CodeGenerator.ObjectModel.pdb

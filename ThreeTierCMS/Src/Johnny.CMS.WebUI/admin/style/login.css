@@ -1,0 +1,37 @@
+/*  ×ÖÌå  */
+body,td {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size:12px;
+	color:#2D465F;
+	font-family:Verdana;
+}
+
+/* login */
+.toplink
+{
+	COLOR: #414141; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+a.toplink:link {
+	 COLOR: #414141; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+a.toplink:visited {
+	 COLOR: #414141; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+a.toplink:active {
+	 COLOR: #ff0000;FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+a.toplink:hover {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; COLOR: #DD6800; BORDER-BOTTOM: 1px dotted; BORDER-RIGHT-WIDTH: 1px; TEXT-DECORATION: none; BACKGROUND-POSITION: 50% bottom; LEFT:1px; BACKGROUND-REPEAT: repeat-x; POSITION: relative; TOP:1px
+}
+
+.error {
+	color: #ff0000; 
+	font-size:12px;
+}
+
+input.username { background:#FFFFFF url("../images/Login/input_username.gif") 2px 2px no-repeat; padding-left:18px; }
+input.password { background:#FFFFFF url("../images/Login/input_password.gif") 2px 2px no-repeat; padding-left:18px; }
+input.vercode { background:#FFFFFF url("../images/Login/input_vercode.gif") 2px 2px no-repeat; padding-left:18px; }

@@ -1,0 +1,5 @@
+D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.Library\bin\Release\Johnny.Library.dll
+D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.Library\bin\Release\Johnny.Library.pdb
+D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.Library\bin\Release\log4net.dll
+D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.Library\obj\Release\Johnny.Library.dll
+D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.Library\obj\Release\Johnny.Library.pdb

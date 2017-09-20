@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes"?>
+<SEHome>
+	<Page Name="首页" URL="index.html">
+		<Page Name="SAP" URL="sapindex.html">
+			<Page Name="SAP Article" URL="article.html" />
+		</Page>
+		<Page Name=".NET" URL="dotnetindex.html">
+			<Page Name=".NET Article" URL="article.html" />
+		</Page>
+		<Page Name="软件项目" URL="mysoftware.html">
+			<Page Name="软件A" URL="softwaredetail.html" />
+			<Page Name="下载" URL="download.html">
+			<Page Name="历史版本" URL="releasehistory.html">
+		</Page>		
+		<Page Name="Blog" URL="blogindex.html">
+			<Page Name=".NET Article" URL="article.html" />
+		</Page>
+		<Page Name="实用网址" URL="websites.html" />
+	</Page>
+</SEHome>
+</xml>

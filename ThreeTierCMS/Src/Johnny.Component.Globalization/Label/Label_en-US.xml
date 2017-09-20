@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<labeltext>
+  <!--CMS-->
+  <label key="Administrator_Title" value="Admin Profile" />
+  <label key="AdminRole_Title" value="Administrator's Role" />
+  <label key="Menu_Title" value="Menu Settings" />
+  <label key="MenuCategory_Title" value="Menu Category Settings" />
+  <label key="PageBinding_Title" value="Page Binding Settings" />
+  <label key="Permission_Title" value="Permission Settings" />
+  <label key="PermissionCategory_Title" value="Permission Category Settings" />
+  <label key="Role_Title" value="Role Settings" />
+  <label key="RolePermission_Title" value="Role Permission Settings" />
+  <label key="TopMenu_Title" value="Top Menu Settings" />
+  <label key="TopMenuBinding_Title" value="Top Menu Binding Settings" />
+
+  <!--SeHome Title-->
+  <label key="Article_Title" value="Article" />
+  <label key="Bulletin_Title" value="Bulletin" />
+  <label key="Channel_Title" value="Channel" />
+  <label key="BestPractice_Title" value="Best Practice" />
+  <label key="Blog_Title" value="Blog" />
+  <label key="BlogCategory_Title" value="Blog Category" />
+  <label key="OpenSource_Title" value="Open Source" />
+  <label key="Release_Title" value="Release" />
+  <label key="Software_Title" value="Software" />
+  <label key="Website_Title" value="Website" />
+  <label key="WebsiteCategory_Title" value="Website Category" />
+
+  <!--Common-->
+  <label key="Common_Male" value="Male" />
+  <label key="Common_Female" value="Female" />
+  <label key="Common_Yes" value="Yes" />
+  <label key="Common_No" value="No" />
+
+  <!--Database-->
+  <label key="Common_ID" value="ID" />
+  <label key="Common_CreatedTime" value="Created Time" />
+  <label key="Common_CreatedById" value="Created By Id" />
+  <label key="Common_CreatedByName" value="Created By Name" />
+  <label key="Common_UpdatedTime" value="Updated Time" />
+  <label key="Common_UpdatedById" value="Updated By Id" />
+  <label key="Common_UpdatedByName" value="Updated By Name" />
+  <label key="Common_Sequence" value="Sequence" />
+
+  <!--Page & WebControl-->
+  <label key="Login_Title" value="Content Management System By Johnny" />
+  <label key="Login_CopyRight" value="Copyright © 2012 Johnny, All Rights Reserved" />
+  <label key="Login_Password" value="Password&amp;nbsp;&amp;nbsp;" />
+  <label key="Login_AdminName" value="User Name" />
+  <label key="Login_VerifyCode" value="Verify Code" />
+  <label key="Login_VPassword_ErrorMessage" value="Please input password!" />
+  <label key="Login_VUserName_ErrorMessage" value="Please input user name!" />
+  <label key="Index_Frame" value="This page uses frames, but your browser does not support frames." />
+  <label key="Top_About_Text" value="About" />
+  <label key="Top_About_ToolTip" value="About Johnny's CMS" />
+  <label key="Top_Help_Text" value="Help" />
+  <label key="Top_Help_ToolTip" value="System Help" />
+  <label key="Top_Homepage_Text" value="Homepage" />
+  <label key="Top_Homepage_ToolTip" value="Hompage" />
+  <label key="Top_Logout_Text" value="Logout" />
+  <label key="Top_Logout_ToolTip" value="Exit System" />
+  <label key="Top_Password_Text" value="Password" />
+  <label key="Top_Password_ToolTip" value="Reset Password" />
+  <label key="Top_Profile_Text" value="Profile" />
+  <label key="Top_Profile_ToolTip" value="Profile" />
+  <label key="Top_Welcome" value="Welcome:" />
+  <label key="ManageGridView_CheckAll" value="All" />
+  <label key="ManageGridView_ID" value="ID" />
+  <label key="AdminMaster_Add" value="Add" />
+  <label key="AdminMaster_List" value="List" />
+  <label key="Article_Flags" value="Article Flags" />
+  <label key="UserControl_MenuCategory" value="Menu Category" />
+  <label key="ResetPassword_Title" value="Reset Password" />
+  <label key="ResetPassword_Original" value="Original Password" />
+  <label key="ResetPassword_New" value="New Password" />
+  <label key="ResetPassword_Confirm" value="Confirmed Password" />
+  <label key="Profile_Title" value="Profile" />
+
+  <!--Model, From Database Tables-->
+  <label key="Administrator_AdminId" value="AdminId" />
+  <label key="Administrator_AdminName" value="Admin Name" />
+  <label key="Administrator_Password" value="Password" />
+  <label key="Administrator_FullName" value="Full Name" />
+  <label key="Administrator_Gender" value="Gender" />
+  <label key="Administrator_Tel" value="Tel" />
+  <label key="Administrator_Email" value="Email" />
+  <label key="Administrator_ValidFrom" value="Valid From" />
+  <label key="Administrator_ValidTo" value="Valid To" />
+  <label key="Administrator_IsActivated" value="Is Activated" />
+  <label key="Administrator_LoginTimes" value="Login Times" />
+  <label key="Administrator_CreatedTime" value="Created Time" />
+  <label key="Administrator_CreatedById" value="Created By Id" />
+  <label key="Administrator_CreatedByName" value="Created By Name" />
+  <label key="Administrator_UpdatedTime" value="Updated Time" />
+  <label key="Administrator_UpdatedById" value="Updated By Id" />
+  <label key="Administrator_UpdatedByName" value="Updated By Name" />
+  <label key="Administrator_Sequence" value="Sequence" />
+  <label key="Adminrole_AdminRoleId" value="AdminRoleId" />
+  <label key="Adminrole_AdminId" value="Administrator" />
+  <label key="Adminrole_RoleId" value="Role" />
+  <label key="Adminrole_Sequence" value="Sequence" />
+  <label key="Article_ArticleId" value="Article Id" />
+  <label key="Article_ChannelId" value="Channel" />
+  <label key="Article_Title" value="Title" />
+  <label key="Article_SubTitle" value="Sub Title" />
+  <label key="Article_KeyWord" value="KeyWord" />
+  <label key="Article_SubContent" value="Sub Content" />
+  <label key="Article_Content" value="Content" />
+  <label key="Article_FirstImage" value="First Image" />
+  <label key="Article_CopyFrom" value="Copy From" />
+  <label key="Article_Hits" value="Hits" />
+  <label key="Article_IsTop" value="Top" />
+  <label key="Article_IsElite" value="Elite" />
+  <label key="Article_IsPic" value="Picture" />
+  <label key="Article_IsPageType" value="Paging" />
+  <label key="Article_IsVerified" value="Is Verified" />
+  <label key="Article_CreatedTime" value="Created Time" />
+  <label key="Article_CreatedById" value="Created By Id" />
+  <label key="Article_CreatedByName" value="Created By Name" />
+  <label key="Article_UpdatedTime" value="Updated Time" />
+  <label key="Article_UpdatedById" value="Updated By Id" />
+  <label key="Article_UpdatedByName" value="Updated By Name" />
+  <label key="Article_Sequence" value="Sequence" />
+  <label key="Bulletin_BulletinId" value="Bulletin Id" />
+  <label key="Bulletin_Title" value="Title" />
+  <label key="Bulletin_Content" value="Content" />
+  <label key="Bulletin_URL" value="URL" />
+  <label key="Bulletin_Hits" value="Hits" />
+  <label key="Bulletin_IsDisplay" value="IsDisplay" />
+  <label key="Bulletin_CreatedTime" value="Created Time" />
+  <label key="Bulletin_CreatedById" value="Created By Id" />
+  <label key="Bulletin_CreatedByName" value="Created By Name" />
+  <label key="Bulletin_UpdatedTime" value="Updated Time" />
+  <label key="Bulletin_UpdatedById" value="Updated By Id" />
+  <label key="Bulletin_UpdatedByName" value="Updated By Name" />
+  <label key="Bulletin_Sequence" value="Sequence" />
+  <label key="Channel_ChannelId" value="Channel Id" />
+  <label key="Channel_ChannelName" value="Channel Name" />
+  <label key="Channel_Sequence" value="Sequence" />
+  <label key="Menu_MenuId" value="Menu Id" />
+  <label key="Menu_MenuName" value="Menu Name" />
+  <label key="Menu_MenuCategoryId" value="Menu Category" />
+  <label key="Menu_PageLink" value="Page Link" />
+  <label key="Menu_ToolTip" value="ToolTip" />
+  <label key="Menu_Image" value="Image" />
+  <label key="Menu_PermissionId" value="Permission" />
+  <label key="Menu_IsDisplay" value="Display in the Menu" />
+  <label key="Menu_Sequence" value="Sequence" />
+  <label key="Menucategory_MenuCategoryId" value="Menu Category Id" />
+  <label key="Menucategory_MenuCategoryName" value="Menu Category" />
+  <label key="Menucategory_Sequence" value="Sequence" />
+  <label key="Pagebinding_PageBindingId" value="Page Binding Id" />
+  <label key="Pagebinding_Title" value="Title" />
+  <label key="Pagebinding_MenuCategoryId" value="Menu Category" />
+  <label key="Pagebinding_ListMenuId" value="List Page" />
+  <label key="Pagebinding_AddMenuId" value="Add Page" />
+  <label key="Permission_PermissionId" value="Permission Id" />
+  <label key="Permission_PermissionName" value="Permission Name" />
+  <label key="Permission_PermissionCategoryId" value="Permission Category" />
+  <label key="Permission_Sequence" value="Sequence" />
+  <label key="Permissioncategory_PermissionCategoryId" value="Permission Category Id" />
+  <label key="Permissioncategory_PermissionCategoryName" value="Permission Category" />
+  <label key="Permissioncategory_Sequence" value="Sequence" />
+  <label key="Role_RoleId" value="Role Id" />
+  <label key="Role_RoleName" value="Role Name" />
+  <label key="Role_Description" value="Description" />
+  <label key="Role_Sequence" value="Sequence" />
+  <label key="Rolepermission_RoleId" value="Role" />
+  <label key="Rolepermission_PermissionId" value="Permission" />
+  <label key="Topmenu_TopMenuId" value="Top Menu Id" />
+  <label key="Topmenu_TopMenuName" value="Top Menu" />
+  <label key="Topmenu_ToolTip" value="ToolTip" />
+  <label key="Topmenu_PageLink" value="Default Page" />
+  <label key="Topmenu_Sequence" value="Sequence" />
+  <label key="Topmenubinding_TopMenuId" value="Top Menu" />
+  <label key="Topmenubinding_MenuCategoryId" value="Menu Category" />
+  <label key="Bestpractice_BestPracticeId" value="Best Practice Id" />
+  <label key="Bestpractice_BestPracticeName" value="Best Practice" />
+  <label key="Bestpractice_ShortDescription" value="Short Description" />
+  <label key="Bestpractice_Description" value="Description" />
+  <label key="Bestpractice_Hits" value="Hits" />
+  <label key="Bestpractice_IsDisplay" value="Is Display" />
+  <label key="Bestpractice_CreatedTime" value="CreatedTime" />
+  <label key="Bestpractice_CreatedById" value="Created By Id" />
+  <label key="Bestpractice_CreatedByName" value="Created By Name" />
+  <label key="Bestpractice_UpdatedTime" value="Updated Time" />
+  <label key="Bestpractice_UpdatedById" value="Updated By Id" />
+  <label key="Bestpractice_UpdatedByName" value="Updated By Name" />
+  <label key="Bestpractice_Sequence" value="Sequence" />
+  <label key="Blog_BlogId" value="Blog Id" />
+  <label key="Blog_Title" value="Title" />
+  <label key="Blog_BlogCategoryId" value="Blog Category" />
+  <label key="Blog_Tag" value="Tag" />
+  <label key="Blog_Content" value="Content" />
+  <label key="Blog_Hits" value="Hits" />
+  <label key="Blog_IsDisplay" value="Is Display" />
+  <label key="Blog_CreatedTime" value="Created Time" />
+  <label key="Blog_CreatedById" value="Created By Id" />
+  <label key="Blog_CreatedByName" value="Created By Name" />
+  <label key="Blog_UpdatedTime" value="Updated Time" />
+  <label key="Blog_UpdatedById" value="Updated By Id" />
+  <label key="Blog_UpdatedByName" value="Updated By Name" />
+  <label key="Blog_Sequence" value="Sequence" />
+  <label key="Blogcategory_BlogCategoryId" value="Blog Category Id" />
+  <label key="Blogcategory_BlogCategoryName" value="Blog Category" />
+  <label key="Blogcategory_Sequence" value="Sequence" />
+  <label key="Opensource_OpenSourceId" value="OpenSource Id" />
+  <label key="Opensource_OpenSourceName" value="OpenSource" />
+  <label key="Opensource_ShortDescription" value="Short Description" />
+  <label key="Opensource_Description" value="Description" />
+  <label key="Opensource_URL" value="URL" />
+  <label key="Opensource_Hits" value="Hits" />
+  <label key="Opensource_IsDisplay" value="Is Display" />
+  <label key="Opensource_CreatedTime" value="Created Time" />
+  <label key="Opensource_CreatedById" value="Created By Id" />
+  <label key="Opensource_CreatedByName" value="Created By Name" />
+  <label key="Opensource_UpdatedTime" value="Updated Time" />
+  <label key="Opensource_UpdatedById" value="Updated By Id" />
+  <label key="Opensource_UpdatedByName" value="Updated By Name" />
+  <label key="Opensource_Sequence" value="Sequence" />
+  <label key="Release_ReleaseId" value="Release Id" />
+  <label key="Release_SoftwareId" value="Software" />
+  <label key="Release_ReleaseName" value="Release Name" />
+  <label key="Release_ReleaseDate" value="Release Date" />
+  <label key="Release_Description" value="Description" />
+  <label key="Release_Hits" value="Hits" />
+  <label key="Release_Downloads" value="Downloads" />
+  <label key="Release_IsDisplay" value="Is Display" />
+  <label key="Release_CreatedTime" value="Created Time" />
+  <label key="Release_CreatedById" value="Created By Id" />
+  <label key="Release_CreatedByName" value="Created By Name" />
+  <label key="Release_UpdatedTime" value="Updated Time" />
+  <label key="Release_UpdatedById" value="Updated By Id" />
+  <label key="Release_UpdatedByName" value="Updated By Name" />
+  <label key="Release_Sequence" value="Sequence" />
+  <label key="Software_SoftwareId" value="Software Id" />
+  <label key="Software_SoftwareName" value="Software Name" />
+  <label key="Software_ShortDescription" value="Short Description" />
+  <label key="Software_Description" value="Description" />
+  <label key="Software_Image" value="Image" />
+  <label key="Software_Feature1" value="Feature1" />
+  <label key="Software_Feature2" value="Feature2" />
+  <label key="Software_Feature3" value="Feature3" />
+  <label key="Software_Feature4" value="Feature4" />
+  <label key="Software_DownloadUrl" value="Download Url" />
+  <label key="Software_DocumentTitle" value="Document Title" />
+  <label key="Software_DocumentDescription" value="Document Description" />
+  <label key="Software_DocumentUrl" value="Document Url" />
+  <label key="Software_Hits" value="Hits" />
+  <label key="Software_Downloads" value="Downloads" />
+  <label key="Software_IsDisplay" value="Is Display" />
+  <label key="Software_CreatedTime" value="Created Time" />
+  <label key="Software_CreatedById" value="Created By Id" />
+  <label key="Software_CreatedByName" value="Created By Name" />
+  <label key="Software_UpdatedTime" value="Updated Time" />
+  <label key="Software_UpdatedById" value="Updated By Id" />
+  <label key="Software_UpdatedByName" value="Updated By Name" />
+  <label key="Software_Sequence" value="Sequence" />
+  <label key="Website_WebsiteId" value="Website Id" />
+  <label key="Website_WebsiteName" value="Website Name" />
+  <label key="Website_WebsiteCategoryId" value="Website Category" />
+  <label key="Website_Description" value="Description" />
+  <label key="Website_URL" value="URL" />
+  <label key="Website_Hits" value="Hits" />
+  <label key="Website_IsDisplay" value="Is Display" />
+  <label key="Website_CreatedTime" value="Created Time" />
+  <label key="Website_CreatedById" value="Created By Id" />
+  <label key="Website_CreatedByName" value="Created By Name" />
+  <label key="Website_UpdatedTime" value="Updated Time" />
+  <label key="Website_UpdatedById" value="Updated By Id" />
+  <label key="Website_UpdatedByName" value="Updated By Name" />
+  <label key="Website_Sequence" value="Sequence" />
+  <label key="Websitecategory_WebsiteCategoryId" value="Website Category Id" />
+  <label key="Websitecategory_WebsiteCategoryName" value="Website Category" />
+  <label key="Websitecategory_Sequence" value="Sequence" />
+</labeltext>

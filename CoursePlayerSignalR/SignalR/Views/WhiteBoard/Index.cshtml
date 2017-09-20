@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Whiteboard";
+}
+
+<h2>Drawing Board</h2>
+<div class="chatcontainer">
+    <canvas id="mywb" width="680" height="300"></canvas>
+    <input type="hidden" id="groupName" value="grpjohnny" />
+    <!--<script type="text/javascript" src="~/scripts/draw.js"></script>-->
+</div>
+
+<style type="text/css">
+    #draw {
+	   border: 1px solid #AAA;
+	   background: #EEE;
+	   }
+</style>​
+<!--Add script to update the page and send messages.-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Declare a proxy to reference the hub.
+        var wb = $.connection.whiteboardHub;
+        // Create a function that the hub can call to broadcast messages.
+        wb.client.broadcastDraw = function (x, y, drawtype) {
+            var mywb = $('#mywb')[0].getContext('2d');
+            if (drawtype === 'dragstart') {
+                mywb.beginPath();
+                mywb.moveTo(x, y);
+            } else if (drawtype === 'drag') {
+                mywb.lineTo(x, y);
+                mywb.clearRect(0, 0, mywb.width, mywb.height);
+                mywb.stroke();
+            } else {
+                mywb.closePath();
+            }            
+        };
+        // Start the connection.
+        $.connection.hub.start().done(function () {
+            wb.server.joinGroup($("#groupName").val());
+        });
+        var mywb = $('#mywb')[0].getContext('2d');
+        mywb.fillStyle = "solid";
+        mywb.strokeStyle = "#ECD018";
+        mywb.lineCap = 'round';
+        mywb.lineWidth = 5;
+        $('#mywb')
+           .drag("start", function (ev, dd) {
+               mywb.beginPath();
+               mywb.moveTo(
+                  ev.pageX - dd.originalX,
+                  ev.pageY - dd.originalY
+               );
+               wb.server.sendDraw($("#groupName").val(), ev.pageX - dd.originalX, ev.pageY - dd.originalY, 'dragstart');
+           })
+           .drag(function (ev, dd) {
+               mywb.lineTo(
+                  ev.pageX - dd.originalX,
+                  ev.pageY - dd.originalY
+               );
+               mywb.clearRect(0, 0, mywb.width, mywb.height);
+               mywb.stroke();
+               wb.server.sendDraw($("#groupName").val(), ev.pageX - dd.originalX, ev.pageY - dd.originalY, 'drag');
+           })
+           .drag("end", function (ev, dd) {
+               mywb.closePath();
+               wb.server.sendDraw($("#groupName").val(), ev.pageX - dd.originalX, ev.pageY - dd.originalY, 'dragend');
+           });
+    });
+</script>
+

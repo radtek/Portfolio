@@ -1,0 +1,13 @@
+D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\COL.Core\bin\Release\COL.Core.dll
+D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\COL.Core\bin\Release\COL.Core.pdb
+D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\COL.Core\bin\Release\SharpZipLib.dll
+D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\COL.Core\bin\Release\Xamarin.Forms.Core.dll
+D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\COL.Core\bin\Release\Xamarin.Forms.Platform.dll
+D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\COL.Core\bin\Release\Xamarin.Forms.Xaml.dll
+D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\COL.Core\bin\Release\Xamarin.Insights.dll
+D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\COL.Core\bin\Release\Xamarin.Forms.Core.xml
+D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\COL.Core\bin\Release\Xamarin.Forms.Xaml.xml
+D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\COL.Core\bin\Release\Xamarin.Insights.xml
+D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\COL.Core\obj\Release\COL.Core.csprojResolveAssemblyReference.cache
+D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\COL.Core\obj\Release\COL.Core.dll
+D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\COL.Core\obj\Release\COL.Core.pdb

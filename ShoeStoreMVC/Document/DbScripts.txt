@@ -1,0 +1,26 @@
+Data Source=(localdb)\v11.0;Initial Catalog=ShoeStore;Integrated Security=True;Pooling=False
+server=jojostudio;database=SportsStore;uid=zrlogin;pwd=778658;
+
+CREATE TABLE [dbo].[Products] (
+    [ProductID]     INT             IDENTITY (1, 1) NOT NULL,
+    [Name]          NVARCHAR (100)  NOT NULL,
+    [Description]   NVARCHAR (500)  NOT NULL,
+    [Category]      NVARCHAR (50)   NOT NULL,
+    [Price]         DECIMAL (16, 2) NOT NULL,
+    [ImageData]     VARBINARY (MAX) NULL,
+    [ImageMimeType] VARCHAR (50)    NULL,
+    PRIMARY KEY CLUSTERED ([ProductID] ASC)
+);
+
+SET IDENTITY_INSERT [dbo].[Products] ON
+INSERT INTO [dbo].[Products] ([ProductID], [Name], [Description], [Category], [Price], [ImageMimeType]) VALUES (1, N'Kayak', N'A boat for one person', N'Watersports', CAST(275.00 AS Decimal(16, 2)), N'image/jpeg')
+INSERT INTO [dbo].[Products] ([ProductID], [Name], [Description], [Category], [Price], [ImageMimeType]) VALUES (2, N'Lifejacket', N'Protective and fashionable', N'Watersports', CAST(48.95 AS Decimal(16, 2)), N'image/jpeg')
+INSERT INTO [dbo].[Products] ([ProductID], [Name], [Description], [Category], [Price], [ImageMimeType]) VALUES (3, N'Soccer Ball', N'FIFA-approved size and weight', N'Soccer', CAST(19.50 AS Decimal(16, 2)), N'image/jpeg')
+INSERT INTO [dbo].[Products] ([ProductID], [Name], [Description], [Category], [Price], [ImageMimeType]) VALUES (4, N'Corner Flags', N'Give your playing field a professional touch', N'Soccer', CAST(34.95 AS Decimal(16, 2)), N'image/jpeg')
+INSERT INTO [dbo].[Products] ([ProductID], [Name], [Description], [Category], [Price], [ImageMimeType]) VALUES (5, N'Stadium', N'Flat-packed, 35,000-seat stadium', N'Soccer', CAST(79500.00 AS Decimal(16, 2)), N'image/jpeg')
+INSERT INTO [dbo].[Products] ([ProductID], [Name], [Description], [Category], [Price], [ImageMimeType]) VALUES (6, N'Thinking Cap', N'Improve your brain efficiency by 75%', N'Chess', CAST(16.00 AS Decimal(16, 2)), N'image/jpeg')
+INSERT INTO [dbo].[Products] ([ProductID], [Name], [Description], [Category], [Price], [ImageMimeType]) VALUES (7, N'Unsteady Chair', N'Secretly give your opponent a disadvantage', N'Chess', CAST(29.95 AS Decimal(16, 2)), N'image/jpeg')
+INSERT INTO [dbo].[Products] ([ProductID], [Name], [Description], [Category], [Price], [ImageMimeType]) VALUES (8, N'Human Chess Board', N'A fun game for the family', N'Chess', CAST(75.00 AS Decimal(16, 2)), N'image/jpeg')
+INSERT INTO [dbo].[Products] ([ProductID], [Name], [Description], [Category], [Price], [ImageMimeType]) VALUES (9, N'Bling-Bling King', N'Gold-plated, diamond-studded King', N'Chess', CAST(1200.00 AS Decimal(16, 2)), N'image/jpeg')
+INSERT INTO [dbo].[Products] ([ProductID], [Name], [Description], [Category], [Price], [ImageMimeType]) VALUES (10, N'Johnny', N'Teacher', N'Watersports', CAST(123.00 AS Decimal(16, 2)), N'image/jpeg')
+SET IDENTITY_INSERT [dbo].[Products] OFF

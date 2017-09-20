@@ -1,0 +1,40 @@
+.table{
+	border: 1px solid #C9DEEC;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background:#E4F3FC;
+	font-size:12px;
+}
+.error_title {
+	color: #4B6888;
+	font-size: 14px;
+	text-decoration: none;
+	font-weight: bold;
+}
+.error_description {
+	color: #ff0000;
+	font-size: 12px;
+}
+.tr_bg_title {
+	background-color: #DAE9F5;
+	font-size:12px;
+}
+.tr_bg_content {
+	background-color: #F8FDFF;
+	font-size:12px;
+}
+
+.list_link {
+	color: #395575;
+	font-size: 12px;
+	text-decoration: none;
+}
+a.list_link:link {
+	color: #395575; text-decoration: none
+}
+a.list_link:visited {
+	color: #395575; text-decoration: none
+}
+a.list_link:hover {
+	color: #ff0000; text-decoration: underline
+}

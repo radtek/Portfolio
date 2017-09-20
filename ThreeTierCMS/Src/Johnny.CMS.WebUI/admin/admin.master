@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="Johnny.CMS.admin.adminmaster" %>
+<%@ Register Src="usercontrol/pagefooter.ascx" TagName="pagefooter" TagPrefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow-x:hidden;overflow-y:auto;">
+<head runat="server">
+    <title>admin.master</title>
+    <meta http-equiv="Content-Type"/>
+  	<link rel="stylesheet" href="style/admin.css" type="text/css" />
+    <link rel="stylesheet" href="style/validation.css" type="text/css" />
+	<script type="text/javascript" src="../scripts/prototype.js"></script>
+    <script type="text/javascript" src="../scripts/validation_cn.js"></script>
+    <script type="text/javascript" src="../scripts/calendar.js"></script>
+    <script type="text/javascript" src="../scripts/checkbox.js"></script>
+</head>
+<body>
+    <form id="frmAdd" runat="server" novalidate="novalidate">   
+    <div>    
+        <table class="table_main" cellSpacing="0" cellPadding="0">  
+            <tr>
+                <td>
+                    <table class="table_nav1" cellSpacing="0" cellPadding="0">
+                        <tr>
+   						    <td>
+   						        <asp:Label ID="lblTitle" runat="server" CssClass="title"></asp:Label>
+						    </td>
+                        </tr>
+                    </table>
+                     <table class="table_nav2" cellSpacing="3" cellPadding="1">
+                      <tr>
+   						<td>
+							<asp:HyperLink ID="hyperlinkAllList" runat="server" CssClass="relatelink">[hyperlinkAllList]</asp:HyperLink>
+							<asp:Label ID="lblSeparator" runat="server" CssClass="topnavichar">┊</asp:Label>
+							<asp:HyperLink ID="hyperlinkAdd" runat="server" CssClass="relatelink">[hyperlinkAdd]</asp:HyperLink>
+						</td>
+                      </tr>
+                    </table>    
+                    <table class="table_message" align="center">
+                        <tr>
+                            <td><asp:Label ID="lblStatus" runat="server"></asp:Label></td>
+                        </tr>
+                    </table>
+                    <asp:ContentPlaceHolder ID="cphPage" runat="server"></asp:ContentPlaceHolder>                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <uc1:pagefooter ID="pageFooter" runat="server" />
+                </td>
+            </tr>
+        </table>
+    </div>        
+    </form>
+    <script type="text/javascript">
+	   var valid = new Validation('aspnetForm', {immediate : true});
+	   valid.initial();
+    </script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CF99E9DF-C3D0-43A7-B7AC-7063E4644F52}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Johnny.Kaixin.Controls</RootNamespace>
+    <AssemblyName>Johnny.Kaixin.Controls</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountTree\DlgImageCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountTree\DlgImageCode.Designer.cs">
+      <DependentUpon>DlgImageCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountTree\DlgAddGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountTree\DlgAddGroup.Designer.cs">
+      <DependentUpon>DlgAddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountTree\DlgAddAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountTree\DlgAddAccount.Designer.cs">
+      <DependentUpon>DlgAddAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountTree\Enums.cs" />
+    <Compile Include="AccountTree\AccountEventArgs.cs" />
+    <Compile Include="AccountTree\IconCtrl.cs" />
+    <Compile Include="AccountTree\ImageCtrl.cs" />
+    <Compile Include="AccountTree\MyResource.Designer.cs">
+      <DependentUpon>MyResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="AccountTree\Nodes.cs" />
+    <Compile Include="AccountTree\TreeConstants.cs" />
+    <Compile Include="AccountTree\AccountTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ErrorHandler.cs" />
+    <Compile Include="ListBoxSelector\AccountListBoxSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListBoxSelector\AccountListBoxSelector.Designer.cs">
+      <DependentUpon>AccountListBoxSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListBoxSelector\CarListViewSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListBoxSelector\CarListViewSelector.Designer.cs">
+      <DependentUpon>CarListViewSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListBoxSelector\FriendListBoxSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListBoxSelector\FriendListBoxSelector.Designer.cs">
+      <DependentUpon>FriendListBoxSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListBoxSelector\FruitListViewSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListBoxSelector\FruitListViewSelector.Designer.cs">
+      <DependentUpon>FruitListViewSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListBoxSelector\AssetListViewSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListBoxSelector\AssetListViewSelector.Designer.cs">
+      <DependentUpon>AssetListViewSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListBoxSelector\DishListViewSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListBoxSelector\DishListViewSelector.Designer.cs">
+      <DependentUpon>DishListViewSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListBoxSelector\FishMaturedListViewSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListBoxSelector\FishMaturedListViewSelector.Designer.cs">
+      <DependentUpon>FishMaturedListViewSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListBoxSelector\ProductListViewSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListBoxSelector\ProductListViewSelector.Designer.cs">
+      <DependentUpon>ProductListViewSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskTree\DlgAddTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskTree\DlgAddTask.Designer.cs">
+      <DependentUpon>DlgAddTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskTree\Enums.cs" />
+    <Compile Include="TaskTree\IconCtrl.cs" />
+    <Compile Include="TaskTree\ImageCtrl.cs" />
+    <Compile Include="TaskTree\MyResource.Designer.cs">
+      <DependentUpon>MyResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="TaskTree\Nodes.cs" />
+    <Compile Include="TaskTree\TaskConstants.cs" />
+    <Compile Include="TaskTree\TaskEventArgs.cs" />
+    <Compile Include="TaskTree\TaskTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AccountTree\DlgImageCode.resx">
+      <DependentUpon>DlgImageCode.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountTree\DlgAddGroup.resx">
+      <DependentUpon>DlgAddGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountTree\DlgAddAccount.resx">
+      <DependentUpon>DlgAddAccount.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountTree\MyResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountTree\AccountTree.resx">
+      <DependentUpon>AccountTree.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListBoxSelector\AccountListBoxSelector.resx">
+      <DependentUpon>AccountListBoxSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListBoxSelector\CarListViewSelector.resx">
+      <DependentUpon>CarListViewSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListBoxSelector\FriendListBoxSelector.resx">
+      <DependentUpon>FriendListBoxSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListBoxSelector\FruitListViewSelector.resx">
+      <DependentUpon>FruitListViewSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListBoxSelector\AssetListViewSelector.resx">
+      <DependentUpon>AssetListViewSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListBoxSelector\DishListViewSelector.resx">
+      <DependentUpon>DishListViewSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListBoxSelector\FishMaturedListViewSelector.resx">
+      <DependentUpon>FishMaturedListViewSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListBoxSelector\ProductListViewSelector.resx">
+      <DependentUpon>ProductListViewSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskTree\DlgAddTask.resx">
+      <DependentUpon>DlgAddTask.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskTree\MyResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskTree\TaskTree.resx">
+      <DependentUpon>TaskTree.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Johnny.Controls.Windows\Johnny.Controls.Windows.csproj">
+      <Project>{6E9416CB-8684-4579-8A3B-15B5C2A6D7FC}</Project>
+      <Name>Johnny.Controls.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.Kaixin.Core\Johnny.Kaixin.Core.csproj">
+      <Project>{D67DDFD9-D25C-40D3-A08A-F7608DF0D0C6}</Project>
+      <Name>Johnny.Kaixin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.Kaixin.Helper\Johnny.Kaixin.Helper.csproj">
+      <Project>{575FD334-2E57-4DB9-9151-B3353AF95C3E}</Project>
+      <Name>Johnny.Kaixin.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.Library\Johnny.Library.csproj">
+      <Project>{AC617E1E-AA47-49BA-A8B8-6FCC3A466A44}</Project>
+      <Name>Johnny.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskTree\Resources\delete_16x.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskTree\Resources\user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskTree\Resources\dpedtui.dll26.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskTree\Resources\msenv.dll12.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskTree\Resources\otheroptions.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskTree\Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskTree\Resources\servicepaused.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskTree\Resources\servicerunning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskTree\Resources\services.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskTree\Resources\servicestopped.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskTree\Resources\serviceunknown.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskTree\Resources\setup.exe2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AccountTree\Resources\adduser.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AccountTree\Resources\users.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AccountTree\Resources\delete_16x.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AccountTree\Resources\keys.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccountTree\Resources\Microsoft.AnalysisServices.Project.DLL6.ico" />
+    <None Include="TaskTree\Resources\Web_XML.ico" />
+    <None Include="AccountTree\Resources\Web_XML.ico" />
+    <None Include="AccountTree\Resources\user.ico" />
+    <None Include="AccountTree\Resources\refresh.png" />
+    <None Include="AccountTree\Resources\rc_html.ico" />
+    <None Include="AccountTree\Resources\msenv.dll12.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="FindTheWord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindTheWordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindTheWordResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FindAllWords">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="top" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindAllWordsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindAllWordsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindWordsByAlphabet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="letter" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindWordsByAlphabetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindWordsByAlphabetResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FindTheWordSoapIn">
+    <wsdl:part name="parameters" element="tns:FindTheWord" />
+  </wsdl:message>
+  <wsdl:message name="FindTheWordSoapOut">
+    <wsdl:part name="parameters" element="tns:FindTheWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindAllWordsSoapIn">
+    <wsdl:part name="parameters" element="tns:FindAllWords" />
+  </wsdl:message>
+  <wsdl:message name="FindAllWordsSoapOut">
+    <wsdl:part name="parameters" element="tns:FindAllWordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindWordsByAlphabetSoapIn">
+    <wsdl:part name="parameters" element="tns:FindWordsByAlphabet" />
+  </wsdl:message>
+  <wsdl:message name="FindWordsByAlphabetSoapOut">
+    <wsdl:part name="parameters" element="tns:FindWordsByAlphabetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SAPDictionarySoap">
+    <wsdl:operation name="FindTheWord">
+      <wsdl:input message="tns:FindTheWordSoapIn" />
+      <wsdl:output message="tns:FindTheWordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAllWords">
+      <wsdl:input message="tns:FindAllWordsSoapIn" />
+      <wsdl:output message="tns:FindAllWordsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindWordsByAlphabet">
+      <wsdl:input message="tns:FindWordsByAlphabetSoapIn" />
+      <wsdl:output message="tns:FindWordsByAlphabetSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SAPDictionarySoap" type="tns:SAPDictionarySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindTheWord">
+      <soap:operation soapAction="http://tempuri.org/FindTheWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAllWords">
+      <soap:operation soapAction="http://tempuri.org/FindAllWords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindWordsByAlphabet">
+      <soap:operation soapAction="http://tempuri.org/FindWordsByAlphabet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SAPDictionarySoap12" type="tns:SAPDictionarySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindTheWord">
+      <soap12:operation soapAction="http://tempuri.org/FindTheWord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAllWords">
+      <soap12:operation soapAction="http://tempuri.org/FindAllWords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindWordsByAlphabet">
+      <soap12:operation soapAction="http://tempuri.org/FindWordsByAlphabet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SAPDictionary">
+    <wsdl:port name="SAPDictionarySoap" binding="tns:SAPDictionarySoap">
+      <soap:address location="http://localhost:3399/SAPDictionary.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SAPDictionarySoap12" binding="tns:SAPDictionarySoap12">
+      <soap12:address location="http://localhost:3399/SAPDictionary.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

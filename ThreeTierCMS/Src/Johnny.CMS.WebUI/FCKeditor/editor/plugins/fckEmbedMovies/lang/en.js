@@ -1,0 +1,9 @@
+FCKLang.EmbedMoviesBtn			  = '视频文件';
+FCKLang.EmbedMoviesDlgTitle		= '视频文件';
+FCKLang.EmbedMoviesDlgName		= '视频文件';
+FCKLang.EmbedMoviesTooltip	  = '在您的文档中插入一个视频文件。';
+FCKLang.EmbedMoviesInfoTab	  = 'Info';
+FCKLang.EmbedMoviesUploadTab  = 'Upload';
+FCKLang.EmbedMoviesURL        = 'URL';
+FCKLang.EmbedMoviesAlertUrl   = '文件Url路径不正确';
+FCKLang.EmbedMoviesFileType   = '文件类型不正确';

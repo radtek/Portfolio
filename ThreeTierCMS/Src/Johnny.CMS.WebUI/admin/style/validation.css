@@ -1,0 +1,125 @@
+i/*
+nput.disabled {
+	border: 1px solid #F2F2F2;
+	background-color: #F2F2F2;
+	height:18px;
+}
+*/
+input.required, textarea.required {
+	border: 1px solid #00A8E6;
+}
+
+input.validation-failed, textarea.validation-failed  {
+	border: 1px solid #FF3300;
+	color : #FF3300;
+}
+input.validation-passed, textarea.validation-passed  {
+	border: 1px solid #00CC00;
+	color : #000;
+}
+
+select.validation-failed {
+	border: 1px solid #FF3300;
+	color : #FF3300;
+}
+select.validation-passed  {
+	border: 1px solid #00CC00;
+	color : #000;
+}
+span.validation-failed {
+	padding:0;
+	margin:0;
+	border:1px solid #FF3300;
+}
+span.validation-passed {
+	padding:0;
+	margin:0;
+	border:1px solid #00CC00;
+}
+/*
+.validation-advice {
+	margin: 5px 0;
+	padding: 5px;
+	background-color: #FF3300;
+	color : #FFF;
+	font-weight: bold;
+}
+
+.custom-advice {
+	margin: 5px 0;
+	padding: 5px;
+	background-color: #C8AA00;
+	color : #FFF;
+	font-weight: bold;
+}
+*/
+.msgNormal
+{
+	margin:1px;
+	background: url(../images/validation/validate_normal.gif) no-repeat;
+	width: 400px;
+	padding-left: 25px;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	color: #999999;
+}
+/*
+.msgOnFocus
+{
+	margin:1px;
+	background: #E9F0FF url(../images/validation/validate_waring.gif) no-repeat;
+	width: 400px;
+	padding-left: 25px;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	border: #00a8ff 1px solid;
+}
+*/
+.msgError
+{
+	margin:1px;
+	background: #FFF2E9 url(../images/validation/validate_error.gif) no-repeat;
+	width: 400px;
+	padding-left: 25px;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	border: #f60 1px solid;
+}
+/*
+.msgError a
+{
+	color: red;
+}
+*/
+.msgOK
+{
+	margin:1px;
+	background: #E9FFEB url(../images/validation/validate_success.gif) no-repeat;
+	width: 400px;
+	padding-left: 25px;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	border: #00be00 1px solid;
+}
+/*
+.msgFree
+{
+	margin:1px;
+	background: url(../images/validate_normal.gif) no-repeat;
+	width: 680px;
+	padding-left: 25px;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	color: #999999;
+}
+.msgShort
+{
+	margin:1px;
+	background: url(../images/validate_normal.gif) no-repeat;
+	width: 150px;
+	padding-left: 25px;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	color: #999999;
+}
+*/

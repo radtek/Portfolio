@@ -1,0 +1,3 @@
+http://weishihuablog.blog.163.com/blog/static/13543356120100234322257/
+
+firefox由于滚动条，引起隐藏菜单抖动

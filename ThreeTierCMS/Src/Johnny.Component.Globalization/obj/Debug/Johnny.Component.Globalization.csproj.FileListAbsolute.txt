@@ -1,0 +1,16 @@
+D:\WorkSpace\GitHub\Projects\SEHome\Dev\1.0\Src\SEHome\Johnny.Component.Globalization\bin\Debug\Johnny.Component.Globalization.dll
+D:\WorkSpace\GitHub\Projects\SEHome\Dev\1.0\Src\SEHome\Johnny.Component.Globalization\bin\Debug\Johnny.Component.Globalization.pdb
+D:\WorkSpace\GitHub\Projects\SEHome\Dev\1.0\Src\SEHome\Johnny.Component.Globalization\bin\Debug\Johnny.Component.Utility.dll
+D:\WorkSpace\GitHub\Projects\SEHome\Dev\1.0\Src\SEHome\Johnny.Component.Globalization\bin\Debug\log4net.dll
+D:\WorkSpace\GitHub\Projects\SEHome\Dev\1.0\Src\SEHome\Johnny.Component.Globalization\bin\Debug\Johnny.Component.Utility.pdb
+D:\WorkSpace\GitHub\Projects\SEHome\Dev\1.0\Src\SEHome\Johnny.Component.Globalization\obj\Debug\Johnny.Component.Globalization.csprojResolveAssemblyReference.cache
+D:\WorkSpace\GitHub\Projects\SEHome\Dev\1.0\Src\SEHome\Johnny.Component.Globalization\obj\Debug\Johnny.Component.Globalization.dll
+D:\WorkSpace\GitHub\Projects\SEHome\Dev\1.0\Src\SEHome\Johnny.Component.Globalization\obj\Debug\Johnny.Component.Globalization.pdb
+D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.Component.Globalization\bin\Debug\Johnny.Component.Globalization.dll
+D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.Component.Globalization\bin\Debug\Johnny.Component.Globalization.pdb
+D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.Component.Globalization\bin\Debug\Johnny.Component.Utility.dll
+D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.Component.Globalization\bin\Debug\log4net.dll
+D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.Component.Globalization\bin\Debug\Johnny.Component.Utility.pdb
+D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.Component.Globalization\obj\Debug\Johnny.Component.Globalization.csprojResolveAssemblyReference.cache
+D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.Component.Globalization\obj\Debug\Johnny.Component.Globalization.dll
+D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.Component.Globalization\obj\Debug\Johnny.Component.Globalization.pdb

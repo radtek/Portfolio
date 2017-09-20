@@ -1,0 +1,5 @@
+D:\WorkSpace\GitHub\Projects\SEHome\Dev\1.0\Src\SEHome\Johnny.Component.Config\bin\Johnny.Component.Config.dll
+D:\WorkSpace\GitHub\Projects\SEHome\Dev\1.0\Src\SEHome\Johnny.Component.Config\bin\Johnny.Component.Config.pdb
+D:\WorkSpace\GitHub\Projects\SEHome\Dev\1.0\Src\SEHome\Johnny.Component.Config\obj\Debug\Johnny.Component.Config.dll
+D:\WorkSpace\GitHub\Projects\SEHome\Dev\1.0\Src\SEHome\Johnny.Component.Config\obj\Debug\Johnny.Component.Config.pdb
+D:\WorkSpace\GitHub\Projects\SEHome\Dev\1.0\Src\SEHome\Johnny.Component.Config\obj\Debug\Johnny.Component.Config.csprojResolveAssemblyReference.cache

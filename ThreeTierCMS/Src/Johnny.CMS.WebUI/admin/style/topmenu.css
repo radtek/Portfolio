@@ -1,0 +1,56 @@
+.button_down {
+	text-decoration: none;
+	background-image: url(../images/topmenu/button_unselect.jpg);
+	font-size: 14px;
+	color: #4B6888;
+	font-weight: bold;
+	text-align:center;
+}
+.button_select {
+	text-decoration: none;
+	background-image: url(../images/topmenu/button_select.jpg);
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-align:center;
+}
+
+/* Hyperlink */
+.hyperlink 
+{
+	color: #999999;
+	font-size: 12px;
+	text-decoration: none;
+}
+a.hyperlink:link 
+{
+	color: #3F6293; 
+	text-decoration: none  ;
+	font-size:12px;
+}
+a.hyperlink:visited 
+{
+	color: #3F6293; 
+	text-decoration: none;
+	font-size:12px;
+}
+a.hyperlink:hover 
+{
+	color: #3F6293; 
+	text-decoration: underline;
+	font-size:12px;
+}
+
+/* top */
+.td_field_logo
+{
+    width: 142px; height: 38px;
+}
+.td_field_user
+{
+    width: 420px; text-align: right; color: #3F6293; font-size: 12px;
+}
+.td_field_link
+{   
+    text-align: right; 
+}

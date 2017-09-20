@@ -1,0 +1,22 @@
+{
+  "name": "Buffer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "buffer.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "binutils": "^0.1.0",
+    "express": "^4.13.4",
+    "node-hashtable": "^0.1.1",
+    "socket.io": "^1.4.6"
+  },
+  "devDependencies": {
+    "unzip": "^0.1.11"
+  }
+}

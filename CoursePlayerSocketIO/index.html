@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="/socket.io/socket.io.js">
+  </script>
+  <script type="text/javascript">
+    var socket = io.connect();
+    socket.on('message', function (time) {
+      document.getElementById('time').innerHTML = time;
+    });
+    socket.on('draw', function (streamlist) {
+      //console.log(streamlist);
+      var left, top, width, height = 0;
+      //var imageList = jQuery.parseJSON(streamlist);
+      var imageList = JSON.parse(streamlist.streamlist);
+      console.log(imageList.length);
+      for (var i = 0; i < imageList.length; i++) {
+          left = $('#workingss').width() / 8 * imageList[i].col;
+          top = $('#workingss').height() / 8 * imageList[i].row;
+          width = $('#workingss').width() / 8;
+          height = $('#workingss').height() / 8;
+          loadImageIntoCanvas(left, top, width, height, "data:image/png;base64," + imageList[i].imagestream);
+      }
+      var myss = $('#myss')[0].getContext('2d');
+      myss.drawImage($('#workingss')[0], 0, 0);
+    });
+    socket.on('drawline', function (wbdata) {
+      var lastPoint;
+      var currentColor = -10;
+      var currentWidth = 1;
+      var workingwb = $('#workingwb')[0].getContext('2d');
+      var xRate = $('#workingwb').width() / 9600;
+      var yRate = $('#workingwb').height() / 4800;
+      workingwb.fillStyle = "solid";
+      var data = wbdata.wbdata;
+      if (data) {
+        var wbobj = JSON.parse(data);
+        if (wbobj.wblines) {
+          for (var i = 0; i < wbobj.wblines.length; i++) {
+            var line = wbobj.wblines[i];
+            drawline(workingwb, getColor(line.color), getWidth(line.color), line.x0, line.y0,line.x1, line.y1, xRate, yRate);
+          }
+          var mywb = $('#mywb')[0].getContext('2d');
+          mywb.drawImage($('#workingwb')[0], 0, 0);
+        }
+        if (wbobj.wbevents) {
+          var endMilliseconds = wbobj.second * 1000 % 60000;
+          for (var i = 0; i < endMilliseconds; i++) {
+            for (var j = 0; j < wbobj.wbevents.length; j++) {
+              var event = wbobj.wbevents[j];
+              if (event&&event.timestamp == i) {
+                if (event.x >=0) {
+                  if (!lastPoint) {
+                    lastPoint = event;
+                  } else {
+                    drawline(workingwb, getColor(currentColor), currentWidth, lastPoint.x, lastPoint.y,event.x, event.y, xRate, yRate);
+                    lastPoint = event;
+                  }
+                } else {
+                  switch (event.x) {
+                     case -100: //Pen Up
+                       currentColor = -8;
+                       lastPoint = null;
+                       break;
+                     case -200: //Clear event
+                        clearWhiteboard();
+                        lastPoint = null;
+                        break;
+                     default:
+                        currentColor = event.x;
+                        currentWidth = getWidth(currentColor);
+                        break;
+                   }
+                   lastPoint = null;
+                }
+              }
+            }
+          }
+          var mywb = $('#mywb')[0].getContext('2d');
+          mywb.drawImage($('#workingwb')[0], 0, 0);
+        }
+      }
+
+    });
+    socket.on('drawlinefinished', function (finished) {
+      var mywb = $('#mywb')[0].getContext('2d');
+      mywb.drawImage($('#workingwb')[0], 0, 0);
+    });
+  </script>
+  <style type="text/css">
+      .chatcontainer {
+          background-color: #99CCFF;
+          border: thick solid #808080;
+          padding: 20px;
+          margin: 20px;
+      }
+      .playercontainer {
+          background-color: #99CCFF;
+          border: thick solid #808080;
+      }
+  </style>
+  <!--jquery slider bar-->
+  <link href="/public/css/Site.css" rel="stylesheet" type="text/css" />
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script src="/public/scripts/jquery-1.10.2.min.js"></script>
+   <script src="/public/scripts/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</head>
+<body>Current server time is: <b><span id="time"></span></b>
+  <div class="chatcontainer">
+    <table style="width:100%" align="center">
+      <tr>
+        <td><label for="amount">Current Time:</label><input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;"></td>
+        <td colspan="2"><input type="button" id="btnplay" value="Play" /></td>
+        <td align="right"><label for="total">Total Time:</label><input type="text" id="total" readonly style="border:0; color:#f6931f; font-weight:bold;"></td>
+      </tr>
+      <tr><td colspan="4"><div id="processbar" style="margin-top:10px"></div></td></tr>
+      <tr><td colspan="2"><canvas id="myss" width="500" height="300" style="margin-top:10px"></canvas></td><td colspan="2"><canvas id="mywb" width="500" height="300" style="margin-top:10px"></canvas></td></tr>
+    </table>
+    <input type="hidden" id="groupName" value="grpjohnny" />
+    <img id="blockimage" src="">
+    <canvas id="workingss" style="display:none" width="500" height="300"></canvas>
+    <canvas id="workingwb" style="display:none" width="500" height="300"></canvas>
+  </div>
+  <!--Add script to update the page and send messages.-->
+<script type="text/javascript">
+    function drawline(workingwb, color, width, x0, y0, x1, y1, xRate, yRate) {
+      workingwb.beginPath();
+      workingwb.strokeStyle = color;
+      workingwb.lineWidth = width;
+      workingwb.moveTo(x0 * xRate, y0 * yRate);
+      workingwb.lineTo(x1 * xRate, y1 * yRate);
+      workingwb.closePath();
+      workingwb.stroke();
+    }
+    function getColor(color) {
+        switch (color) {
+            case -1:
+                return '#FF0000';
+            case -2:
+                return '#0000FF';
+            case -3:
+                return '#00FF00';
+            case -8:
+                return '#000000';
+            case -9:
+                return '#FFFFFF';
+            case -10:
+                return '#FFFFFF';
+            default:
+                return '#FFFFFF';
+                break;
+        }
+    }
+
+    function getWidth(color) {
+      switch (color) {
+        case -1:
+            return 1;
+        case -2:
+            return 1;
+        case -3:
+            return 1;
+        case -8:
+            return 1;
+        case -9:
+            return 8 * 10 / 12;
+        case -10:
+            return 39 * 10 / 12;
+        default:
+            return 1;
+      }
+    }
+    /*
+    function groupWBEventsBySecond(wbevents) {
+      var res = [];
+      for (var i = 0; i < wbevents.length; i++) {
+        var event = wbevents[i];
+        if(!res[event.timestamp]) {
+
+        }
+      }
+
+
+      return ht;
+    }*/
+    function getReadableTimeText(totalseconds) {
+        var hours, minutes, seconds = 0;
+        seconds = totalseconds % 60;
+        hours = Math.floor(totalseconds / (60 * 60));
+        minutes = Math.floor((totalseconds - hours * 60 * 60) / 60);
+
+        var outh, outm, outs = "";
+        outh = hours < 10 ? "0" + hours : hours;
+        outm = minutes < 10 ? "0" + minutes : minutes;
+        outs = seconds < 10 ? "0" + seconds : seconds;
+
+        return outh + ":" + outm + ":" + outs;
+    }
+    function loadImageIntoCanvas(left, top, width, height, src) {
+
+        var workingss = document.getElementById("workingss");
+        var ctx = workingss.getContext("2d");
+
+        var img = new Image();
+        img.onload = function () {
+            ctx.drawImage(img, left, top, width, height);
+        }
+        img.src = src;
+    }
+    function clearScreenshot() {
+        // reset screen
+        var workingss = $('#workingss')[0].getContext('2d');
+        workingss.clearRect(0, 0, $('#workingss').width(), $('#workingss').height());
+        var myss = $('#myss')[0].getContext('2d');
+        myss.clearRect(0, 0, $('#myss').width(), $('#myss').height());
+    }
+    function clearWhiteboard() {
+        // reset whiteboard
+        var workingwb = $('#workingwb')[0].getContext('2d');
+        workingwb.clearRect(0, 0, $('#workingwb').width(), $('#workingwb').height());
+        var mywb = $('#mywb')[0].getContext('2d');
+        mywb.clearRect(0, 0, $('#mywb').width(), $('#mywb').height());
+    }
+    $(function () {
+
+        //$("#groupName").val("johnnygrp" + Math.floor((Math.random() * 1000) + 1));
+        $("#processbar").slider({
+            range: "max",
+            min: 1,
+            max: 4 * 60 * 60 - 30 * 60,
+            value: 130,
+            slide: function (event, ui) {
+                //https://jqueryui.com/slider/#rangemax
+                $("#amount").val(getReadableTimeText(ui.value));
+            },
+            stop: function (event, ui) {
+                $("#amount").val(getReadableTimeText(ui.value));
+                clearScreenshot();
+                clearWhiteboard();
+                if (playstate == 'playing') {
+                    //wb.server.jump($("#groupName").val(), $("#processbar").slider("value"));
+                }
+            }
+        });
+        $("#amount").val(getReadableTimeText($("#processbar").slider("value")));
+        $("#total").val(getReadableTimeText(4 * 60 * 60 - 30 * 60));
+        // Declare a proxy to reference the hub.
+        /*var wb = $.connection.playerHub;
+        //draw screenshot
+        wb.client.broadcastDrawImage = function (streamlist) {
+            var left, top, width, height = 0;
+            var imageList = jQuery.parseJSON(streamlist);
+            for (var i = 0; i < imageList.length; i++) {
+                left = $('#workingss').width() / 8 * imageList[i].Col;
+                top = $('#workingss').height() / 8 * imageList[i].Row;
+                width = $('#workingss').width() / 8;
+                height = $('#workingss').height() / 8;
+                loadImageIntoCanvas(left, top, width, height, "data:image/png;base64," + imageList[i].ImageStream);
+            }
+            var myss = $('#myss')[0].getContext('2d');
+            myss.drawImage($('#workingss')[0], 0, 0);
+        };*/
+        // draw lines
+
+        /*wb.client.broadcastDrawWBLine = function (color, width, x0, y0, x1, y1) {
+            workingwb.beginPath();
+            workingwb.strokeStyle = getColor(color);
+            workingwb.lineWidth = width;
+            workingwb.moveTo(x0 * xRate, y0 * yRate);
+            workingwb.lineTo(x1 * xRate, y1 * yRate);
+            workingwb.closePath();
+            workingwb.stroke();
+        };
+
+        wb.client.broadcastDrawWBLineFinished = function () {
+            var mywb = $('#mywb')[0].getContext('2d');
+            mywb.drawImage($('#workingwb')[0], 0, 0);
+        };
+
+        wb.client.broadcastDrawWBEvent = function (color, width, x0, y0, x1, y1) {
+            workingwb.beginPath();
+            workingwb.strokeStyle = getColor(color);
+            workingwb.lineWidth = width;
+            workingwb.moveTo(x0 * xRate, y0 * yRate);
+            workingwb.lineTo(x1 * xRate, y1 * yRate);
+            workingwb.closePath();
+            workingwb.stroke();
+        };
+        wb.client.broadcastDrawWBEventFinished = function () {
+            var mywb = $('#mywb')[0].getContext('2d');
+            mywb.drawImage($('#workingwb')[0], 0, 0);
+        };
+        //draw clear
+        wb.client.broadcastClearReat = function () {
+            clearWhiteboard();
+        };*/
+        // play video
+        var playstate = "stopped";
+        var interval = null;
+        $("#btnplay").click(function () {
+            if (playstate == 'stopped') {
+                // Start the connection.
+                //$.connection.hub.logging = true; //enable log
+                /*$.connection.hub.start().done(function () {
+                    wb.server.joinGroup($("#groupName").val());
+                    wb.server.play($("#groupName").val(), $("#processbar").slider("value"));
+                });*/
+
+                interval = setInterval(function () {
+                    $("#processbar").slider("value", $("#processbar").slider("value") + 1);
+                    $("#amount").val(getReadableTimeText($("#processbar").slider("value")));
+                    //wb.server.playing($("#processbar").slider("value"));
+                    socket.emit('timeupdate', {
+                      second: $("#processbar").slider("value")
+                    });
+                }, 1000);
+                $("#btnplay").prop('value', 'Stop');
+                playstate = "playing";
+            } else if (playstate == 'playing') {
+                //$.connection.hub.stop($("#groupName").val());
+                $("#btnplay").prop('value', 'Play');
+                $("#processbar").slider("value", 0);
+                $("#amount").val(getReadableTimeText($("#processbar").slider("value")));
+                playstate = "stopped";
+                clearInterval(interval); // stop the interval
+                clearScreenshot();
+                clearWhiteboard();
+                //wb.server.stop();
+            }
+        });
+    });
+</script>
+</body>
+</html>

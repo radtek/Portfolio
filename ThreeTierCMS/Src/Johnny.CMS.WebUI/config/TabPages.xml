@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<Tab>
+  <TabPage Name="首页" URL="index.aspx" TabPageID="home-link" Pages="index.aspx"/>
+  <TabPage Name="SAP" URL="sap.aspx" TabPageID="sap-link" Pages="sap.aspx|saparticledetail.aspx"/>
+  <TabPage Name=".NET" URL="dotnet.aspx" TabPageID="dotnet-link" Pages="dotnet.aspx|dotnetarticledetail.aspx"/>  
+  <TabPage Name="IT行业" URL="it.aspx?cid=4" TabPageID="it-link" Pages="it.aspx|itarticledetail.aspx"/>
+  <TabPage Name="软件项目" URL="software.aspx" TabPageID="software-link" Pages="software.aspx|softwaredetail.aspx"/>
+  <TabPage Name="收藏" URL="favorite.aspx" TabPageID="favorite-link" Pages="favorite.aspx|websites.aspx"/>
+  <TabPage Name="网盘" URL="webdisk.aspx" TabPageID="webdisk-link" Pages=""/>
+  <TabPage Name="讨论区" URL="forum.aspx" TabPageID="forum-link" Pages="forum.aspx"/>
+  <TabPage Name="Blog" URL="blog.aspx" TabPageID="blog-link" Pages="blog.aspx"/>
+  <TabPage Name="关于" URL="about.aspx" TabPageID="about-link" Pages="about.aspx"/>
+</Tab>

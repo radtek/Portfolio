@@ -1,0 +1,207 @@
+
+============================== START ==============================
+2015-07-18 16:49:37 [Task]------ Totally [1] tables, No.[1]:cms_administrator ------
+============================== FINISHED ==============================
+
+============================== START ==============================
+2015-07-18 16:52:13 [Task]------ Totally [1] tables, No.[1]:cms_administrator ------
+============================== FINISHED ==============================
+
+============================== START ==============================
+2015-07-18 17:05:28 [Task]------ Totally [1] tables, No.[1]:cms_administrator ------
+============================== FINISHED ==============================
+
+============================== START ==============================
+2015-07-18 17:06:51 [Task]------ Totally [25] tables, No.[1]:cms_administrator ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[2]:cms_adminrole ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[3]:cms_mailsettings ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[4]:cms_menu ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[5]:cms_menucategory ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[6]:cms_navigator ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[7]:cms_pagebinding ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[8]:cms_permission ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[9]:cms_permissioncategory ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[10]:cms_role ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[11]:cms_rolepermission ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[12]:cms_topmenu ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[13]:cms_topmenubinding ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[14]:cms_websettings ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[15]:seh_article ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[16]:seh_bestpractice ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[17]:seh_blog ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[18]:seh_blogcategory ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[19]:seh_bulletin ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[20]:seh_channel ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[21]:seh_opensource ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[22]:seh_release ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[23]:seh_software ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[24]:seh_website ------
+2015-07-18 17:06:54 [Task]------ Totally [25] tables, No.[25]:seh_websitecategory ------
+============================== FINISHED ==============================
+
+============================== START ==============================
+2015-07-18 17:09:18 [Task]------ Totally [25] tables, No.[1]:cms_administrator ------
+2015-07-18 17:09:18 [Task]------ Totally [25] tables, No.[2]:cms_adminrole ------
+2015-07-18 17:09:18 [Task]------ Totally [25] tables, No.[3]:cms_mailsettings ------
+2015-07-18 17:09:18 [Task]------ Totally [25] tables, No.[4]:cms_menu ------
+2015-07-18 17:09:18 [Task]------ Totally [25] tables, No.[5]:cms_menucategory ------
+2015-07-18 17:09:18 [Task]------ Totally [25] tables, No.[6]:cms_navigator ------
+2015-07-18 17:09:18 [Task]------ Totally [25] tables, No.[7]:cms_pagebinding ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[8]:cms_permission ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[9]:cms_permissioncategory ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[10]:cms_role ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[11]:cms_rolepermission ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[12]:cms_topmenu ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[13]:cms_topmenubinding ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[14]:cms_websettings ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[15]:seh_article ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[16]:seh_bestpractice ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[17]:seh_blog ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[18]:seh_blogcategory ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[19]:seh_bulletin ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[20]:seh_channel ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[21]:seh_opensource ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[22]:seh_release ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[23]:seh_software ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[24]:seh_website ------
+2015-07-18 17:09:19 [Task]------ Totally [25] tables, No.[25]:seh_websitecategory ------
+============================== FINISHED ==============================
+
+============================== START ==============================
+2015-07-18 17:10:12 [Task]------ Totally [25] tables, No.[1]:cms_administrator ------
+2015-07-18 17:10:12 [Task]------ Totally [25] tables, No.[2]:cms_adminrole ------
+2015-07-18 17:10:12 [Task]------ Totally [25] tables, No.[3]:cms_mailsettings ------
+2015-07-18 17:10:12 [Task]------ Totally [25] tables, No.[4]:cms_menu ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[5]:cms_menucategory ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[6]:cms_navigator ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[7]:cms_pagebinding ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[8]:cms_permission ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[9]:cms_permissioncategory ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[10]:cms_role ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[11]:cms_rolepermission ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[12]:cms_topmenu ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[13]:cms_topmenubinding ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[14]:cms_websettings ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[15]:seh_article ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[16]:seh_bestpractice ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[17]:seh_blog ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[18]:seh_blogcategory ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[19]:seh_bulletin ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[20]:seh_channel ------
+2015-07-18 17:10:13 [Task]------ Totally [25] tables, No.[21]:seh_opensource ------
+2015-07-18 17:10:14 [Task]------ Totally [25] tables, No.[22]:seh_release ------
+2015-07-18 17:10:14 [Task]------ Totally [25] tables, No.[23]:seh_software ------
+2015-07-18 17:10:14 [Task]------ Totally [25] tables, No.[24]:seh_website ------
+2015-07-18 17:10:14 [Task]------ Totally [25] tables, No.[25]:seh_websitecategory ------
+============================== FINISHED ==============================
+
+============================== START ==============================
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[1]:cms_administrator ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[2]:cms_adminrole ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[3]:cms_mailsettings ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[4]:cms_menu ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[5]:cms_menucategory ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[6]:cms_navigator ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[7]:cms_pagebinding ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[8]:cms_permission ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[9]:cms_permissioncategory ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[10]:cms_role ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[11]:cms_rolepermission ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[12]:cms_topmenu ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[13]:cms_topmenubinding ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[14]:cms_websettings ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[15]:seh_article ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[16]:seh_bestpractice ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[17]:seh_blog ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[18]:seh_blogcategory ------
+2015-07-18 17:10:55 [Task]------ Totally [25] tables, No.[19]:seh_bulletin ------
+2015-07-18 17:10:56 [Task]------ Totally [25] tables, No.[20]:seh_channel ------
+2015-07-18 17:10:56 [Task]------ Totally [25] tables, No.[21]:seh_opensource ------
+2015-07-18 17:10:56 [Task]------ Totally [25] tables, No.[22]:seh_release ------
+2015-07-18 17:10:56 [Task]------ Totally [25] tables, No.[23]:seh_software ------
+2015-07-18 17:10:56 [Task]------ Totally [25] tables, No.[24]:seh_website ------
+2015-07-18 17:10:56 [Task]------ Totally [25] tables, No.[25]:seh_websitecategory ------
+============================== FINISHED ==============================
+
+============================== START ==============================
+2015-07-18 22:12:39 [Task]Check working folders:D:\TempDev\WorkingFolder
+2015-07-18 22:12:42 [Task]------ Totally [25] tables, No.[1]:cms_administrator ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Administrator.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[2]:cms_adminrole ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Adminrole.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[3]:cms_mailsettings ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Mailsettings.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[4]:cms_menu ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Menu.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[5]:cms_menucategory ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Menucategory.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[6]:cms_navigator ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Navigator.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[7]:cms_pagebinding ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Pagebinding.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[8]:cms_permission ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Permission.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[9]:cms_permissioncategory ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Permissioncategory.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[10]:cms_role ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Role.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[11]:cms_rolepermission ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Rolepermission.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[12]:cms_topmenu ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Topmenu.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[13]:cms_topmenubinding ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Topmenubinding.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[14]:cms_websettings ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Websettings.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[15]:seh_article ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Article.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[16]:seh_bestpractice ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Bestpractice.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[17]:seh_blog ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Blog.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[18]:seh_blogcategory ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Blogcategory.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[19]:seh_bulletin ------
+2015-07-18 22:12:43 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Bulletin.cs'.
+2015-07-18 22:12:43 [Task]------ Totally [25] tables, No.[20]:seh_channel ------
+2015-07-18 22:12:44 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Channel.cs'.
+2015-07-18 22:12:44 [Task]------ Totally [25] tables, No.[21]:seh_opensource ------
+2015-07-18 22:12:44 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Opensource.cs'.
+2015-07-18 22:12:44 [Task]------ Totally [25] tables, No.[22]:seh_release ------
+2015-07-18 22:12:44 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Release.cs'.
+2015-07-18 22:12:44 [Task]------ Totally [25] tables, No.[23]:seh_software ------
+2015-07-18 22:12:44 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Software.cs'.
+2015-07-18 22:12:44 [Task]------ Totally [25] tables, No.[24]:seh_website ------
+2015-07-18 22:12:44 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Website.cs'.
+2015-07-18 22:12:44 [Task]------ Totally [25] tables, No.[25]:seh_websitecategory ------
+2015-07-18 22:12:44 [Task]Exception occured, the code generation for this table failed! Error:Could not find a part of the path 'D:\TempDev\WorkingFolder\sdfsdf\Output\Model\Websitecategory.cs'.
+============================== FINISHED ==============================
+
+============================== START ==============================
+2015-07-18 22:20:22 [Task]Check working folders:D:\TempDev\WorkingFolder
+2015-07-18 22:20:22 [Task]------ Totally [25] tables, No.[1]:cms_administrator ------
+2015-07-18 22:20:22 [Task]------ Totally [25] tables, No.[2]:cms_adminrole ------
+2015-07-18 22:20:22 [Task]------ Totally [25] tables, No.[3]:cms_mailsettings ------
+2015-07-18 22:20:22 [Task]------ Totally [25] tables, No.[4]:cms_menu ------
+2015-07-18 22:20:22 [Task]------ Totally [25] tables, No.[5]:cms_menucategory ------
+2015-07-18 22:20:22 [Task]------ Totally [25] tables, No.[6]:cms_navigator ------
+2015-07-18 22:20:22 [Task]------ Totally [25] tables, No.[7]:cms_pagebinding ------
+2015-07-18 22:20:22 [Task]------ Totally [25] tables, No.[8]:cms_permission ------
+2015-07-18 22:20:22 [Task]------ Totally [25] tables, No.[9]:cms_permissioncategory ------
+2015-07-18 22:20:22 [Task]------ Totally [25] tables, No.[10]:cms_role ------
+2015-07-18 22:20:22 [Task]------ Totally [25] tables, No.[11]:cms_rolepermission ------
+2015-07-18 22:20:22 [Task]------ Totally [25] tables, No.[12]:cms_topmenu ------
+2015-07-18 22:20:22 [Task]------ Totally [25] tables, No.[13]:cms_topmenubinding ------
+2015-07-18 22:20:23 [Task]------ Totally [25] tables, No.[14]:cms_websettings ------
+2015-07-18 22:20:23 [Task]------ Totally [25] tables, No.[15]:seh_article ------
+2015-07-18 22:20:23 [Task]------ Totally [25] tables, No.[16]:seh_bestpractice ------
+2015-07-18 22:20:23 [Task]------ Totally [25] tables, No.[17]:seh_blog ------
+2015-07-18 22:20:23 [Task]------ Totally [25] tables, No.[18]:seh_blogcategory ------
+2015-07-18 22:20:23 [Task]------ Totally [25] tables, No.[19]:seh_bulletin ------
+2015-07-18 22:20:23 [Task]------ Totally [25] tables, No.[20]:seh_channel ------
+2015-07-18 22:20:23 [Task]------ Totally [25] tables, No.[21]:seh_opensource ------
+2015-07-18 22:20:23 [Task]------ Totally [25] tables, No.[22]:seh_release ------
+2015-07-18 22:20:23 [Task]------ Totally [25] tables, No.[23]:seh_software ------
+2015-07-18 22:20:23 [Task]------ Totally [25] tables, No.[24]:seh_website ------
+2015-07-18 22:20:23 [Task]------ Totally [25] tables, No.[25]:seh_websitecategory ------
+============================== FINISHED ==============================

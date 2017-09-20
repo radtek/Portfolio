@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<MasterData>
+  <URLAddress URL="http://updateassistant.googlecode.com/files"/>
+  <UpdateFileList>
+    <UpdateFile FileName = "CarsInMarketMasterData.xml" Version="2009-04-18"/>
+    <UpdateFile FileName = "RankSeedsMasterData.xml" Version="2009-04-18"/>
+    <UpdateFile FileName = "SeedsInShopMasterData.xml" Version="2009-04-18"/>
+  </UpdateFileList>
+</MasterData>

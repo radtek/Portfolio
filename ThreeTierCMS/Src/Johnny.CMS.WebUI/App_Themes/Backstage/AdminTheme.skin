@@ -1,0 +1,78 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<%@ Register Assembly="Johnny.Controls.Web" Namespace="Johnny.Controls.Web.ManageGridView"
+    TagPrefix="zr" %>
+    
+<asp:GridView runat="server" CellPadding="3" ForeColor="#004E82" CellSpacing="1" GridLines="None" AutoGenerateColumns="False" Width="100%" PageSize="10" AllowSorting="True" AllowPaging="True">
+  <HeaderStyle BackColor="#026AAB" Font-Bold="True" ForeColor="#FFFFFF" />
+  <RowStyle BackColor="#FFFFFF" VerticalAlign="Top" />
+  <AlternatingRowStyle BackColor="#e2eaf8" />
+  <EditRowStyle BackColor="#7C6F57" />
+  <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+  <PagerStyle BackColor="#FFFFFF" ForeColor="#000000" HorizontalAlign="Left"  />
+  <PagerSettings Mode="NumericFirstLast" Position="TopAndBottom" PageButtonCount="10" />
+</asp:GridView>
+
+<asp:GridView SkinID="ArticalList" runat="server" CellPadding="3" ForeColor="#004E82" CellSpacing="1" GridLines="None" AutoGenerateColumns="False" Width="100%" PageSize="100" AllowSorting="False" AllowPaging="False">
+  <HeaderStyle BackColor="#698CC3" Font-Bold="True" ForeColor="#FFFFFF" />
+  <RowStyle BackColor="#FFFFFF" VerticalAlign="Top" />
+  <AlternatingRowStyle BackColor="#e2eaf8" />
+  <EditRowStyle BackColor="#7C6F57" />
+  <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+  <PagerStyle BackColor="#FFFFFF" ForeColor="#000000" HorizontalAlign="Left"  />
+  <PagerSettings Mode="NumericFirstLast" Position="TopAndBottom" PageButtonCount="10" />
+</asp:GridView>
+
+<asp:GridView SkinID="ArticalPages" runat="server" CellPadding="3" ForeColor="#004E82" CellSpacing="1" GridLines="None" AutoGenerateColumns="False" Width="100%" PageSize="20" AllowSorting="True" AllowPaging="True">
+  <HeaderStyle BackColor="#698CC3" Font-Bold="True" ForeColor="#FFFFFF" />
+  <RowStyle BackColor="#FFFFFF" VerticalAlign="Top" />
+  <AlternatingRowStyle BackColor="#e2eaf8" />
+  <EditRowStyle BackColor="#7C6F57" />
+  <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+  <PagerStyle BackColor="#FFFFFF" ForeColor="#000000" HorizontalAlign="Left"  />
+  <PagerSettings Mode="NumericFirstLast" Position="TopAndBottom" PageButtonCount="10" />
+</asp:GridView>
+
+ <asp:Menu runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="1em" ForeColor="#990000" StaticSubMenuIndent="10px" Font-Weight="bold">
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                <DynamicMenuStyle BackColor="#FFFBD6" />
+                <StaticSelectedStyle BackColor="#FFCC66" />
+                <DynamicSelectedStyle BackColor="#FFCC66" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+            </asp:Menu>
+
+ <asp:Menu runat="server" Orientation="Horizontal" SkinID="MainMenu" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="1em" ForeColor="#FFFFFF" StaticSubMenuIndent="10px">
+    <StaticMenuItemStyle ItemSpacing="3px" HorizontalPadding="5px" VerticalPadding="2px" Font-Bold="True"/>
+    <DynamicHoverStyle BorderWidth="1px" BackColor="#284E98" ForeColor="White" />
+    <DynamicMenuStyle BackColor="#284E98" BorderColor="#C000C0" BorderStyle="Solid" BorderWidth="1px" />
+    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+    <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+</asp:Menu>
+
+<asp:HyperLink SkinID="Rights" runat="server" Font-Bold="True" ForeColor="#698CC3"></asp:HyperLink>
+
+<%--  主页的Level1级别的分组显示  --%>
+<asp:DataList SkinID="Level1" runat="server"  RepeatColumns="2" RepeatDirection="Horizontal" Width="95%" CellPadding="3" CellSpacing="2">
+</asp:DataList>
+
+<zr:ManageGridView runat="server" CssClass="gridview_table" Width="98%" PagingStyle="PrevNext" SkinID="ManageList" CellSpacing="0" CellPadding="0">
+    <HeaderStyle CssClass="gridview_header" Height="25" />
+    <RowStyle BackColor="White" />
+    <AlternatingRowStyle BackColor="#EBF3FD" />
+    <SelectedRowStyle BackColor="#FFF9E8" />
+</zr:ManageGridView>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CFC484CB-747A-426B-8FC9-5B4570FB93BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Johnny.CMS.OM</RootNamespace>
+    <AssemblyName>Johnny.CMS.OM</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Access\AdminLoginLog.cs" />
+    <Compile Include="Access\AdminRole.cs" />
+    <Compile Include="Access\Permission.cs" />
+    <Compile Include="Access\PermissionCategory.cs" />
+    <Compile Include="Access\Role.cs" />
+    <Compile Include="Access\RolePermission.cs" />
+    <Compile Include="ModelBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeH\BestPractice.cs" />
+    <Compile Include="SeH\Blog.cs" />
+    <Compile Include="SeH\BlogCategory.cs" />
+    <Compile Include="SeH\OpenSource.cs" />
+    <Compile Include="SeH\Release.cs" />
+    <Compile Include="SeH\Software.cs" />
+    <Compile Include="SeH\Website.cs" />
+    <Compile Include="SeH\WebsiteCategory.cs" />
+    <Compile Include="SystemInfo\BreviarySettings.cs" />
+    <Compile Include="SeH\Bulletin.cs" />
+    <Compile Include="SystemInfo\MailSettings.cs" />
+    <Compile Include="SystemInfo\Menu.cs" />
+    <Compile Include="SystemInfo\MenuCategory.cs" />
+    <Compile Include="SystemInfo\Navigator.cs" />
+    <Compile Include="SystemInfo\PageBinding.cs" />
+    <Compile Include="SystemInfo\TopMenuBinding.cs" />
+    <Compile Include="SystemInfo\TopMenu.cs" />
+    <Compile Include="SystemInfo\WebSettings.cs" />
+    <Compile Include="Access\Administrator.cs" />
+    <Compile Include="SeH\Channel.cs" />
+    <Compile Include="SeH\Article.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

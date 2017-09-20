@@ -1,0 +1,736 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{40793A27-478B-4357-B4C3-FC8943131F3D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Johnny.Kaixin.WinUI</RootNamespace>
+    <AssemblyName>开心助手V2.5</AssemblyName>
+    <ApplicationIcon>Boxes.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC\Microsoft.mshtml\7.0.3300.0__b03f5f7f11d50a3a\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoUpdate.cs" />
+    <Compile Include="PopupDlg\DlgTips.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgTips.Designer.cs">
+      <DependentUpon>DlgTips.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\FindAndReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\FindAndReplaceForm.Designer.cs">
+      <DependentUpon>FindAndReplaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOutput.Designer.cs">
+      <DependentUpon>FrmOutput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Globals.cs" />
+    <Compile Include="PopupDlg\DlgSelectionBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgSelectionBase.Designer.cs">
+      <DependentUpon>DlgSelectionBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgBiterSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgBiterSelection.Designer.cs">
+      <DependentUpon>DlgBiterSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgRecoverSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgRecoverSelection.Designer.cs">
+      <DependentUpon>DlgRecoverSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgSlaveSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgSlaveSelection.Designer.cs">
+      <DependentUpon>DlgSlaveSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgHouseRobSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgHouseRobSelection.Designer.cs">
+      <DependentUpon>DlgHouseRobSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgHouseStaySelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgHouseStaySelection.Designer.cs">
+      <DependentUpon>DlgHouseStaySelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgParkerSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgParkerSelection.Designer.cs">
+      <DependentUpon>DlgParkerSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\IDlgSelection.cs" />
+    <Compile Include="PopupDlg\DlgGardenSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgGardenSelection.Designer.cs">
+      <DependentUpon>DlgGardenSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FrmAddFriends.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmAddFriends.Designer.cs">
+      <DependentUpon>FrmAddFriends.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\DlgProxySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\DlgProxySetting.Designer.cs">
+      <DependentUpon>DlgProxySetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBaseCloseMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaseCloseMenu.Designer.cs">
+      <DependentUpon>FrmBaseCloseMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FrmBuyCards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmBuyCards.Designer.cs">
+      <DependentUpon>FrmBuyCards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FrmChineseWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmChineseWord.Designer.cs">
+      <DependentUpon>FrmChineseWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FrmBuildTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmBuildTeam.Designer.cs">
+      <DependentUpon>FrmBuildTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FrmSendMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmSendMessage.Designer.cs">
+      <DependentUpon>FrmSendMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTaskEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTaskEditor.Designer.cs">
+      <DependentUpon>FrmTaskEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainConstants.cs" />
+    <Compile Include="FrmWebBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWebBrowser.Designer.cs">
+      <DependentUpon>FrmWebBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUserDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserDetail.Designer.cs">
+      <DependentUpon>FrmUserDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAccountManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAccountManager.Designer.cs">
+      <DependentUpon>FrmAccountManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProperty.Designer.cs">
+      <DependentUpon>FrmProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTaskManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTaskManager.Designer.cs">
+      <DependentUpon>FrmTaskManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DummyTaskList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DummyTaskList.Designer.cs">
+      <DependentUpon>DummyTaskList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmToolbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmToolbox.Designer.cs">
+      <DependentUpon>FrmToolbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\DockHelper.cs" />
+    <Compile Include="Customization\Extender.cs" />
+    <Compile Include="Customization\InertButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Customization\VS2003AutoHideStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Customization\VS2003DockPaneCaption.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Customization\VS2003DockPaneStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmProperty.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTaskManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmTaskManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DummyTaskList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DummyTaskList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmToolbox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmToolbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Customization\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Customization\Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SplashScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmUpgradeGarage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmUpgradeGarage.Designer.cs">
+      <DependentUpon>FrmUpgradeGarage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FrmMaintainContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmMaintainContact.Designer.cs">
+      <DependentUpon>FrmMaintainContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FrmUpdateData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmUpdateData.Designer.cs">
+      <DependentUpon>FrmUpdateData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolWindow.Designer.cs">
+      <DependentUpon>ToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\DlgDelaySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\DlgDelaySetting.Designer.cs">
+      <DependentUpon>DlgDelaySetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\DlgSmtpSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\DlgSmtpSetting.Designer.cs">
+      <DependentUpon>DlgSmtpSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocument.Designer.cs">
+      <DependentUpon>FrmDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgFriendValidation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgFriendValidation.Designer.cs">
+      <DependentUpon>DlgFriendValidation.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICSharpCode.TextEditor\ICSharpCode.TextEditor.csproj">
+      <Project>{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}</Project>
+      <Name>ICSharpCode.TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.Controls.Windows\Johnny.Controls.Windows.csproj">
+      <Project>{6E9416CB-8684-4579-8A3B-15B5C2A6D7FC}</Project>
+      <Name>Johnny.Controls.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.Kaixin.Controls\Johnny.Kaixin.Controls.csproj">
+      <Project>{CF99E9DF-C3D0-43A7-B7AC-7063E4644F52}</Project>
+      <Name>Johnny.Kaixin.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.Kaixin.Core\Johnny.Kaixin.Core.csproj">
+      <Project>{D67DDFD9-D25C-40D3-A08A-F7608DF0D0C6}</Project>
+      <Name>Johnny.Kaixin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.Kaixin.Helper\Johnny.Kaixin.Helper.csproj">
+      <Project>{575FD334-2E57-4DB9-9151-B3353AF95C3E}</Project>
+      <Name>Johnny.Kaixin.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Johnny.Library\Johnny.Library.csproj">
+      <Project>{AC617E1E-AA47-49BA-A8B8-6FCC3A466A44}</Project>
+      <Name>Johnny.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Net.Json\System.Net.Json.csproj">
+      <Project>{5DF7824B-8259-4A7B-8719-51B772F4E9D4}</Project>
+      <Name>System.Net.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinFormsUI\WinFormsUI.csproj">
+      <Project>{C75532C4-765B-418E-B09B-46D36B2ABDB1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Customization\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\DlgProxySetting.resx">
+      <DependentUpon>DlgProxySetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUserDetail.resx">
+      <DependentUpon>FrmUserDetail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAccountManager.resx">
+      <DependentUpon>FrmAccountManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customization\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWindow.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PaneDiamond.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockPaneStrip_ScrollRightEnabled.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PaneDiamond_Bottom.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\Dockindicator_PaneDiamond_Fill.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PaneDiamond_Hotspot.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PaneDiamond_HotspotIndex.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PaneDiamond_Left.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PaneDiamond_Right.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PaneDiamond_Top.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PanelBottom.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PanelBottom_Active.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PanelFill.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PanelFill_Active.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PanelLeft.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PanelLeft_Active.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PanelRight.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PanelRight_Active.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PanelTop.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockIndicator_PanelTop_Active.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockPaneCaption_AutoHideNo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockPaneCaption_AutoHideYes.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockPaneCaption_CloseDisabled.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockPaneCaption_CloseEnabled.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockPaneStrip_CloseDisabled.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockPaneStrip_CloseEnabled.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockPaneStrip_ScrollLeftDisabled.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockPaneStrip_ScrollLeftEnabled.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customization\Resources\DockPaneStrip_ScrollRightDisabled.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmOutput.resx">
+      <DependentUpon>FrmOutput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FrmAddFriends.resx">
+      <DependentUpon>FrmAddFriends.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBaseCloseMenu.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmBaseCloseMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FrmChineseWord.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmChineseWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FrmBuildTeam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmBuildTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FrmSendMessage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmSendMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTaskEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmTaskEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWebBrowser.resx">
+      <DependentUpon>FrmWebBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyResource.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreenForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SplashScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\DlgDelaySetting.resx">
+      <DependentUpon>DlgDelaySetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\DlgSmtpSetting.resx">
+      <DependentUpon>DlgSmtpSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocument.resx">
+      <DependentUpon>FrmDocument.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internetconnection.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rc_html.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Microsoft.AnalysisServices.ProjectUI.DLL0.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\devenv.exe3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Resources.SplashScreen.jpg" />
+    <None Include="Resources\dpedtui.dll26.ico" />
+    <None Include="Resources\otheroptions.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Boxes.ico" />
+    <EmbeddedResource Include="PopupDlg\DlgBuyAssetsSelection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DlgBuyAssetsSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDlg\DlgTips.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DlgTips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\ToolboxItems.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\OpenFileMenuItems.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Resources\EncryptFriends.config" />
+    <None Include="app.config" />
+    <Compile Include="PopupDlg\DlgBuyAssetsSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgBuyAssetsSelection.Designer.cs">
+      <DependentUpon>DlgBuyAssetsSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManager\FormCollection.cs" />
+    <Compile Include="FormManager\FormItem.cs" />
+    <Compile Include="PopupDlg\DlgPicCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgPicCode.Designer.cs">
+      <DependentUpon>DlgPicCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgPicValidation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgPicValidation.Designer.cs">
+      <DependentUpon>DlgPicValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgFishSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgFishSelection.Designer.cs">
+      <DependentUpon>DlgFishSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgCafeSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgCafeSelection.Designer.cs">
+      <DependentUpon>DlgCafeSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgPresentFoodSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgPresentFoodSelection.Designer.cs">
+      <DependentUpon>DlgPresentFoodSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgPresentFishSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgPresentFishSelection.Designer.cs">
+      <DependentUpon>DlgPresentFishSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgSellProductSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgSellProductSelection.Designer.cs">
+      <DependentUpon>DlgSellProductSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FrmToolBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterDataUpdate.cs" />
+    <Compile Include="PopupDlg\DlgRanchSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgRanchSelection.Designer.cs">
+      <DependentUpon>DlgRanchSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDlg\DlgStealFruitSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDlg\DlgStealFruitSelection.Designer.cs">
+      <DependentUpon>DlgStealFruitSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManager\FormManager.cs" />
+    <Compile Include="Utility\DynamicCtrl.cs" />
+    <None Include="Resources\FileType\Code_ClassCS.ico" />
+    <None Include="Resources\FileType\textdoc.ico" />
+    <None Include="Resources\FileType\Web_XML.ico" />
+    <EmbeddedResource Include="AboutDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\FindAndReplaceForm.resx">
+      <DependentUpon>FindAndReplaceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDlg\DlgBiterSelection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DlgBiterSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDlg\DlgPicCode.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DlgPicCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDlg\DlgSelectionBase.resx">
+      <DependentUpon>DlgSelectionBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDlg\DlgStealFruitSelection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DlgStealFruitSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDlg\DlgPicValidation.resx">
+      <DependentUpon>DlgPicValidation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDlg\DlgPresentFoodSelection.resx">
+      <DependentUpon>DlgPresentFoodSelection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDlg\DlgPresentFishSelection.resx">
+      <DependentUpon>DlgPresentFishSelection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDlg\DlgSellProductSelection.resx">
+      <DependentUpon>DlgSellProductSelection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\DockPanel.config" />
+    <EmbeddedResource Include="Tools\FrmBuyCards.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmBuyCards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FrmUpgradeGarage.resx">
+      <DependentUpon>FrmUpgradeGarage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FrmMaintainContact.resx">
+      <DependentUpon>FrmMaintainContact.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\log4net.config" />
+    <EmbeddedResource Include="Tools\FrmUpdateData.resx">
+      <DependentUpon>FrmUpdateData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDlg\DlgFriendValidation.resx">
+      <DependentUpon>DlgFriendValidation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Resources\Rally.ico" />
+    <None Include="Resources\homenet.ico" />
+    <None Include="Resources\MessageQueuing.ico" />
+    <None Include="Resources\Boxes.ico" />
+    <None Include="Resources\p3oEnetres.ico" />
+    <EmbeddedResource Include="Resources\Versions.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

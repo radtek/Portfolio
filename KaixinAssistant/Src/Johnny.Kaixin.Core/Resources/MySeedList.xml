@@ -1,0 +1,30 @@
+﻿<data>
+  <seed>
+    <item>
+      <seedid>1</seedid>
+      <num>20</num>
+      <fruitpic>http://img.kaixin001.com.cn//i2/house/garden/crop/huluobo.swf</fruitpic>
+      <name>胡萝卜</name>
+    </item>
+    <item>
+      <seedid>2</seedid>
+      <num>20</num>
+      <fruitpic>http://img.kaixin001.com.cn//i2/house/garden/crop/dabaicai.swf</fruitpic>
+      <name>大白菜</name>
+    </item>
+    <item>
+      <seedid>3</seedid>
+      <num>1</num>
+      <fruitpic>http://img.kaixin001.com.cn//i2/house/garden/crop/tudou.swf</fruitpic>
+      <name>土豆</name>
+    </item>
+    <item>
+      <seedid>4</seedid>
+      <num>1</num>
+      <fruitpic>http://img.kaixin001.com.cn//i2/house/garden/crop/qianniuhua.swf</fruitpic>
+      <name>牵牛花</name>
+    </item>
+  </seed>
+  <ret>succ</ret>
+  <totalpage>1</totalpage>
+</data>

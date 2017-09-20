@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<entity name="Bulletin" modelName="MDLBulletin" namespace="Johnny.SEHome.OM" author="JOJOZHUANG\Administrator" createdDateTime="2009-09-24T20:53:31" schema="dbo" tableName="Bulletin" description="dbo.Bulletin" spprefix="pr_">
+  <primaryKey>
+    <column columnName="BulletinId" />
+  </primaryKey>
+  <columns>
+    <property name="BulletinId" lowerName="bulletinid" tableName="Bulletin" field="_bulletinid" initialValue="" columnName="BulletinId" identity="False" primaryKey="False" foreignKey="False" nullable="False" uiLength="0" description="column of dbo.Bulletin.BulletinId" />
+    <property name="BulletinTitle" lowerName="bulletintitle" tableName="Bulletin" field="_bulletintitle" initialValue="" columnName="BulletinTitle" identity="False" primaryKey="False" foreignKey="False" nullable="False" uiLength="0" description="column of dbo.Bulletin.BulletinTitle" />
+    <property name="Content" lowerName="content" tableName="Bulletin" field="_content" initialValue="" columnName="Content" identity="False" primaryKey="False" foreignKey="False" nullable="False" uiLength="0" description="column of dbo.Bulletin.Content" />
+    <property name="Hits" lowerName="hits" tableName="Bulletin" field="_hits" initialValue="" columnName="Hits" identity="False" primaryKey="False" foreignKey="False" nullable="False" uiLength="0" description="column of dbo.Bulletin.Hits" />
+    <property name="IsDisplay" lowerName="isdisplay" tableName="Bulletin" field="_isdisplay" initialValue="" columnName="IsDisplay" identity="False" primaryKey="False" foreignKey="False" nullable="False" uiLength="0" description="column of dbo.Bulletin.IsDisplay" />
+    <property name="Sequence" lowerName="sequence" tableName="Bulletin" field="_sequence" initialValue="" columnName="Sequence" identity="False" primaryKey="False" foreignKey="False" nullable="False" uiLength="0" description="column of dbo.Bulletin.Sequence" />
+    <property name="AddedTime" lowerName="addedtime" tableName="Bulletin" field="_addedtime" initialValue="" columnName="AddedTime" identity="False" primaryKey="False" foreignKey="False" nullable="False" uiLength="0" description="column of dbo.Bulletin.AddedTime" />
+    <property name="AddedBy" lowerName="addedby" tableName="Bulletin" field="_addedby" initialValue="" columnName="AddedBy" identity="False" primaryKey="False" foreignKey="False" nullable="False" uiLength="0" description="column of dbo.Bulletin.AddedBy" />
+    <property name="UpdatedTime" lowerName="updatedtime" tableName="Bulletin" field="_updatedtime" initialValue="" columnName="UpdatedTime" identity="False" primaryKey="False" foreignKey="False" nullable="False" uiLength="0" description="column of dbo.Bulletin.UpdatedTime" />
+    <property name="UpdatedBy" lowerName="updatedby" tableName="Bulletin" field="_updatedby" initialValue="" columnName="UpdatedBy" identity="False" primaryKey="False" foreignKey="False" nullable="False" uiLength="0" description="column of dbo.Bulletin.UpdatedBy" />
+  </columns>
+</entity>
