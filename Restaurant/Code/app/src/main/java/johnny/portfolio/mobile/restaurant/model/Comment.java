@@ -1,10 +1,10 @@
-package edu.depaul.csc472.restaurant.Model;
+package johnny.portfolio.mobile.restaurant.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Created by RZHUANG on 10/28/2015.
+ * Created by Johnny on 10/28/2015.
  */
 public class Comment implements Parcelable {
     int id;

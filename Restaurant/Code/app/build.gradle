@@ -5,7 +5,7 @@ android {
     buildToolsVersion '26.0.2'
 
     defaultConfig {
-        applicationId "edu.depaul.csc472.restaurant"
+        applicationId "johnny.portfolio.mobile.restaurant"
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 1

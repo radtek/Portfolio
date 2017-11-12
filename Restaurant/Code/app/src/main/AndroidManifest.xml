@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.depaul.csc472.restaurant" >
+    package="johnny.portfolio.mobile.restaurant" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name="edu.depaul.csc472.restaurant.RestaurantListActivity"
+            android:name="johnny.portfolio.mobile.restaurant.RestaurantListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName="edu.depaul.csc472.restaurant.RestaurantListActivity" >
+            android:parentActivityName="johnny.portfolio.mobile.restaurant.RestaurantListActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,28 +22,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.depaul.csc472.restaurant.RestaurantDetailActivity"
+            android:name="johnny.portfolio.mobile.restaurant.RestaurantDetailActivity"
             android:label="@string/title_restaurant_detail"
             android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName="edu.depaul.csc472.restaurant.RestaurantListActivity" >
+            android:parentActivityName="johnny.portfolio.mobile.restaurant.RestaurantListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="edu.depaul.csc472.restaurant.RestaurantListActivity" />
+                android:value="johnny.portfolio.mobile.restaurant.RestaurantListActivity" />
         </activity>
         <activity
-            android:name="edu.depaul.csc472.restaurant.SignInActivity"
+            android:name="johnny.portfolio.mobile.restaurant.SignInActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName="edu.depaul.csc472.restaurant.RestaurantListActivity" >
+            android:parentActivityName="johnny.portfolio.mobile.restaurant.RestaurantListActivity" >
         </activity>
         <activity
-            android:name="edu.depaul.csc472.restaurant.SignUpActivity"
+            android:name="johnny.portfolio.mobile.restaurant.SignUpActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName="edu.depaul.csc472.restaurant.RestaurantListActivity" >
+            android:parentActivityName="johnny.portfolio.mobile.restaurant.RestaurantListActivity" >
         </activity>
         <activity
-            android:name="edu.depaul.csc472.restaurant.CommentAddActivity"
+            android:name="johnny.portfolio.mobile.restaurant.CommentAddActivity"
             android:label="@string/title_activity_comment"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>

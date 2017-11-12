@@ -1,15 +1,14 @@
-package edu.depaul.csc472.restaurant;
+package johnny.portfolio.mobile.restaurant;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -17,51 +16,52 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class SignInActivity extends AppCompatActivity {
-    public static String UserName = "";
-    private String LoginUser = "";
+public class CommentAddActivity extends Activity {
+    //public interface CommentCallbacks {
+        /**
+         * Callback for when a new comment is submitted
+         */
+    //    public void onCommentChanged();
+    //}
+
+    //private CommentCallbacks commentCallbacks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.comment_add);
 
-        // my_child_toolbar is defined in the layout file
-        Toolbar myChildToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(myChildToolbar);
+        final int RestId = getIntent().getIntExtra("RestId", 1);
+        final String UserName = getIntent().getStringExtra("UserName");
 
-        // Get a support ActionBar corresponding to this toolbar
-        ActionBar ab = getSupportActionBar();
+        final TextView lblUserName = (TextView) findViewById(R.id.lblUserName);
+        final EditText txtComment = (EditText) findViewById(R.id.txtComment);
+        final Button btnSubmit = (Button) findViewById(R.id.btnSubmitComment);
+        final Button btnCancel = (Button) findViewById(R.id.btnCommentCancel);
 
-        // Enable the Up button
-        ab.setDisplayHomeAsUpEnabled(true);
+        lblUserName.setText(UserName);
 
-        final EditText txtUserName = (EditText) findViewById(R.id.lgn_username);
-        final EditText txtPassword = (EditText) findViewById(R.id.lgn_password);
-        final Button btnSignIn = (Button) findViewById(R.id.btnSignIn);
-        final Button btnGotoSignUp = (Button) findViewById(R.id.btnGotoSignUp);
-
-        btnSignIn.setOnClickListener(new View.OnClickListener() {
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
-                    String strUserName = txtUserName.getText().toString();
-                    String strPassword = txtPassword.getText().toString();
+                    String strUserName = lblUserName.getText().toString();
+                    String strComment = txtComment.getText().toString();
 
-                    if(strUserName.equals("")||strPassword.equals("")){
+                    if(strComment.equals("")){
 
-                        showMSG("Please input UserName and Password!");
+                        showMSG("Please input comments!");
+                        return;
                     }
 
-                    LoginUser = strUserName;
-
                     HashMap<String, String> params = new HashMap<String, String>();
+                    params.put("RestId", String.valueOf(RestId));
                     params.put("UserName", strUserName);
-                    params.put("Password", strPassword);
+                    params.put("Content", strComment);
 
-                    AsyncSignIn signInTask = new AsyncSignIn();
-                    signInTask.params = params;
-                    signInTask.execute("http://10.0.3.2:8080/api/User/Login");
+                    AsyncSubmitComment submitTask = new AsyncSubmitComment();
+                    submitTask.params = params;
+                    submitTask.execute("http://10.0.3.2:8080/api/comment/create");
 
                 } catch (Exception e) {
                     // response body is no valid JSON string
@@ -69,15 +69,12 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-        btnGotoSignUp.setOnClickListener(new View.OnClickListener() {
+        btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent loginIntent = new Intent(SignInActivity.this, SignUpActivity.class);
-                //loginIntent.putExtra(RestaurantDetailFragment.ARG_ITEM_ID, id);
-                startActivity(loginIntent);
+                finish();
             }
         });
-
     }
 
     protected void showMSG(String msg){
@@ -99,16 +96,7 @@ public class SignInActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void email(View view) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("*/*");
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "me@cdm.depaul.edu" } );
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Email from Implicit Intent Demo");
-        intent.putExtra(Intent.EXTRA_TEXT, "-- Sent by my Android App");
-        startActivity(intent);
-    }
-
-    private class AsyncSignIn extends AsyncTask<String, Void, JSONObject> {
+    private class AsyncSubmitComment extends AsyncTask<String, Void, JSONObject> {
 
         private Exception exception;
         public HashMap<String, String> params = new HashMap<String, String>();
@@ -130,11 +118,10 @@ public class SignInActivity extends AppCompatActivity {
                 if (feed!=null) {
                     showMSG(feed.getString("Message"));
                     if (feed.getString("RetCode").equals("0")){
-                        UserName = LoginUser;
+                        setResult(RESULT_OK);
                         finish();
                     }
                     else {
-                        UserName = "";
                     }
                 }
             }
@@ -144,7 +131,7 @@ public class SignInActivity extends AppCompatActivity {
         }
 
         protected void showMSG(String msg){
-            Toast.makeText(SignInActivity.this, msg, Toast.LENGTH_LONG).show();
+            Toast.makeText(CommentAddActivity.this, msg, Toast.LENGTH_LONG).show();
         }
     }
 }

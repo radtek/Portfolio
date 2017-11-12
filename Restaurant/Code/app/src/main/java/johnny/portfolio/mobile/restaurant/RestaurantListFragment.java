@@ -1,18 +1,24 @@
-package edu.depaul.csc472.restaurant;
+package johnny.portfolio.mobile.restaurant;
 
 import android.app.Activity;
-import android.app.ListFragment;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import edu.depaul.csc472.restaurant.Model.Comment;
-import edu.depaul.csc472.restaurant.Model.CommentList;
+import java.util.HashMap;
+import java.util.Map;
+
+import johnny.portfolio.mobile.restaurant.model.Restaurant;
+import johnny.portfolio.mobile.restaurant.model.RestaurantList;
 
 /**
  * A list fragment representing a list of Restaurants. This fragment
@@ -23,7 +29,8 @@ import edu.depaul.csc472.restaurant.Model.CommentList;
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
  */
-public class CommentListFragment extends ListFragment {
+public class RestaurantListFragment extends ListFragment
+        implements RestaurantDetailFragment.DetailCallbacks{
 
     /**
      * The serialization (saved instance state) Bundle key representing the
@@ -68,7 +75,7 @@ public class CommentListFragment extends ListFragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public CommentListFragment() {
+    public RestaurantListFragment() {
     }
 
     @Override
@@ -76,7 +83,7 @@ public class CommentListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
 
         // TODO: replace with a real list adapter.
-        setListAdapter(new CommentAdapter(getActivity()));
+        setListAdapter(new RestaurantAdapter(getActivity()));
         //setHasOptionsMenu(true);
      }
 
@@ -85,30 +92,30 @@ public class CommentListFragment extends ListFragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Restore the previously serialized activated item position.
-        /*if (savedInstanceState != null
+        if (savedInstanceState != null
                 && savedInstanceState.containsKey(STATE_ACTIVATED_POSITION)) {
             setActivatedPosition(savedInstanceState.getInt(STATE_ACTIVATED_POSITION));
-        }*/
+        }
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-/*
+
         // Activities containing this fragment must implement its callbacks.
         if (!(activity instanceof Callbacks)) {
             throw new IllegalStateException("Activity must implement fragment's callbacks.");
         }
 
-        mCallbacks = (Callbacks) activity;*/
+        mCallbacks = (Callbacks) activity;
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-/*
+
         // Reset the active callbacks interface to the dummy implementation.
-        mCallbacks = sDummyCallbacks;*/
+        mCallbacks = sDummyCallbacks;
     }
 
     @Override
@@ -117,17 +124,16 @@ public class CommentListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        //mCallbacks.onItemSelected(RestaurantList.Restaurants.get(position).getName());
+        mCallbacks.onItemSelected(RestaurantList.Restaurants.get(position).getName());
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        /*
         if (mActivatedPosition != ListView.INVALID_POSITION) {
             // Serialize and persist the activated item position.
             outState.putInt(STATE_ACTIVATED_POSITION, mActivatedPosition);
-        }*/
+        }
     }
 
     /**
@@ -135,62 +141,73 @@ public class CommentListFragment extends ListFragment {
      * given the 'activated' state when touched.
      */
     public void setActivateOnItemClick(boolean activateOnItemClick) {
-        /*
         // When setting CHOICE_MODE_SINGLE, ListView will automatically
         // give items the 'activated' state when touched.
         getListView().setChoiceMode(activateOnItemClick
                 ? ListView.CHOICE_MODE_SINGLE
-                : ListView.CHOICE_MODE_NONE);*/
+                : ListView.CHOICE_MODE_NONE);
     }
 
     private void setActivatedPosition(int position) {
-        /*
         if (position == ListView.INVALID_POSITION) {
             getListView().setItemChecked(mActivatedPosition, false);
         } else {
             getListView().setItemChecked(position, true);
         }
 
-        mActivatedPosition = position;*/
+        mActivatedPosition = position;
     }
 
     // For Handset
     @Override
     public void onResume() {
         super.onResume();
-        /*
-        ((CommentAdapter) getListAdapter()).notifyDataSetChanged();*/
+        ((RestaurantAdapter) getListAdapter()).notifyDataSetChanged();
     }
 
     public void Refresh() {
-
-        ((CommentAdapter) getListAdapter()).notifyDataSetChanged();
+        ((RestaurantAdapter) getListAdapter()).notifyDataSetChanged();
     }
 
     ///// Callback from WineDetailFragment. For two-pane layout
 
-    //@Override
-    //public void onItemChanged() {
-    //    ((CommentAdapter) getListAdapter()).notifyDataSetChanged();
-    //}
+    @Override
+    public void onItemChanged() {
+        ((RestaurantAdapter) getListAdapter()).notifyDataSetChanged();
+    }
 
-    // Comment Adapter
-    static class CommentAdapter extends BaseAdapter {
+    // Restaurant Adapter
+    static class RestaurantAdapter extends BaseAdapter {
 
         private LayoutInflater inflater;
+        private Map<Restaurant.Category, Bitmap> icons;
+        private Map<Integer, Bitmap> ratings;
 
-        CommentAdapter(Context context) {
+        RestaurantAdapter(Context context) {
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            icons = new HashMap<Restaurant.Category, Bitmap>();
+
+            for (Restaurant.Category category : Restaurant.Category.values()) {
+                icons.put(category, BitmapFactory.decodeResource(context.getResources(),
+                        Restaurant.getIconResource(category)));
+            }
+
+            ratings = new HashMap<Integer, Bitmap>();
+            ratings.put(1, BitmapFactory.decodeResource(context.getResources(), R.drawable.rating1));
+            ratings.put(2, BitmapFactory.decodeResource(context.getResources(), R.drawable.rating2));
+            ratings.put(3, BitmapFactory.decodeResource(context.getResources(), R.drawable.rating3));
+            ratings.put(4, BitmapFactory.decodeResource(context.getResources(), R.drawable.rating4));
+            ratings.put(5, BitmapFactory.decodeResource(context.getResources(), R.drawable.rating5));
         }
 
         @Override
         public int getCount() {
-            return CommentList.Comments.size();
+            return RestaurantList.Restaurants.size();
         }
 
         @Override
         public Object getItem(int i) {
-            return CommentList.Comments.get(i);
+            return RestaurantList.Restaurants.get(i);
         }
 
         @Override
@@ -203,24 +220,34 @@ public class CommentListFragment extends ListFragment {
             ViewHolder holder;
             View row = convertView;
             if (row == null) {
-                row = inflater.inflate(R.layout.comment_list_item, parent, false);
+                row = inflater.inflate(R.layout.restaurant_list_item, parent, false);
                 holder = new ViewHolder();
-                holder.content = (TextView) row.findViewById(R.id.comment_content);
-                holder.user = (TextView) row.findViewById(R.id.comment_user);
+                holder.icon = (ImageView) row.findViewById(R.id.image);
+                holder.name = (TextView) row.findViewById(R.id.text1);
+                holder.location = (TextView) row.findViewById(R.id.location);
+                holder.rating = (ImageView) row.findViewById(R.id.rating);
+                holder.reviews = (TextView) row.findViewById(R.id.reviews);
                 row.setTag(holder);
             } else {
                 holder = (ViewHolder) row.getTag();
             }
 
-            Comment comment = CommentList.Comments.get(position);
-            holder.content.setText(comment.getContent());
-            holder.user.setText(String.valueOf(comment.getUserName())+":");
+            Restaurant restaurant = RestaurantList.Restaurants.get(position);
+            holder.name.setText(restaurant.getName());
+            holder.location.setText(restaurant.getLocation());
+            holder.icon.setImageBitmap(icons.get(restaurant.getType()));
+            int ratingvalue = (int)(Math.round(restaurant.getRating()));
+            holder.rating.setImageBitmap(ratings.get(ratingvalue));
+            holder.reviews.setText(restaurant.getReviewText());
             return row;
         }
 
         static class ViewHolder {
-            TextView content;
-            TextView user;
+            TextView name;
+            TextView location;
+            ImageView rating;
+            TextView reviews;
+            ImageView icon;
         }
 
     }

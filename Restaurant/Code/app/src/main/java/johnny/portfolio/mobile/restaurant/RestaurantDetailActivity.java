@@ -1,4 +1,4 @@
-package edu.depaul.csc472.restaurant;
+package johnny.portfolio.mobile.restaurant;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -79,7 +79,7 @@ public class RestaurantDetailActivity extends AppCompatActivity {
     public void email(View view) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("*/*");
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "me@cdm.depaul.edu" } );
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "jojozhuang@gmail.com" } );
         intent.putExtra(Intent.EXTRA_SUBJECT, "Email from Implicit Intent Demo");
         intent.putExtra(Intent.EXTRA_TEXT, "-- Sent by my Android App");
         startActivity(intent);

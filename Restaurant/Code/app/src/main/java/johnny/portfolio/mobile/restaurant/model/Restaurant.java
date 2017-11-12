@@ -1,12 +1,12 @@
-package edu.depaul.csc472.restaurant.Model;
+package johnny.portfolio.mobile.restaurant.model;
 
-import edu.depaul.csc472.restaurant.R;
+import johnny.portfolio.mobile.restaurant.R;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Created by RZHUANG on 10/28/2015.
+ * Created by Johnny on 10/28/2015.
  */
 public class Restaurant implements Parcelable {
     public enum Category {Restaurant, Dessert, CoffeeTea, Bakeries, IceCream}

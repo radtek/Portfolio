@@ -1,4 +1,4 @@
-package edu.depaul.csc472.restaurant;
+package johnny.portfolio.mobile.restaurant;
 
 import android.app.Activity;
 import android.app.FragmentManager;
@@ -26,10 +26,10 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import edu.depaul.csc472.restaurant.Model.Comment;
-import edu.depaul.csc472.restaurant.Model.CommentList;
-import edu.depaul.csc472.restaurant.Model.Restaurant;
-import edu.depaul.csc472.restaurant.Model.RestaurantList;
+import johnny.portfolio.mobile.restaurant.model.Comment;
+import johnny.portfolio.mobile.restaurant.model.CommentList;
+import johnny.portfolio.mobile.restaurant.model.Restaurant;
+import johnny.portfolio.mobile.restaurant.model.RestaurantList;
 
 /**
  * A fragment representing a single Restaurant detail screen.

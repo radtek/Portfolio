@@ -119,7 +119,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/comment_list"
-        android:name="edu.depaul.csc472.restaurant.CommentListFragment"
+        android:name="johnny.portfolio.mobile.restaurant.CommentListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"

@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/restaurant_list"
-        android:name="edu.depaul.csc472.restaurant.RestaurantListFragment"
+        android:name="johnny.portfolio.mobile.restaurant.RestaurantListFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"

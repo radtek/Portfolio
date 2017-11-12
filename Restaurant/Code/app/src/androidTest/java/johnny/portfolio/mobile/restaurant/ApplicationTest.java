@@ -1,4 +1,4 @@
-package edu.depaul.csc472.restaurant;
+package johnny.portfolio.mobile.restaurant;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
