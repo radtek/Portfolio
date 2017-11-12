@@ -1,18 +1,11 @@
 package edu.depaul.csc472.restaurant.Model;
 
-import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import edu.depaul.csc472.restaurant.HttpHelper;
 
 /**
  * Created by RZHUANG on 10/28/2015.

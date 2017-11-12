@@ -60,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                     AsyncSign signUpTask = new AsyncSign();
                     signUpTask.params = params;
-                    signUpTask.execute("http://140.192.34.69/restaurant/api/User/Register");
+                    signUpTask.execute("http://10.0.3.2:8080/api/User/Register");
 
                 } catch (Exception e) {
                     // response body is no valid JSON string

@@ -3,24 +3,16 @@ package edu.depaul.csc472.restaurant;
 import android.app.Activity;
 import android.app.ListFragment;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import edu.depaul.csc472.restaurant.Model.Comment;
 import edu.depaul.csc472.restaurant.Model.CommentList;
-import edu.depaul.csc472.restaurant.Model.Restaurant;
-import edu.depaul.csc472.restaurant.Model.RestaurantList;
 
 /**
  * A list fragment representing a list of Restaurants. This fragment

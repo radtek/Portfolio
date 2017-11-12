@@ -3,9 +3,6 @@ package edu.depaul.csc472.restaurant;
 import android.os.AsyncTask;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.InputStream;
 
 /**
  * Created by Johnny on 11/5/15.

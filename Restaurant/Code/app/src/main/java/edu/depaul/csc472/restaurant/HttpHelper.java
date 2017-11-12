@@ -93,8 +93,8 @@ public class HttpHelper {
             url = new URL(requestURL);
             Log.d("HTTP Post", "requestURL=" + requestURL);
             conn = (HttpURLConnection) url.openConnection();
-            conn.setReadTimeout(30000);
-            conn.setConnectTimeout(30000);
+            conn.setReadTimeout(10000);
+            conn.setConnectTimeout(10000);
             conn.setRequestMethod("POST");
             conn.setDoInput(true);
             conn.setDoOutput(true);
@@ -127,8 +127,10 @@ public class HttpHelper {
         } catch (MalformedURLException e) {
             // URL is invalid
         } catch (SocketTimeoutException e) {
+            System.out.println(e);
             // data retrieval or connection timed out
         } catch (IOException e) {
+            System.out.println(e);
             // could not read response body
             // (could not create input stream)
         } catch (JSONException e) {

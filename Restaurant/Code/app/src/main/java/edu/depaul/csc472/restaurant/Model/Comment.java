@@ -3,8 +3,6 @@ package edu.depaul.csc472.restaurant.Model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import edu.depaul.csc472.restaurant.R;
-
 /**
  * Created by RZHUANG on 10/28/2015.
  */

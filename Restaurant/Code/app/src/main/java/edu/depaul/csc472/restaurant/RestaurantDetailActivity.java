@@ -1,25 +1,13 @@
 package edu.depaul.csc472.restaurant;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-
-import edu.depaul.csc472.restaurant.Model.Comment;
-import edu.depaul.csc472.restaurant.Model.CommentList;
 
 /**
  * An activity representing a single Restaurant detail screen. This

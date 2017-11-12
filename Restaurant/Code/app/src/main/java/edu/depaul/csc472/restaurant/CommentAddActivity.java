@@ -1,14 +1,9 @@
 package edu.depaul.csc472.restaurant;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -66,7 +61,7 @@ public class CommentAddActivity extends Activity {
 
                     AsyncSubmitComment submitTask = new AsyncSubmitComment();
                     submitTask.params = params;
-                    submitTask.execute("http://140.192.34.69/restaurant/api/comment/create");
+                    submitTask.execute("http://10.0.3.2:8080/api/comment/create");
 
                 } catch (Exception e) {
                     // response body is no valid JSON string
