@@ -12,7 +12,7 @@ class TabSearchViewController: UICollectionViewController {
     
     let reuseIdentifier = "ContinentViewCell"
     
-    var selectedCell: NSIndexPath?
+    var selectedCell: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +27,8 @@ class TabSearchViewController: UICollectionViewController {
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView!.dataSource = self
         collectionView!.delegate = self
-        collectionView!.registerClass(ContinentViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        collectionView!.backgroundColor = UIColor.whiteColor()
+        collectionView!.register(ContinentViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView!.backgroundColor = UIColor.white
         self.view.addSubview(collectionView!)
         
         // Do any additional setup after loading the view.
@@ -42,11 +42,11 @@ class TabSearchViewController: UICollectionViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if segue.identifier == "toCountry" {
-            if let countryViewController = segue.destinationViewController as? CountryViewController {
+            if let countryViewController = segue.destination as? CountryViewController {
                 countryViewController.continent = continents[selectedCell!.item]
             }
         }
@@ -54,21 +54,21 @@ class TabSearchViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         //#warning Incomplete method implementation -- Return the number of sections
         return 1
     }
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
         return continents.count
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Configure the cell
         let continent = continents[indexPath.row]
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ContinentViewCell
-        cell.backgroundColor = UIColorFromRGB(0x209624)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ContinentViewCell
+        cell.backgroundColor = UIColorFromRGB(rgbValue: 0x209624)
         cell.txtName.text = continent.name
         cell.txtDetails.text = "\(continent.locations) countries/areas"
         cell.imageView.image = UIImage(named: continent.image)
@@ -76,9 +76,9 @@ class TabSearchViewController: UICollectionViewController {
         return cell
     }
     
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedCell = indexPath
-        performSegueWithIdentifier("toCountry", sender: self)
+        performSegue(withIdentifier: "toCountry", sender: self)
     }
     
     // MARK: UICollectionViewDelegate

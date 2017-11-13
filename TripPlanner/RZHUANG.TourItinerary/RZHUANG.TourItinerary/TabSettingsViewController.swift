@@ -25,11 +25,11 @@ class TabSettingsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func switchDownloadWif(sender: UISwitch) {
-        appSettings.onlyDownloadDataInWifiMode = sender.on
+    @IBAction func switchDownloadWif(_ sender: UISwitch) {
+        appSettings.onlyDownloadDataInWifiMode = sender.isOn
     }
     
-    @IBAction func rateApp(sender: UIButton) {
+    @IBAction func rateApp(_ sender: UIButton) {
         let rate = RateMyApp.sharedInstance
         rate.appID = "284882215" //facebook
         
@@ -38,14 +38,14 @@ class TabSettingsViewController: UITableViewController {
         //})
     }
     
-    @IBAction func showAbout(sender: UIButton) {
+    @IBAction func showAbout(_ sender: UIButton) {
         let title = "About"
-        let alertController = UIAlertController(title: title, message: "This app is built for final project of CSC471. I love swift!", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: title, message: "This app is built for final project of CSC471. I love swift!", preferredStyle: .alert)
         
         // Create the action.
-        let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
-        presentViewController(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
     
     /*

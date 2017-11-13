@@ -32,14 +32,14 @@ class MyFavoritesViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         favoriteCityList = getFavoriteCityList()
         tableView.reloadData()
     }
 
-    @IBAction func switchEditMode(sender: UIBarButtonItem) {
+    @IBAction func switchEditMode(_ sender: UIBarButtonItem) {
         if isEditMode==false {
             tableView.setEditing(true, animated: true)
             btnEdit.title = "Done"
@@ -53,21 +53,22 @@ class MyFavoritesViewController: UITableViewController {
     }
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return favoriteCityList.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let city = favoriteCityList[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier("basic", forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "basic", for: indexPath as IndexPath)
         
         // Configure the cell...
         cell.textLabel?.text = city.name
@@ -85,13 +86,13 @@ class MyFavoritesViewController: UITableViewController {
     */
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             // Delete the row from the data source
-            favorites.removeAtIndex(indexPath.row)
+            favorites.remove(at: indexPath.row)
             favoriteCityList = getFavoriteCityList()
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
+            tableView.deleteRows(at: [indexPath as IndexPath], with: .fade)
+        } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
@@ -114,10 +115,10 @@ class MyFavoritesViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.        
-        if let cityDetailViewController = segue.destinationViewController as? CityDetailViewController {
+        if let cityDetailViewController = segue.destination as? CityDetailViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 cityDetailViewController.city = favoriteCityList[indexPath.row]
             }

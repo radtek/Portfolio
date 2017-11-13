@@ -29,54 +29,54 @@ class MyTripsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
     
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return trips.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let trip = trips[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier("basic", forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "basic", for: indexPath as IndexPath)
         
         // Configure the cell...
         cell.textLabel?.text = trip.destination
-        cell.detailTextLabel?.text = trip.country        
-        cell.imageView?.image = getImage(trip.destination)
+        cell.detailTextLabel?.text = trip.country
+        cell.imageView?.image = getImage(imagename: trip.destination)
         
         return cell
     }
     
-    override func tableView(tableView: UITableView,
+    func tableView(tableView: UITableView,
         accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
             let trip = trips[indexPath.row]
             let title = trip.destination + "(" + trip.country + ")"
             let message = "From: " + trip.from.formatted + "\n" + "To: " + trip.to.formatted
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
-            let okayAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
             alertController.addAction(okayAction)
-            presentViewController(alertController, animated: true, completion: nil)
-            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        present(alertController, animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         
-        if let tripDetailViewController = segue.destinationViewController as? TripDetailViewController {
+        if let tripDetailViewController = segue.destination as? TripDetailViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let trip = trips[indexPath.row]
                 tripDetailViewController.viewTitle = trip.destination
@@ -85,7 +85,7 @@ class MyTripsViewController: UITableViewController {
         }
     }
         
-    @IBAction func switchEditMode(sender: UIBarButtonItem) {
+    @IBAction func switchEditMode(_ sender: UIBarButtonItem) {
         if isEditMode==false {
             tableView.setEditing(true, animated: true)
             btnEdit.title = "Done"
@@ -117,12 +117,12 @@ class MyTripsViewController: UITableViewController {
 
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             // Delete the row from the data source
-            trips.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
+            trips.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: .fade)
+        } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }

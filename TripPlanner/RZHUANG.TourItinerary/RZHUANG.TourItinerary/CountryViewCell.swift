@@ -21,23 +21,23 @@ class CountryViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
-        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
         contentView.addSubview(imageView)
         
         //Country Name
         let nameFrame = CGRect(x: 5, y: frame.size.height-20, width: frame.size.width, height: 20)
         txtName = UILabel(frame: nameFrame)
-        txtName.font = UIFont.boldSystemFontOfSize(12.0)
-        txtName.textColor = UIColor.whiteColor()
-        txtName.textAlignment = .Left
+        txtName.font = UIFont.boldSystemFont(ofSize: 12.0)
+        txtName.textColor = UIColor.white
+        txtName.textAlignment = .left
         contentView.addSubview(txtName)
         
         //Count of cities with this country
         let detailsFrame = CGRect(x: frame.size.width-10, y: frame.size.height-20, width: frame.size.width, height: 20)
         txtDetails = UILabel(frame: detailsFrame)
-        txtDetails.font = UIFont.boldSystemFontOfSize(12.0)
-        txtDetails.textColor = UIColor.whiteColor()
-        txtDetails.textAlignment = .Left
+        txtDetails.font = UIFont.boldSystemFont(ofSize: 12.0)
+        txtDetails.textColor = UIColor.white
+        txtDetails.textAlignment = .left
         contentView.addSubview(txtDetails)
     }
     

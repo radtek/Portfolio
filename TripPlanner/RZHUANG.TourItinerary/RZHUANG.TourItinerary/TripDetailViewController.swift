@@ -44,22 +44,22 @@ class TripDetailViewController: UITableViewController {
         //self.tabBarController?.tabBar.hidden = true
         
         navigationTitle.title = viewTitle
-        btnFrom.titleLabel?.textAlignment = .Right
-        btnTo.titleLabel?.textAlignment = .Right
+        btnFrom.titleLabel?.textAlignment = .right
+        btnTo.titleLabel?.textAlignment = .right
         textviewNote!.layer.borderWidth = 1
-        textviewNote!.layer.borderColor = UIColor.grayColor().CGColor
+        textviewNote!.layer.borderColor = UIColor.gray.cgColor
         
         if trip == nil {
-            btnFrom.setTitle(NSDate().formatted, forState: .Normal)
-            btnTo.setTitle(NSDate().formatted, forState: .Normal)
+            btnFrom.setTitle(NSDate().formatted, for: .normal)
+            btnTo.setTitle(NSDate().formatted, for: .normal)
         }
         
         if let t = trip {
-            imageCity.image = getImage(t.destination)
+            imageCity.image = getImage(imagename: t.destination)
             txtCity.text = t.destination
             txtCountry.text = t.country
-            btnFrom.setTitle(t.from.formatted, forState: .Normal)
-            btnTo.setTitle(t.to.formatted, forState: .Normal)
+            btnFrom.setTitle(t.from.formatted, for: .normal)
+            btnTo.setTitle(t.to.formatted, for: .normal)
             txtFlight1.text = t.flight1
             txtFlight2.text = t.flight2
             txtHotel.text = t.hotel
@@ -77,11 +77,11 @@ class TripDetailViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    @IBAction func shareTrip(sender: UIButton) {
+    @IBAction func shareTrip(_ sender: UIButton) {
         var textToShare = "Hi, \n\nbelow are the trip details!\n\n"
         textToShare += "City: \(trip!.destination)\n"
         textToShare += "Country: \(trip!.country)\n"
@@ -91,35 +91,35 @@ class TripDetailViewController: UITableViewController {
         textToShare += "Return Flight: \(trip!.flight2)\n"
         textToShare += "Hotel: \(trip!.hotel)\n"
         textToShare += "Note: \(trip!.note)\n"
-        let objectsToShare = [textToShare, []]
+        let objectsToShare = [textToShare, []] as [Any]
         let activityVC = UIActivityViewController(activityItems: objectsToShare as [AnyObject], applicationActivities: nil)
         
-        self.presentViewController(activityVC, animated: true, completion: nil)
+        self.present(activityVC, animated: true, completion: nil)
     }
     
-    @IBAction func saveTrip(sender: UIBarButtonItem) {
+    @IBAction func saveTrip(_ sender: UIBarButtonItem) {
     
         if txtCity.text!.isEmpty{
             let title = "Error"
-            let alertController = UIAlertController(title: title, message: "City can't be empty!", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: title, message: "City can't be empty!", preferredStyle: .alert)
             
             // Create the action.
-            let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
-            presentViewController(alertController, animated: true, completion: nil)
+            present(alertController, animated: true, completion: nil)
             return
         }
         
-        let fromdate: NSDate = convertDate(btnFrom.titleLabel?.text)
-        let todate: NSDate = convertDate(btnTo.titleLabel?.text)
-        if fromdate.compare(todate) == NSComparisonResult.OrderedDescending {
+        let fromdate: NSDate = convertDate(datestr: btnFrom.titleLabel?.text)
+        let todate: NSDate = convertDate(datestr: btnTo.titleLabel?.text)
+        if fromdate.compare(todate as Date) == ComparisonResult.orderedDescending {
             let title = "Error"
-            let alertController = UIAlertController(title: title, message: "From date can't be larger than To date!", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: title, message: "From date can't be larger than To date!", preferredStyle: .alert)
             
             // Create the action.
-            let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
-            presentViewController(alertController, animated: true, completion: nil)
+            present(alertController, animated: true, completion: nil)
             return
         }
         
@@ -138,7 +138,7 @@ class TripDetailViewController: UITableViewController {
             newTrip.sights[3] = txtSight4.text!
             newTrip.sights[4] = txtSight5.text!
             newTrip.note = textviewNote.text
-            addNewTrip(newTrip)
+            addNewTrip(trip: newTrip)
         }
         else {
             trip!.destination = txtCity.text!
@@ -156,23 +156,23 @@ class TripDetailViewController: UITableViewController {
             trip!.note = textviewNote.text
             //tableView.reloadData()
         }
-        navigationController!.popViewControllerAnimated(true)
+        navigationController!.popViewController(animated: true)
     }
     
-    @IBAction func editEnded(sender: UITextField) {
+    @IBAction func editEnded(_ sender: UITextField) {
         sender.resignFirstResponder()
     }    
-    @IBAction func fromDateChange(sender: UIButton) {
-        popDatePicker("1")
+    @IBAction func fromDateChange(_ sender: UIButton) {
+        popDatePicker(dateno: "1")
     }
-    @IBAction func toDateChange(sender: UIButton) {
-        popDatePicker("2")
+    @IBAction func toDateChange(_ sender: UIButton) {
+        popDatePicker(dateno: "2")
     }
     func popDatePicker(dateno: String) {
         let title = "Select Date"
         let message = "\n\n\n\n\n\n\n\n\n\n\n\n\n";
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.ActionSheet);
-        alert.modalInPopover = true;
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.actionSheet);
+        alert.isModalInPopover = true;
         
         var pickerFrame: CGRect
         if deviceOrientation == true {
@@ -182,38 +182,38 @@ class TripDetailViewController: UITableViewController {
             pickerFrame = CGRect(x: 0, y: 30, width: self.view.frame.width-17, height: 100); //portrait
         }
         let datePicker: UIDatePicker = UIDatePicker(frame: pickerFrame);
-        datePicker.datePickerMode = .DateAndTime
-        datePicker.locale = NSLocale(localeIdentifier: "en_US")
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.locale = NSLocale(localeIdentifier: "en_US") as Locale
 
         if dateno=="1" {
-            datePicker.setDate(convertDate(self.btnFrom.titleLabel?.text), animated: true)
+            datePicker.setDate(convertDate(datestr: self.btnFrom.titleLabel?.text) as Date, animated: true)
         }
         else if dateno=="2" {
-            datePicker.setDate(convertDate(self.btnTo.titleLabel?.text), animated: true)
+            datePicker.setDate(convertDate(datestr: self.btnTo.titleLabel?.text) as Date, animated: true)
         }
 
         alert.view.addSubview(datePicker);
         
         // Create the action.
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Destructive, handler: nil)
-        let okayAction = UIAlertAction(title: "Confirm", style: .Default) {
-            action in self.updateDate(dateno, newdate: datePicker.date)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        let okayAction = UIAlertAction(title: "Confirm", style: .default) {
+            action in self.updateDate(dateno: dateno, newdate: datePicker.date as NSDate)
         }
         alert.addAction(okayAction)
         alert.addAction(cancelAction)
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
 
     }
     
     func updateDate(dateno: String, newdate: NSDate) {
         if dateno=="1" {
-            btnFrom.setTitle(newdate.formatted, forState: .Normal)
+            btnFrom.setTitle(newdate.formatted, for: .normal)
             if let t = trip {
                 t.from = newdate
             }
         }
         else if dateno=="2" {
-            btnTo.setTitle(newdate.formatted, forState: .Normal)
+            btnTo.setTitle(newdate.formatted, for: .normal)
             if let t = trip {
                 t.to = newdate
             }
@@ -241,21 +241,21 @@ class TripDetailViewController: UITableViewController {
 
     
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.row == 0 && indexPath.section == 0 && trip == nil)
         {
-            imageCity.hidden = true
-            btnShare.hidden = true
+            imageCity.isHidden = true
+            btnShare.isHidden = true
             return 0.0
         }
         else {
-            return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+            return super.tableView(tableView, heightForRowAt: indexPath as IndexPath)
+            //return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
         }
     }
 

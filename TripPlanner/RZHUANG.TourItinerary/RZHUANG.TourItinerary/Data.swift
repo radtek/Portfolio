@@ -14,7 +14,7 @@ var appSettings = AppSettings()
 
 class AppSettings {
     var onlyDownloadDataInWifiMode: Bool = false
-    var transitionOptions = UIViewAnimationOptions.TransitionCurlUp
+    var transitionOptions = UIViewAnimationOptions.transitionCurlUp
     init(){
     }
     
@@ -30,14 +30,14 @@ var sights3: [String] = ["Port Jackson", "Sydney Harbour Bridge", "Bondi Beach",
 var sights4: [String] = ["London Eye", "Buckingham Palace", "British Museum", "Tower Bridge", "St Paul's Cathedral"]
 
 var trips = [
-    Trip(destination: "Chicago", country: "USA", from: convertDate("2015 Jul 26 08:00 AM"), to: convertDate("2015 Jul 30 06:55 PM"), flight1: "AA999", flight2: "AA130", hotel: "Hilton Chicago O'Hare Airport",sights: sights1, note: "For a economy forum."),
-    Trip(destination: "Shanghai", country: "China", from: convertDate("2015 Aug 22 09:01 AM"), to: convertDate("2015 Sep 13 04:03 PM"), flight1: "AA289", flight2: "AA288", hotel: "Four Seasons Hotel",sights: sights2, note: "For short business travel."),
-    Trip(destination: "Sydney", country: "Australia", from: convertDate("2015 Sep 29 09:01 AM"), to: convertDate("2015 Oct 28 10:03 PM"), flight1: "AA7364", flight2: "AA7363", hotel: "Hilton Sydney",sights: sights3, note: "For a personal trip to Golden Beach with family."),
-    Trip(destination: "London", country: "United Kingdom", from: convertDate("2015 Nov 8 09:35 AM"), to: convertDate("2015 Dec 25 08:01 PM"), flight1: "AA928", flight2: "AA929", hotel: "London Hilton on Park Lane",sights: sights4, note: "Visit a customer, will be work onsite for a couple of days."),
-    Trip(destination: "Hangzhou", country: "China", from: convertDate("2015 Dec 28 09:35 AM"), to: convertDate("2015 Dec 30 08:01 PM"), flight1: "AA928", flight2: "AA929", hotel: "London Hilton on Park Lane",sights: sights4, note: "Visit a customer, will be work onsite for a couple of days."),
-    Trip(destination: "LosAngeles", country: "USA", from: convertDate("2016 Jan 1 09:35 AM"), to: convertDate("2016 Jan 15 08:01 PM"), flight1: "AA928", flight2: "AA929", hotel: "London Hilton on Park Lane",sights: sights4, note: "Visit a customer, will be work onsite for a couple of days."),
-    Trip(destination: "NewYork", country: "USA", from: convertDate("2016 Feb 1 09:35 AM"), to: convertDate("2016 Feb 7 08:01 PM"), flight1: "AA928", flight2: "AA929", hotel: "London Hilton on Park Lane",sights: sights4, note: "Visit a customer, will be work onsite for a couple of days."),
-    Trip(destination: "Beijing", country: "China", from: convertDate("2016 Mar 8 09:35 AM"), to: convertDate("2016 Mar 25 08:01 PM"), flight1: "AA928", flight2: "AA929", hotel: "London Hilton on Park Lane",sights: sights4, note: "Visit a customer, will be work onsite for a couple of days."),
+    Trip(destination: "Chicago", country: "USA", from: convertDate(datestr: "2015 Jul 26 08:00 AM"), to: convertDate(datestr: "2015 Jul 30 06:55 PM"), flight1: "AA999", flight2: "AA130", hotel: "Hilton Chicago O'Hare Airport",sights: sights1, note: "For a economy forum."),
+    Trip(destination: "Shanghai", country: "China", from: convertDate(datestr: "2015 Aug 22 09:01 AM"), to: convertDate(datestr: "2015 Sep 13 04:03 PM"), flight1: "AA289", flight2: "AA288", hotel: "Four Seasons Hotel",sights: sights2, note: "For short business travel."),
+    Trip(destination: "Sydney", country: "Australia", from: convertDate(datestr: "2015 Sep 29 09:01 AM"), to: convertDate(datestr: "2015 Oct 28 10:03 PM"), flight1: "AA7364", flight2: "AA7363", hotel: "Hilton Sydney",sights: sights3, note: "For a personal trip to Golden Beach with family."),
+    Trip(destination: "London", country: "United Kingdom", from: convertDate(datestr: "2015 Nov 8 09:35 AM"), to: convertDate(datestr: "2015 Dec 25 08:01 PM"), flight1: "AA928", flight2: "AA929", hotel: "London Hilton on Park Lane",sights: sights4, note: "Visit a customer, will be work onsite for a couple of days."),
+    Trip(destination: "Hangzhou", country: "China", from: convertDate(datestr: "2015 Dec 28 09:35 AM"), to: convertDate(datestr: "2015 Dec 30 08:01 PM"), flight1: "AA928", flight2: "AA929", hotel: "London Hilton on Park Lane",sights: sights4, note: "Visit a customer, will be work onsite for a couple of days."),
+    Trip(destination: "LosAngeles", country: "USA", from: convertDate(datestr: "2016 Jan 1 09:35 AM"), to: convertDate(datestr: "2016 Jan 15 08:01 PM"), flight1: "AA928", flight2: "AA929", hotel: "London Hilton on Park Lane",sights: sights4, note: "Visit a customer, will be work onsite for a couple of days."),
+    Trip(destination: "NewYork", country: "USA", from: convertDate(datestr: "2016 Feb 1 09:35 AM"), to: convertDate(datestr: "2016 Feb 7 08:01 PM"), flight1: "AA928", flight2: "AA929", hotel: "London Hilton on Park Lane",sights: sights4, note: "Visit a customer, will be work onsite for a couple of days."),
+    Trip(destination: "Beijing", country: "China", from: convertDate(datestr: "2016 Mar 8 09:35 AM"), to: convertDate(datestr: "2016 Mar 25 08:01 PM"), flight1: "AA928", flight2: "AA929", hotel: "London Hilton on Park Lane",sights: sights4, note: "Visit a customer, will be work onsite for a couple of days."),
 ]
 
 class Trip {
@@ -68,12 +68,12 @@ class Trip {
 }
 
 func addNewTrip(trip: Trip) {
-    trips.insert(trip, atIndex: 0)
+    trips.insert(trip, at: 0)
 }
 
 func getNextTrip() ->Trip? {
     if trips.count > 0 {
-        trips.sortInPlace({$0.from.compare($1.from) == NSComparisonResult.OrderedAscending })
+        trips.sort(by: {$0.from.compare($1.from as Date) == ComparisonResult.orderedAscending })
         let trip = trips[0]
         return trip
     }
@@ -282,15 +282,15 @@ class LocalTimeZone {
 
 //Favorites
 var favorites = [
-    Favorite(city: "CITY111", addedtime: convertDate("2015 May 26 08:00 AM")),
-    Favorite(city: "CITY511", addedtime: convertDate("2015 May 22 08:00 AM")),
-    Favorite(city: "CITY311", addedtime: convertDate("2015 May 21 08:00 AM")),
-    Favorite(city: "CITY112", addedtime: convertDate("2015 May 12 08:00 AM")),
-    Favorite(city: "CITY115", addedtime: convertDate("2015 May 11 08:00 AM")),
-    Favorite(city: "CITY211", addedtime: convertDate("2015 May 09 08:00 AM")),
-    Favorite(city: "CITY513", addedtime: convertDate("2015 May 08 08:00 AM")),
-    Favorite(city: "CITY514", addedtime: convertDate("2015 May 07 08:00 AM")),
-    Favorite(city: "CITY515", addedtime: convertDate("2015 May 06 08:00 AM")),
+    Favorite(city: "CITY111", addedtime: convertDate(datestr: "2015 May 26 08:00 AM")),
+    Favorite(city: "CITY511", addedtime: convertDate(datestr: "2015 May 22 08:00 AM")),
+    Favorite(city: "CITY311", addedtime: convertDate(datestr: "2015 May 21 08:00 AM")),
+    Favorite(city: "CITY112", addedtime: convertDate(datestr:"2015 May 12 08:00 AM")),
+    Favorite(city: "CITY115", addedtime: convertDate(datestr:"2015 May 11 08:00 AM")),
+    Favorite(city: "CITY211", addedtime: convertDate(datestr:"2015 May 09 08:00 AM")),
+    Favorite(city: "CITY513", addedtime: convertDate(datestr:"2015 May 08 08:00 AM")),
+    Favorite(city: "CITY514", addedtime: convertDate(datestr:"2015 May 07 08:00 AM")),
+    Favorite(city: "CITY515", addedtime: convertDate(datestr:"2015 May 06 08:00 AM")),
 ]
 
 class Favorite {
@@ -309,7 +309,7 @@ class Favorite {
 
 func sortFavorites() {
     if favorites.count > 0 {
-        favorites.sortInPlace({$0.addedtime.compare($1.addedtime) == NSComparisonResult.OrderedDescending })
+        favorites.sort(by: {$0.addedtime.compare($1.addedtime as Date) == ComparisonResult.orderedDescending })
     }
 }
 
@@ -348,7 +348,7 @@ func checkFavorite(key: String) ->Bool {
 
 func addNewFavorite(key: String) {
     let newfavorite = Favorite(city: key, addedtime: NSDate())
-    favorites.insert(newfavorite, atIndex: 0)
+    favorites.insert(newfavorite, at: 0)
 }
 
 func removeFavorite(key: String) {
@@ -359,10 +359,10 @@ func removeFavorite(key: String) {
         var index = 0;
         for favorite in favorites {
             if favorite.city == key {
-                favorites.removeAtIndex(index)
+                favorites.remove(at: index)
                 return
             }
-            index++
+            index += 1
         }
     }
 }

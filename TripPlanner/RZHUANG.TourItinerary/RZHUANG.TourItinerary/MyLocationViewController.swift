@@ -46,7 +46,7 @@ class MyLocationViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         //self.tabBarController?.tabBar.hidden = false
         //self.hidesBottomBarWhenPushed = false
         super.viewWillAppear(animated)
@@ -85,12 +85,12 @@ class MyLocationViewController: UITableViewController {
         
         if txtLatitude.text!.isEmpty || txtLongitude.text!.isEmpty {
             let title = "Error"
-            let alertController = UIAlertController(title: title, message: "Latitude and Longitude can't be empty!", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: title, message: "Latitude and Longitude can't be empty!", preferredStyle: .alert)
             
             // Create the action.
-            let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
-            presentViewController(alertController, animated: true, completion: nil)
+            present(alertController, animated: true, completion: nil)
             return
         }
         
@@ -98,22 +98,22 @@ class MyLocationViewController: UITableViewController {
         let longitude = txtLongitude.text!.doubleValue
         if latitude < -90 || latitude > 90 || longitude < -180 || longitude > 180 {
             let title = "Error"
-            let alertController = UIAlertController(title: title, message: "Invalid latitude or longitude! Latitude must be between -90 to +90, and Longitude must be between -180 to +180.", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: title, message: "Invalid latitude or longitude! Latitude must be between -90 to +90, and Longitude must be between -180 to +180.", preferredStyle: .alert)
             
             // Create the action.
-            let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
-            presentViewController(alertController, animated: true, completion: nil)
+            present(alertController, animated: true, completion: nil)
             return
         }
         
         location = CLLocationCoordinate2D(latitude: txtLatitude.text!.doubleValue, longitude: txtLongitude.text!.doubleValue)
             
         //get localtime
-        getTimezoneInfo("http://api.geonames.org/timezoneJSON?lat=\(location.latitude)&lng=\(location.longitude)&username=demo")
+        getTimezoneInfo(urlString: "http://api.geonames.org/timezoneJSON?lat=\(location.latitude)&lng=\(location.longitude)&username=demo")
         
         //get weather
-        getWeatherInfo("http://api.openweathermap.org/data/2.5/weather?lat=\(location.latitude)&lon=\(location.longitude)")
+        getWeatherInfo(urlString: "http://api.openweathermap.org/data/2.5/weather?lat=\(location.latitude)&lon=\(location.longitude)")
         
         let span = MKCoordinateSpanMake(0.75, 0.75)
         let region = MKCoordinateRegion(center: location, span: span)
@@ -132,22 +132,24 @@ class MyLocationViewController: UITableViewController {
     //http://openweathermap.org/weather-data#current
     func getWeatherInfo(urlString: String) {
         let url = NSURL(string: urlString)
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {
+        let task = URLSession.shared.dataTask(with: url! as URL) {
             (data, response, error) in
-            dispatch_async(dispatch_get_main_queue(), {
-                self.setLabels(data!)
-            })
+            DispatchQueue.main.async {
+                if data != nil {
+                    self.setLabels(weatherData: data! as Data)
+                }
+            }
         }
         
         task.resume()
     }
     
-    func setLabels(weatherData: NSData) {
+    func setLabels(weatherData: Data) {
         var jsonError: NSError?
         
         do {
-            let json: AnyObject = try NSJSONSerialization.JSONObjectWithData(weatherData, options: [])
-            if let dict = json as? NSDictionary {
+            let json: AnyObject = try JSONSerialization.jsonObject(with: weatherData as Data, options: []) as AnyObject
+            if json is NSDictionary {
                 var temp: Double = 0.0
                 var humidity: Double = 0.0
                 
@@ -161,7 +163,7 @@ class MyLocationViewController: UITableViewController {
                 }
                 
                 activityIndicatorWeather.stopAnimating()
-                lblLocalWeather.text = formatWeather(temp, humidity: humidity)
+                lblLocalWeather.text = formatWeather(temp: temp, humidity: humidity)
             } else {
                 print("not a dictionary")
                 lblLocalWeather.text = "[Fail to get the weather!]"
@@ -180,7 +182,7 @@ class MyLocationViewController: UITableViewController {
     func formatWeather(temp: Double, humidity: Double) -> String{
         let celsius = temp - 273.15
         let fahrenheit = celsius * 1.8 + 32
-        let labelstr: String = "%.0f°F (%.0f°C), %.0f".format(fahrenheit, celsius, humidity) + "% Humidity"
+        let labelstr: String = "%.0f°F (%.0f°C), %.0f".format(args: fahrenheit, celsius, humidity) + "% Humidity"
         
         return labelstr
     }
@@ -192,23 +194,25 @@ class MyLocationViewController: UITableViewController {
     //http://api.geonames.org/timezoneJSON?lat=47.01&lng=10.2&username=demo
     func getTimezoneInfo(urlString: String) {
         let url = NSURL(string: urlString)
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {
+        let task = URLSession.shared.dataTask(with: url! as URL) {
             (data, response, error) in
-            dispatch_async(dispatch_get_main_queue(), {
-                self.setLocalTimeLabel(data!)
-            })
+            DispatchQueue.main.async {
+                if data != nil {
+                    self.setLocalTimeLabel(timeData: data! as Data)
+                }
+            }
         }
         
         task.resume()
         
     }
     
-    func setLocalTimeLabel(timeData: NSData) {
+    func setLocalTimeLabel(timeData: Data) {
         var jsonError: NSError?
         
         do {
-            let json: AnyObject = try NSJSONSerialization.JSONObjectWithData(timeData, options: [])
-            if let dict = json as? NSDictionary {
+            let json: AnyObject = try JSONSerialization.jsonObject(with: timeData as Data, options: []) as AnyObject
+            if json is NSDictionary {
                 var timezoneid: String = ""
                 var time: String = ""
                 
@@ -221,7 +225,7 @@ class MyLocationViewController: UITableViewController {
                 
                 if !timezoneid.isEmpty && !time.isEmpty {
                     activityIndicatorTime.stopAnimating()
-                    lblLocalTime.text = convertDateTime(timezoneid, time: time)
+                    lblLocalTime.text = convertDateTime(timezoneid: timezoneid, time: time)
                 }
                 else {
                     lblLocalTime.text = "[Fail to get the local time!]"
@@ -244,17 +248,17 @@ class MyLocationViewController: UITableViewController {
         }
     }
 
-    @IBAction func getCurrentLocation(sender: UIButton) {
+    @IBAction func getCurrentLocation(_ sender: UIButton) {
         txtLatitude.resignFirstResponder()
         txtLongitude.resignFirstResponder()
         getLocation()
     }
-    @IBAction func updateLocation(sender: UIButton) {
+    @IBAction func updateLocation(_ sender: UIButton) {
         txtLatitude.resignFirstResponder()
         txtLongitude.resignFirstResponder()
         setMapView()
     }
-    @IBAction func editEnded(sender: UITextField) {
+    @IBAction func editEnded(_ sender: UITextField) {
         sender.resignFirstResponder()
     }
     

@@ -13,7 +13,7 @@ class CountryViewController: UICollectionViewController {
     let reuseIdentifier = "CountryViewCell"
     
     var continent: Continent?
-    var selectedCell: NSIndexPath?
+    var selectedCell: IndexPath?
     var countryList = Array<Country>()
     var cellwidth: CGFloat = 0.0
     
@@ -32,7 +32,7 @@ class CountryViewController: UICollectionViewController {
 
         if let cnt = continent {
             navigationTitle.title = cnt.name
-            countryList = getCountryList(cnt.key)
+            countryList = getCountryList(continent: cnt.key)
 
             let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
             layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -41,8 +41,8 @@ class CountryViewController: UICollectionViewController {
             collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
             collectionView!.dataSource = self
             collectionView!.delegate = self
-            collectionView!.registerClass(CountryViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-            collectionView!.backgroundColor = UIColor.whiteColor()
+            collectionView!.register(CountryViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+            collectionView!.backgroundColor = UIColor.white
             self.view.addSubview(collectionView!)
         }
     }
@@ -55,11 +55,11 @@ class CountryViewController: UICollectionViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if segue.identifier == "toCity" {
-            if let cityViewController = segue.destinationViewController as? CityViewController {
+            if let cityViewController = segue.destination as? CityViewController {
                 cityViewController.country = countryList[selectedCell!.item]
             }
         }
@@ -67,31 +67,31 @@ class CountryViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         //#warning Incomplete method implementation -- Return the number of sections
         return 1
     }
 
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
         
         return countryList.count
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Configure the cell
         let country = countryList[indexPath.row]
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CountryViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CountryViewCell
         cell.txtName.text = country.name
         cell.txtDetails.text = "\(country.locations)"
         cell.imageView.image = UIImage(named: country.image)
         return cell
     }
     
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedCell = indexPath
-        performSegueWithIdentifier("toCity", sender: self)
+        performSegue(withIdentifier: "toCity", sender: self)
     }
 
     // MARK: UICollectionViewDelegate

@@ -12,19 +12,19 @@ import UIKit
 //common methods
 extension NSDate {
     var formatted: String {
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         //formatter.dateFormat = "yyyy-MM-dd' 'hh:mm a'"
         //formatter.dateFormat = "EEE yyyy MMMM dd' 'hh:mm a'"
         formatter.dateFormat = "YYYY MMMM dd' 'hh:mm a'"
         //formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
         //formatter.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierISO8601)!
-        formatter.locale = NSLocale(localeIdentifier: "en_US")
-        return formatter.stringFromDate(self)
+        formatter.locale = NSLocale(localeIdentifier: "en_US") as Locale!
+        return formatter.string(from: self as Date)
     }
 }
 
 extension String {
-    func format(args: CVarArgType...) -> String {
+    func format(args: CVarArg...) -> String {
         return NSString(format: self, arguments: getVaList(args)) as String
     }    
 }
@@ -36,11 +36,11 @@ extension String {
 
 func convertDate(datestr: String?) -> NSDate {
     if let str = datestr {
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY MMMM dd' 'hh:mm a'"
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
-        let date = dateFormatter.dateFromString(str)
-        return date!
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US") as Locale!
+        let date = dateFormatter.date(from: str)
+        return date! as NSDate
     }
     else {
         return NSDate()
@@ -52,13 +52,13 @@ func convertDateTime(timezoneid: String, time: String) -> String {
     //println(time)
     //let timezoneid2 = "Asia/Shanghai"
     //let time2 = "2015-06-05 04:51"
-    let dateFormatter = NSDateFormatter()
+    let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "YYYY-MM-dd HH:mm"
-    dateFormatter.timeZone = NSTimeZone(name: timezoneid)
+    dateFormatter.timeZone = NSTimeZone(name: timezoneid) as! TimeZone
     
-    if let date = dateFormatter.dateFromString(time) {
+    if let date = dateFormatter.date(from: time) {
         dateFormatter.dateFormat = "EEE, YYYY MMM dd' 'hh:mm a'"
-        return dateFormatter.stringFromDate(date)
+        return dateFormatter.string(from: date)
     }
     else {
         return ""
@@ -109,16 +109,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         handleRotationChanged()
         
         //detect rotation change
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleRotationChanged", name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: "handleRotationChanged", name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
 
         //detect network change
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"handleNetworkConnectionNotification:", name: kReachabilityChangedNotification, object: nil);
+        NotificationCenter.default.addObserver(self, selector:"handleNetworkConnectionNotification:", name: NSNotification.Name.reachabilityChanged, object: nil);
         
-        reachability = Reachability.reachabilityForInternetConnection();
+        reachability = Reachability.forInternetConnection();
         reachability?.startNotifier();
         if reachability != nil {
-            networkStatus = getNetworkStatus(reachability!)
-            showPopUp(networkStatus)
+            networkStatus = getNetworkStatus(currentReachability: reachability!)
+            showPopUp(status: networkStatus)
         }
         
         return true
@@ -126,12 +126,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func handleRotationChanged()
     {
-        if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation))
+        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation))
         {
             deviceOrientation = true
         }
         
-        if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation))
+        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation))
         {
             deviceOrientation = false
         }
@@ -142,8 +142,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func handleNetworkConnectionNotification(notification:NSNotification)
     {
         let networkReachability = notification.object as! Reachability;
-        networkStatus = getNetworkStatus(networkReachability)
-        showPopUp(networkStatus)
+        networkStatus = getNetworkStatus(currentReachability: networkReachability)
+        showPopUp(status: networkStatus)
     }
     
     //Get the status
@@ -175,20 +175,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func showPopUp(status: NetworkStatus) {
         if (status == NetworkStatus.NoConnetion)
         {
-            let alertController = UIAlertController(title: "Network unavailable", message: "Your device is not connected to intenet, you can turn on wifi or cellular data in Settings.", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Network unavailable", message: "Your device is not connected to intenet, you can turn on wifi or cellular data in Settings.", preferredStyle: .alert)
             
             let callActionHandler = { (action:UIAlertAction!) -> Void in
-                UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
+                UIApplication.shared.openURL(NSURL(string:UIApplicationOpenSettingsURLString)! as URL)
                 //UIApplication.sharedApplication().openURL(NSURL(string:"prefs:root=General")!)
             }
             
             // Create the action.
-            let settingsAction = UIAlertAction(title: "Settings", style: .Cancel, handler: callActionHandler)
+            let settingsAction = UIAlertAction(title: "Settings", style: .cancel, handler: callActionHandler)
             alertController.addAction(settingsAction)
-            let cancelAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            let cancelAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(cancelAction)
             self.window?.makeKeyAndVisible()
-            self.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
+            self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
         }
     }
 
@@ -212,7 +212,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: kReachabilityChangedNotification, object: nil);
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.reachabilityChanged, object: nil);
     }
 
 

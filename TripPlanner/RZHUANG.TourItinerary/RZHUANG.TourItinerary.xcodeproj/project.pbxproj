@@ -608,6 +608,7 @@
 				PRODUCT_NAME = "Travel Note";
 				SWIFT_OBJC_BRIDGING_HEADER = "RZHUANG.TourItinerary/RZHUANG.TourItinerary-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -621,6 +622,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.depaul.csc471.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RZHUANG.TourItinerary/RZHUANG.TourItinerary-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

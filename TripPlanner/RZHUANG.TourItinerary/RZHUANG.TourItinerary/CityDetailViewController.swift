@@ -59,14 +59,14 @@ class CityDetailViewController: UITableViewController {
             annotation.coordinate = location
             
             //set favorite icon
-            isFavorite = checkFavorite(c.key)
+            isFavorite = checkFavorite(key: c.key)
             if isFavorite {
                 let image = UIImage(named: "Me_Favorite") as UIImage!
-                btnFavorite.setImage(image, forState: .Normal)
+                btnFavorite.setImage(image, for: .normal)
             }
             else {
                 let image = UIImage(named: "Me_Favorite_Black") as UIImage!
-                btnFavorite.setImage(image, forState: .Normal)
+                btnFavorite.setImage(image, for: .normal)
             }
             
             //assign new pictures
@@ -86,13 +86,13 @@ class CityDetailViewController: UITableViewController {
             mapView.addAnnotation(annotation)
             
             //get localtime
-            getTimezoneInfo("http://api.geonames.org/timezoneJSON?lat=\(c.latitude)&lng=\(c.longitude)&username=demo")
+            getTimezoneInfo(urlString: "http://api.geonames.org/timezoneJSON?lat=\(c.latitude)&lng=\(c.longitude)&username=demo")
             
             //get weather
-            let escapedParams = c.name.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
+            let escapedParams = c.name.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlHostAllowed)
             if let encodedAddress = escapedParams {
                 let urlpath = "http://api.openweathermap.org/data/2.5/weather?q=" + encodedAddress
-                getWeatherInfo(urlpath)
+                getWeatherInfo(urlString: urlpath)
             }
             
         }
@@ -103,34 +103,35 @@ class CityDetailViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func addFavorite(sender: UIButton) {
+    @IBAction func addFavorite(_ sender: UIButton) {
         if isFavorite {
-            removeFavorite(city!.key)
+            removeFavorite(key: city!.key)
             isFavorite = false;
             let image = UIImage(named: "Me_Favorite_Black") as UIImage!
-            btnFavorite.setImage(image, forState: .Normal)
+            btnFavorite.setImage(image, for: .normal)
         }
         else {
-            addNewFavorite(city!.key)
+            addNewFavorite(key: city!.key)
             isFavorite = true;
             let image = UIImage(named: "Me_Favorite") as UIImage!
-            btnFavorite.setImage(image, forState: .Normal)
+            btnFavorite.setImage(image, for: .normal)
         }
     }
     
-    @IBAction func shareCity(sender: UIBarButtonItem) {
+    @IBAction func shareCity(_ sender: UIBarButtonItem) {
         let textToShare = "Hi, I found a beautiful city in Travel Note. I'd like to share it with you!\n\n\(city!.name):"
-        let params = city!.name.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+        let params = city!.name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+
         if let myWebsite = NSURL(string: "https://www.google.com/?gws_rd=ssl#q=\(params!)")
         {
-            let objectsToShare = [textToShare, myWebsite]
+            let objectsToShare = [textToShare, myWebsite] as [Any]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             
-            self.presentViewController(activityVC, animated: true, completion: nil)
+            self.present(activityVC, animated: true, completion: nil)
         }
     }
     
-    @IBAction func switchImage(sender: UIButton) {
+    @IBAction func switchImage(_ sender: UIButton) {
         let transitionOptions = appSettings.transitionOptions
         let current = indexImage
         var next = current + 1
@@ -138,13 +139,13 @@ class CityDetailViewController: UITableViewController {
             next = 0
         }
         
-        UIView.transitionWithView(self.container, duration: 1.0, options: transitionOptions, animations: {
+        UIView.transition(with: self.container, duration: 1.0, options: transitionOptions, animations: {
             self.pointsViews[current].removeFromSuperview()
             self.container.addSubview(self.pointsViews[next])
             self.lblPoint.text = self.city!.pointsofinterest[next]
             }, completion: nil)
         
-        indexImage++
+        indexImage += 1
         if indexImage >= 5 {
             indexImage = 0
         }
@@ -157,13 +158,13 @@ class CityDetailViewController: UITableViewController {
     //http://openweathermap.org/weather-data#current
     func getWeatherInfo(urlString: String) {
         let url = NSURL(string: urlString)
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {
+        let task = URLSession.shared.dataTask(with: url! as URL) {
             (data, response, error) in
-                dispatch_async(dispatch_get_main_queue(), {
-                    if data != nil {
-                        self.setLabels(data!)
-                    }
-                })
+            DispatchQueue.main.async {
+                if data != nil {
+                    self.setLabels(weatherData: data! as NSData)
+                }
+            }
         }
         
         task.resume()
@@ -174,7 +175,7 @@ class CityDetailViewController: UITableViewController {
         var jsonError: NSError?
         
         do {
-            let json: AnyObject = try NSJSONSerialization.JSONObjectWithData(weatherData, options: [])
+            let json: AnyObject = try JSONSerialization.jsonObject(with: weatherData as Data, options: []) as AnyObject
             if let dict = json as? NSDictionary {
                 var temp: Double = 0.0
                 var humidity: Double = 0.0
@@ -186,7 +187,7 @@ class CityDetailViewController: UITableViewController {
                     if let humidityvalue = main["humidity"] as? Double {
                         humidity = humidityvalue
                     }
-                    lblWeather.text = formatWeather(temp, humidity: humidity)
+                    lblWeather.text = formatWeather(temp: temp, humidity: humidity)
                 }
                 else {
                     lblWeather.text = "[Fail to get the weather!]"
@@ -209,7 +210,7 @@ class CityDetailViewController: UITableViewController {
         let celsius = temp - 273.15
         let fahrenheit = celsius * 1.8 + 32
         //let labelstr: String = "\(fahrenheit)°F (\(celsius)°C), \(humidity)% Humidity"
-        let labelstr: String = "%.0f°F (%.0f°C), %.0f".format(fahrenheit, celsius, humidity) + "% Humidity"
+        let labelstr: String = "%.0f°F (%.0f°C), %.0f".format(args: fahrenheit, celsius, humidity) + "% Humidity"
 
         return labelstr
     }
@@ -221,13 +222,13 @@ class CityDetailViewController: UITableViewController {
     //http://api.geonames.org/timezoneJSON?lat=47.01&lng=10.2&username=demo
     func getTimezoneInfo(urlString: String) {
         let url = NSURL(string: urlString)
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {
+        let task = URLSession.shared.dataTask(with: url! as URL) {
             (data, response, error) in
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async{
                 if data != nil {
-                    self.setLocalTimeLabel(data!)
+                    self.setLocalTimeLabel(timeData: data! as NSData)
                 }
-            })
+            }
         }
         
         task.resume()
@@ -238,7 +239,7 @@ class CityDetailViewController: UITableViewController {
         var jsonError: NSError?
         
         do {
-            let json: AnyObject = try NSJSONSerialization.JSONObjectWithData(timeData, options: [])
+            let json: AnyObject = try JSONSerialization.jsonObject(with: timeData as Data, options: []) as AnyObject
             if let dict = json as? NSDictionary {
                 var timezoneid: String = ""
                 var time: String = ""
@@ -251,7 +252,7 @@ class CityDetailViewController: UITableViewController {
                 }
                 
                 if !timezoneid.isEmpty && !time.isEmpty {
-                    var str = convertDateTime(timezoneid, time: time)
+                    var str = convertDateTime(timezoneid: timezoneid, time: time)
                     if str.isEmpty {
                         str = "[Fail to get the local time!]"
                     }
@@ -289,15 +290,15 @@ class CityDetailViewController: UITableViewController {
         return 0
     }*/
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             //city name in the left corner of the image
             let cityFrame = CGRect(x: 10, y: imageCity.frame.height-25, width: imageCity.frame.width-10, height: 20)
             let lblCity = UILabel(frame: cityFrame)
-            lblCity.font = UIFont.boldSystemFontOfSize(17.0)
-            lblCity.textColor = UIColor.whiteColor()
-            lblCity.textAlignment = .Left
-            lblCity.lineBreakMode = .ByWordWrapping // or NSLineBreakMode.ByWordWrapping
+            lblCity.font = UIFont.boldSystemFont(ofSize: 17.0)
+            lblCity.textColor = UIColor.white
+            lblCity.textAlignment = .left
+            lblCity.lineBreakMode = .byWordWrapping // or NSLineBreakMode.ByWordWrapping
             lblCity.numberOfLines = 0
             lblCity.text = city!.name
             //lblCity.layer.borderColor = UIColor.greenColor().CGColor
@@ -308,7 +309,7 @@ class CityDetailViewController: UITableViewController {
         }
         else if indexPath.row == 2 {
             //set city descripton
-            descriptionCell.textLabel!.lineBreakMode = .ByWordWrapping
+            descriptionCell.textLabel!.lineBreakMode = .byWordWrapping
             descriptionCell.textLabel!.numberOfLines = 0;
             descriptionCell.textLabel!.text = city!.description
             descriptionCell.textLabel!.font = UIFont(name: lblTitle.font.familyName, size: 14.0)
@@ -319,11 +320,11 @@ class CityDetailViewController: UITableViewController {
             //Display location info in the left bottom of map view
             let locationFrame = CGRect(x: 4, y: mapView.frame.height-19, width: 175, height: 20)
             let lblLocation = UILabel(frame: locationFrame)
-            lblLocation.backgroundColor = UIColor.darkGrayColor()
-            lblLocation.font = UIFont.boldSystemFontOfSize(12.0)
-            lblLocation.textColor = UIColor.whiteColor()
-            lblLocation.textAlignment = .Left
-            lblLocation.lineBreakMode = .ByWordWrapping // or NSLineBreakMode.ByWordWrapping
+            lblLocation.backgroundColor = UIColor.darkGray
+            lblLocation.font = UIFont.boldSystemFont(ofSize: 12.0)
+            lblLocation.textColor = UIColor.white
+            lblLocation.textAlignment = .left
+            lblLocation.lineBreakMode = .byWordWrapping // or NSLineBreakMode.ByWordWrapping
             lblLocation.numberOfLines = 0
             lblLocation.text = String(format: "  Lat: %.4f   Lon: %.4f", city!.latitude, city!.longitude)
             mapCell.addSubview(lblLocation)
@@ -336,23 +337,24 @@ class CityDetailViewController: UITableViewController {
             
             for i in 0..<city!.pointsofinterest.count {
                 pointsViews[i].frame = container.frame
-                pointsViews[i].contentMode = .ScaleToFill
+                pointsViews[i].contentMode = .scaleToFill
             }
             container.addSubview(pointsViews[0])
             
             //create a button upon the images to receive the on touch event
             let btnFrame = CGRect(x: 0, y: 0, width: imageCity.frame.width, height: imageCity.frame.height)
             btnSwitch = UIButton(frame: btnFrame)
-            btnSwitch.addTarget(self, action: "switchImage:", forControlEvents: .TouchUpInside)
+            btnSwitch.addTarget(self, action: #selector(CityDetailViewController.switchImage(_:)), for: .touchUpInside)
             pointsCell.addSubview(btnSwitch)
             return pointsCell
         }
         else {
-            return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+            return super.tableView(tableView, cellForRowAt: indexPath as IndexPath)
+            //return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
         }
     }
 
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (indexPath.row == 5)
         {
             //resize the image
@@ -366,7 +368,7 @@ class CityDetailViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if (indexPath.row == 2 && indexPath.section == 0)
         {
@@ -379,7 +381,8 @@ class CityDetailViewController: UITableViewController {
             return label.frame.height + 25            //var height: CGFloat = 0.0
         }
         else {
-            return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+            return super.tableView(tableView, heightForRowAt: indexPath as IndexPath)
+            //return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
         }
     }
 

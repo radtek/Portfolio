@@ -36,21 +36,21 @@ class TabMeViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
         
         //get the next trip each time when the view is load, even in return back case
         nextTrip = getNextTrip()
         if nextTrip == nil {
-            imageViewNextTrip.image = getImage("")
-            btnImage.enabled = false
+            imageViewNextTrip.image = getImage(imagename: "")
+            btnImage.isEnabled = false
             lblNextTrip.text = "There is no upcoming trip."
         }
         else {
-            imageViewNextTrip.image = getImage(nextTrip!.destination)
+            imageViewNextTrip.image = getImage(imagename: nextTrip!.destination)
             //The button is transparent and cover the image, just response to the onclick event
-            btnImage.enabled = true
+            btnImage.isEnabled = true
             btnImage.frame = imageViewNextTrip.frame //make the same size with image control.
             lblNextTrip.text = "Next Trip\nTo:     \(nextTrip!.destination) (\(nextTrip!.country))\nDate: \(nextTrip!.from.formatted)"
         }
@@ -81,15 +81,15 @@ class TabMeViewController: UITableViewController {
     }
     */
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
             let nexttripFrame = CGRect(x: 10, y: imageViewNextTrip.frame.height-60, width: imageViewNextTrip.frame.width, height: 60)
             lblNextTrip = UILabel(frame: nexttripFrame)
-            lblNextTrip.font = UIFont.boldSystemFontOfSize(15.0)
-            lblNextTrip.textColor = UIColor.whiteColor()
-            lblNextTrip.textAlignment = .Left
-            lblNextTrip.lineBreakMode = .ByWordWrapping // or NSLineBreakMode.ByWordWrapping
+            lblNextTrip.font = UIFont.boldSystemFont(ofSize: 15.0)
+            lblNextTrip.textColor = UIColor.white
+            lblNextTrip.textAlignment = .left
+            lblNextTrip.lineBreakMode = .byWordWrapping // or NSLineBreakMode.ByWordWrapping
             lblNextTrip.numberOfLines = 0
             lblNextTrip.text = "Next Trip\nTo:     \(nextTrip!.destination) (\(nextTrip!.country))\nDate: \(nextTrip!.from.formatted)"
             //lblNextTrip.layer.borderColor = UIColor.greenColor().CGColor
@@ -98,7 +98,8 @@ class TabMeViewController: UITableViewController {
             return nextTripCell
         }
         else {
-            return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+            return super.tableView(tableView, cellForRowAt: indexPath as IndexPath)
+            //return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
         }
     }
 
@@ -141,19 +142,19 @@ class TabMeViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if segue.identifier == "nextTrip" {
             if nextTrip != nil {
-                if let tripDetailViewController = segue.destinationViewController as? TripDetailViewController {
+                if let tripDetailViewController = segue.destination as? TripDetailViewController {
                     tripDetailViewController.viewTitle = "Next Trip"
                     tripDetailViewController.trip = nextTrip
                 }
             }
         }
         else if segue.identifier == "newTrip" {
-            if let tripDetailViewController = segue.destinationViewController as? TripDetailViewController {
+            if let tripDetailViewController = segue.destination as? TripDetailViewController {
                 tripDetailViewController.viewTitle = "New Trip"
             }
         }

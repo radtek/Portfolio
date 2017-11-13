@@ -20,14 +20,14 @@ class CityViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
-        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
         contentView.addSubview(imageView)
         
         let textFrame = CGRect(x: 5, y: frame.size.height-20, width: frame.size.width, height: 20)
         textLabel = UILabel(frame: textFrame)
-        textLabel.font = UIFont.boldSystemFontOfSize(12.0)
-        textLabel.textColor = UIColor.whiteColor()
-        textLabel.textAlignment = .Left
+        textLabel.font = UIFont.boldSystemFont(ofSize: 12.0)
+        textLabel.textColor = UIColor.white
+        textLabel.textAlignment = .left
         contentView.addSubview(textLabel)
     }
 }

@@ -18,8 +18,8 @@ let options = [
     "Flip Bottom",
 ]
 
-class SettingsAnimationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
+class SettingsAnimationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+//UIPickerViewDataSource
     @IBOutlet weak var pickerTransitionMode: UIPickerView!
     
     override func viewDidLoad() {
@@ -33,26 +33,26 @@ class SettingsAnimationViewController: UIViewController, UIPickerViewDataSource,
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
         
         //set the selection of the picker
         var selectedIndex = -1
         switch appSettings.transitionOptions {
-        case UIViewAnimationOptions.TransitionCurlDown:
+        case UIViewAnimationOptions.transitionCurlDown:
             selectedIndex = 0
-        case UIViewAnimationOptions.TransitionCurlUp:
+        case UIViewAnimationOptions.transitionCurlUp:
             selectedIndex = 1
-        case UIViewAnimationOptions.TransitionCrossDissolve:
+        case UIViewAnimationOptions.transitionCrossDissolve:
             selectedIndex = 2
-        case UIViewAnimationOptions.TransitionFlipFromLeft:
+        case UIViewAnimationOptions.transitionFlipFromLeft:
             selectedIndex = 3
-        case UIViewAnimationOptions.TransitionFlipFromRight:
+        case UIViewAnimationOptions.transitionFlipFromRight:
             selectedIndex = 4
-        case UIViewAnimationOptions.TransitionFlipFromTop:
+        case UIViewAnimationOptions.transitionFlipFromTop:
             selectedIndex = 5
-        case UIViewAnimationOptions.TransitionFlipFromBottom:
+        case UIViewAnimationOptions.transitionFlipFromBottom:
             selectedIndex = 6
         default:
             selectedIndex = 1
@@ -61,42 +61,42 @@ class SettingsAnimationViewController: UIViewController, UIPickerViewDataSource,
         pickerTransitionMode.selectRow(selectedIndex, inComponent: 0, animated: true)
     }
     
-    @IBAction func saveSettings(sender: UIBarButtonItem) {
-        var transitionOptions = UIViewAnimationOptions.TransitionNone
-        switch options[pickerTransitionMode.selectedRowInComponent(0)] {
-            case "Curl Down":
-                transitionOptions = .TransitionCurlDown
-            case "Curl Up":
-                transitionOptions = .TransitionCurlUp
-            case "Dissolve":
-                transitionOptions = .TransitionCrossDissolve
-            case "Flip Left":
-                transitionOptions = .TransitionFlipFromLeft
-            case "Flip Right":
-                transitionOptions = .TransitionFlipFromRight
-            case "Flip Top":
-                transitionOptions = .TransitionFlipFromTop
-            case "Flip Bottom":
-                transitionOptions = .TransitionFlipFromBottom
-            default:
-                transitionOptions = .TransitionCurlUp
+    @IBAction func saveSetting(_ sender: UIBarButtonItem) {
+        var transitionOptions = UIViewAnimationOptions.showHideTransitionViews
+        switch options[pickerTransitionMode.selectedRow(inComponent: 0)] {
+        case "Curl Down":
+            transitionOptions = .transitionCurlDown
+        case "Curl Up":
+            transitionOptions = .transitionCurlUp
+        case "Dissolve":
+            transitionOptions = .transitionCrossDissolve
+        case "Flip Left":
+            transitionOptions = .transitionFlipFromLeft
+        case "Flip Right":
+            transitionOptions = .transitionFlipFromRight
+        case "Flip Top":
+            transitionOptions = .transitionFlipFromTop
+        case "Flip Bottom":
+            transitionOptions = .transitionFlipFromBottom
+        default:
+            transitionOptions = .transitionCurlUp
         }
         
         appSettings.transitionOptions = transitionOptions
-        navigationController!.popViewControllerAnimated(true)
+        navigationController!.popViewController(animated: true)
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return options.count
     }
     
     // MARK: UIPickerViewDelegate
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return options[row]
     }
 
