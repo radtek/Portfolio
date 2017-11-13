@@ -40,7 +40,7 @@ class TabSettingsViewController: UITableViewController {
     
     @IBAction func showAbout(_ sender: UIButton) {
         let title = "About"
-        let alertController = UIAlertController(title: title, message: "This app is built for final project of CSC471. I love swift!", preferredStyle: .alert)
+        let alertController = UIAlertController(title: title, message: "This app is built with Swift 3.2 and Xcode 9.1", preferredStyle: .alert)
         
         // Create the action.
         let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

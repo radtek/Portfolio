@@ -116,7 +116,7 @@
 		B226E1471B1A1732008E4802 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../../Reachability/Reachability/Reachability.m; sourceTree = "<group>"; };
 		B23A029D1B0BCABD00AB7003 /* CountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		B23A029F1B0BDED100AB7003 /* CountryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryViewCell.swift; sourceTree = "<group>"; };
-		B246FF0A1B0409E4004B7F77 /* Travel Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B246FF0A1B0409E4004B7F77 /* Trip Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trip Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B246FF0E1B0409E4004B7F77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B246FF0F1B0409E4004B7F77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B246FF161B0409E4004B7F77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		B246FF0B1B0409E4004B7F77 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B246FF0A1B0409E4004B7F77 /* Travel Note.app */,
+				B246FF0A1B0409E4004B7F77 /* Trip Planner.app */,
 				B246FF211B0409E4004B7F77 /* johnny.portfolio.tripplannerTests.xctest */,
 			);
 			name = Products;
@@ -322,7 +322,7 @@
 			);
 			name = johnny.portfolio.tripplanner;
 			productName = johnny.portfolio.tripplanner;
-			productReference = B246FF0A1B0409E4004B7F77 /* Travel Note.app */;
+			productReference = B246FF0A1B0409E4004B7F77 /* Trip Planner.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B246FF201B0409E4004B7F77 /* johnny.portfolio.tripplannerTests */ = {
@@ -608,8 +608,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = johnny.portfolio.tripplanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.depaul.csc471.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "Travel Note";
+				PRODUCT_BUNDLE_IDENTIFIER = "johnny.portfolio.mobile.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "Trip Planner";
 				SWIFT_OBJC_BRIDGING_HEADER = "johnny.portfolio.tripplanner/johnny.portfolio.tripplanner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -623,7 +623,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = johnny.portfolio.tripplanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.depaul.csc471.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "johnny.portfolio.mobile.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "johnny.portfolio.tripplanner/johnny.portfolio.tripplanner-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -644,7 +644,7 @@
 				);
 				INFOPLIST_FILE = johnny.portfolio.tripplannerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.depaul.csc471.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "johnny.portfolio.mobile.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/johnny.portfolio.tripplanner.app/johnny.portfolio.tripplanner";
 			};
@@ -660,7 +660,7 @@
 				);
 				INFOPLIST_FILE = johnny.portfolio.tripplannerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.depaul.csc471.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "johnny.portfolio.mobile.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/johnny.portfolio.tripplanner.app/johnny.portfolio.tripplanner";
 			};

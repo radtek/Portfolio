@@ -119,7 +119,7 @@ class CityDetailViewController: UITableViewController {
     }
     
     @IBAction func shareCity(_ sender: UIBarButtonItem) {
-        let textToShare = "Hi, I found a beautiful city in Travel Note. I'd like to share it with you!\n\n\(city!.name):"
+        let textToShare = "Hi, I found a beautiful city in Trip Planner. I'd like to share it with you!\n\n\(city!.name):"
         let params = city!.name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
 
         if let myWebsite = NSURL(string: "https://www.google.com/?gws_rd=ssl#q=\(params!)")
