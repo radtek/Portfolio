@@ -59,7 +59,8 @@ class OneShotLocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations[0] as? CLLocation {
+        if let location = locations.first
+        {
             _didComplete(location: location, error: nil)
         } else {
             _didComplete(location: nil, error: NSError(domain: self.classForCoder.description(),
@@ -85,6 +86,5 @@ class OneShotLocationManager: NSObject, CLLocationManagerDelegate {
         } else {
             fatalError("To use location in iOS8 you need to define either NSLocationWhenInUseUsageDescription or NSLocationAlwaysUsageDescription in the app bundle's Info.plist file")
         }
-        
     }
 }

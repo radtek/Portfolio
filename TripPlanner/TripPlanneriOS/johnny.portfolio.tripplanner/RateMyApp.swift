@@ -117,7 +117,7 @@ class RateMyApp : UIViewController,UIAlertViewDelegate{
         
     }
     
-    private func incrementValueForKey(name name:String){
+    private func incrementValueForKey(name:String){
         
         if(appID.characters.count == 0)
         {
@@ -258,7 +258,7 @@ class RateMyApp : UIViewController,UIAlertViewDelegate{
         
     }
     
-    internal func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
+    internal func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int){
         
         if(buttonIndex == 0)
         {

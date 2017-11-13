@@ -124,7 +124,7 @@ class TripDetailViewController: UITableViewController {
         }
         
         if trip == nil {
-            var newTrip = Trip()
+            let newTrip = Trip()
             newTrip.destination = txtCity.text!
             newTrip.country = txtCountry.text!
             newTrip.from = fromdate
