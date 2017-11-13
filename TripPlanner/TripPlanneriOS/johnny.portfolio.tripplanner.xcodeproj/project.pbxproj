@@ -36,7 +36,7 @@
 		B246FF171B0409E4004B7F77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B246FF151B0409E4004B7F77 /* Main.storyboard */; };
 		B246FF191B0409E4004B7F77 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B246FF181B0409E4004B7F77 /* Images.xcassets */; };
 		B246FF1C1B0409E4004B7F77 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B246FF1A1B0409E4004B7F77 /* LaunchScreen.xib */; };
-		B246FF281B0409E4004B7F77 /* RZHUANG_TourItineraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246FF271B0409E4004B7F77 /* RZHUANG_TourItineraryTests.swift */; };
+		B246FF281B0409E4004B7F77 /* johnny_portfolio_tripplannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246FF271B0409E4004B7F77 /* johnny_portfolio_tripplannerTests.swift */; };
 		B24EE7711B20DA5600C64A12 /* SettingsAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24EE7701B20DA5600C64A12 /* SettingsAnimationViewController.swift */; };
 		B262476D1B0CE25F00FEA245 /* CityViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262476C1B0CE25F00FEA245 /* CityViewCell.swift */; };
 		B262476F1B0CE27600FEA245 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262476E1B0CE27600FEA245 /* CityViewController.swift */; };
@@ -84,7 +84,7 @@
 			containerPortal = B246FF021B0409E4004B7F77 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B246FF091B0409E4004B7F77;
-			remoteInfo = RZHUANG.TourItinerary;
+			remoteInfo = johnny.portfolio.tripplanner;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -111,7 +111,7 @@
 		B222FC501B1E4F1B00C06005 /* Apps-Sharing-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Apps-Sharing-icon.png"; path = "../../icon/Apps-Sharing-icon.png"; sourceTree = "<group>"; };
 		B226E1411B17D3B6008E4802 /* RateMyApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateMyApp.swift; sourceTree = "<group>"; };
 		B226E1431B17D458008E4802 /* TabSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabSettingsViewController.swift; sourceTree = "<group>"; };
-		B226E1451B1A1730008E4802 /* RZHUANG.TourItinerary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RZHUANG.TourItinerary-Bridging-Header.h"; sourceTree = "<group>"; };
+		B226E1451B1A1730008E4802 /* johnny.portfolio.tripplanner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "johnny.portfolio.tripplanner-Bridging-Header.h"; sourceTree = "<group>"; };
 		B226E1461B1A1732008E4802 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../../Reachability/Reachability/Reachability.h; sourceTree = "<group>"; };
 		B226E1471B1A1732008E4802 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../../Reachability/Reachability/Reachability.m; sourceTree = "<group>"; };
 		B23A029D1B0BCABD00AB7003 /* CountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
@@ -122,9 +122,9 @@
 		B246FF161B0409E4004B7F77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B246FF181B0409E4004B7F77 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B246FF1B1B0409E4004B7F77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B246FF211B0409E4004B7F77 /* RZHUANG.TourItineraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RZHUANG.TourItineraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B246FF211B0409E4004B7F77 /* johnny.portfolio.tripplannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = johnny.portfolio.tripplannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B246FF261B0409E4004B7F77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B246FF271B0409E4004B7F77 /* RZHUANG_TourItineraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RZHUANG_TourItineraryTests.swift; sourceTree = "<group>"; };
+		B246FF271B0409E4004B7F77 /* johnny_portfolio_tripplannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = johnny_portfolio_tripplannerTests.swift; sourceTree = "<group>"; };
 		B24EE7701B20DA5600C64A12 /* SettingsAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAnimationViewController.swift; sourceTree = "<group>"; };
 		B262476C1B0CE25F00FEA245 /* CityViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewCell.swift; sourceTree = "<group>"; };
 		B262476E1B0CE27600FEA245 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 		B246FF011B0409E4004B7F77 = {
 			isa = PBXGroup;
 			children = (
-				B246FF0C1B0409E4004B7F77 /* RZHUANG.TourItinerary */,
-				B246FF241B0409E4004B7F77 /* RZHUANG.TourItineraryTests */,
+				B246FF0C1B0409E4004B7F77 /* johnny.portfolio.tripplanner */,
+				B246FF241B0409E4004B7F77 /* johnny.portfolio.tripplannerTests */,
 				B246FF0B1B0409E4004B7F77 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -197,12 +197,12 @@
 			isa = PBXGroup;
 			children = (
 				B246FF0A1B0409E4004B7F77 /* Travel Note.app */,
-				B246FF211B0409E4004B7F77 /* RZHUANG.TourItineraryTests.xctest */,
+				B246FF211B0409E4004B7F77 /* johnny.portfolio.tripplannerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B246FF0C1B0409E4004B7F77 /* RZHUANG.TourItinerary */ = {
+		B246FF0C1B0409E4004B7F77 /* johnny.portfolio.tripplanner */ = {
 			isa = PBXGroup;
 			children = (
 				B246FF0F1B0409E4004B7F77 /* AppDelegate.swift */,
@@ -228,7 +228,7 @@
 				B226E1411B17D3B6008E4802 /* RateMyApp.swift */,
 				B2E0A69A1B05356200AAC71B /* Data.swift */,
 			);
-			path = RZHUANG.TourItinerary;
+			path = johnny.portfolio.tripplanner;
 			sourceTree = "<group>";
 		};
 		B246FF0D1B0409E4004B7F77 /* Supporting Files */ = {
@@ -236,7 +236,7 @@
 			children = (
 				B226E1461B1A1732008E4802 /* Reachability.h */,
 				B226E1471B1A1732008E4802 /* Reachability.m */,
-				B226E1451B1A1730008E4802 /* RZHUANG.TourItinerary-Bridging-Header.h */,
+				B226E1451B1A1730008E4802 /* johnny.portfolio.tripplanner-Bridging-Header.h */,
 				B2F036541B1F8D70008A42F7 /* Lujiazui.png */,
 				B2F036551B1F8D70008A42F7 /* OrientalPearlTower.png */,
 				B2F0365E1B1F8D86008A42F7 /* AdlerPlanetarium.png */,
@@ -288,13 +288,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B246FF241B0409E4004B7F77 /* RZHUANG.TourItineraryTests */ = {
+		B246FF241B0409E4004B7F77 /* johnny.portfolio.tripplannerTests */ = {
 			isa = PBXGroup;
 			children = (
-				B246FF271B0409E4004B7F77 /* RZHUANG_TourItineraryTests.swift */,
+				B246FF271B0409E4004B7F77 /* johnny_portfolio_tripplannerTests.swift */,
 				B246FF251B0409E4004B7F77 /* Supporting Files */,
 			);
-			path = RZHUANG.TourItineraryTests;
+			path = johnny.portfolio.tripplannerTests;
 			sourceTree = "<group>";
 		};
 		B246FF251B0409E4004B7F77 /* Supporting Files */ = {
@@ -308,9 +308,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B246FF091B0409E4004B7F77 /* RZHUANG.TourItinerary */ = {
+		B246FF091B0409E4004B7F77 /* johnny.portfolio.tripplanner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B246FF2B1B0409E4004B7F77 /* Build configuration list for PBXNativeTarget "RZHUANG.TourItinerary" */;
+			buildConfigurationList = B246FF2B1B0409E4004B7F77 /* Build configuration list for PBXNativeTarget "johnny.portfolio.tripplanner" */;
 			buildPhases = (
 				B246FF061B0409E4004B7F77 /* Sources */,
 				B246FF071B0409E4004B7F77 /* Frameworks */,
@@ -320,14 +320,14 @@
 			);
 			dependencies = (
 			);
-			name = RZHUANG.TourItinerary;
-			productName = RZHUANG.TourItinerary;
+			name = johnny.portfolio.tripplanner;
+			productName = johnny.portfolio.tripplanner;
 			productReference = B246FF0A1B0409E4004B7F77 /* Travel Note.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B246FF201B0409E4004B7F77 /* RZHUANG.TourItineraryTests */ = {
+		B246FF201B0409E4004B7F77 /* johnny.portfolio.tripplannerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B246FF2E1B0409E4004B7F77 /* Build configuration list for PBXNativeTarget "RZHUANG.TourItineraryTests" */;
+			buildConfigurationList = B246FF2E1B0409E4004B7F77 /* Build configuration list for PBXNativeTarget "johnny.portfolio.tripplannerTests" */;
 			buildPhases = (
 				B246FF1D1B0409E4004B7F77 /* Sources */,
 				B246FF1E1B0409E4004B7F77 /* Frameworks */,
@@ -338,9 +338,9 @@
 			dependencies = (
 				B246FF231B0409E4004B7F77 /* PBXTargetDependency */,
 			);
-			name = RZHUANG.TourItineraryTests;
-			productName = RZHUANG.TourItineraryTests;
-			productReference = B246FF211B0409E4004B7F77 /* RZHUANG.TourItineraryTests.xctest */;
+			name = johnny.portfolio.tripplannerTests;
+			productName = johnny.portfolio.tripplannerTests;
+			productReference = B246FF211B0409E4004B7F77 /* johnny.portfolio.tripplannerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -363,7 +363,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B246FF051B0409E4004B7F77 /* Build configuration list for PBXProject "RZHUANG.TourItinerary" */;
+			buildConfigurationList = B246FF051B0409E4004B7F77 /* Build configuration list for PBXProject "johnny.portfolio.tripplanner" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -376,8 +376,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B246FF091B0409E4004B7F77 /* RZHUANG.TourItinerary */,
-				B246FF201B0409E4004B7F77 /* RZHUANG.TourItineraryTests */,
+				B246FF091B0409E4004B7F77 /* johnny.portfolio.tripplanner */,
+				B246FF201B0409E4004B7F77 /* johnny.portfolio.tripplannerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -479,7 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B246FF281B0409E4004B7F77 /* RZHUANG_TourItineraryTests.swift in Sources */,
+				B246FF281B0409E4004B7F77 /* johnny_portfolio_tripplannerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,7 +488,7 @@
 /* Begin PBXTargetDependency section */
 		B246FF231B0409E4004B7F77 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B246FF091B0409E4004B7F77 /* RZHUANG.TourItinerary */;
+			target = B246FF091B0409E4004B7F77 /* johnny.portfolio.tripplanner */;
 			targetProxy = B246FF221B0409E4004B7F77 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -554,7 +554,9 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "./johnny.portfolio.tripplanner/johnny.portfolio.tripplanner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -592,6 +594,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "./johnny.portfolio.tripplanner/johnny.portfolio.tripplanner-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -602,11 +606,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = RZHUANG.TourItinerary/Info.plist;
+				INFOPLIST_FILE = johnny.portfolio.tripplanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.depaul.csc471.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Travel Note";
-				SWIFT_OBJC_BRIDGING_HEADER = "RZHUANG.TourItinerary/RZHUANG.TourItinerary-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "johnny.portfolio.tripplanner/johnny.portfolio.tripplanner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -617,11 +621,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = RZHUANG.TourItinerary/Info.plist;
+				INFOPLIST_FILE = johnny.portfolio.tripplanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.depaul.csc471.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "RZHUANG.TourItinerary/RZHUANG.TourItinerary-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "johnny.portfolio.tripplanner/johnny.portfolio.tripplanner-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -638,11 +642,11 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = RZHUANG.TourItineraryTests/Info.plist;
+				INFOPLIST_FILE = johnny.portfolio.tripplannerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.depaul.csc471.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RZHUANG.TourItinerary.app/RZHUANG.TourItinerary";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/johnny.portfolio.tripplanner.app/johnny.portfolio.tripplanner";
 			};
 			name = Debug;
 		};
@@ -654,18 +658,18 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = RZHUANG.TourItineraryTests/Info.plist;
+				INFOPLIST_FILE = johnny.portfolio.tripplannerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.depaul.csc471.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RZHUANG.TourItinerary.app/RZHUANG.TourItinerary";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/johnny.portfolio.tripplanner.app/johnny.portfolio.tripplanner";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B246FF051B0409E4004B7F77 /* Build configuration list for PBXProject "RZHUANG.TourItinerary" */ = {
+		B246FF051B0409E4004B7F77 /* Build configuration list for PBXProject "johnny.portfolio.tripplanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B246FF291B0409E4004B7F77 /* Debug */,
@@ -674,7 +678,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B246FF2B1B0409E4004B7F77 /* Build configuration list for PBXNativeTarget "RZHUANG.TourItinerary" */ = {
+		B246FF2B1B0409E4004B7F77 /* Build configuration list for PBXNativeTarget "johnny.portfolio.tripplanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B246FF2C1B0409E4004B7F77 /* Debug */,
@@ -683,7 +687,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B246FF2E1B0409E4004B7F77 /* Build configuration list for PBXNativeTarget "RZHUANG.TourItineraryTests" */ = {
+		B246FF2E1B0409E4004B7F77 /* Build configuration list for PBXNativeTarget "johnny.portfolio.tripplannerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B246FF2F1B0409E4004B7F77 /* Debug */,

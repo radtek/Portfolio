@@ -1,26 +1,27 @@
 //
-//  CityViewController.swift
-//  RZHUANG.TourItinerary
+//  CountryViewController.swift
+//  johnny.portfolio.tripplanner
 //
-//  Created by Johnny on 5/20/15.
-//  Copyright (c) 2015 CDM of DePaul University. All rights reserved.
+//  Created by Johnny on 5/19/15.
+//  Copyright (c) 2015 JoJoStudio. All rights reserved.
 //
 
 import UIKit
 
-class CityViewController: UICollectionViewController {
+class CountryViewController: UICollectionViewController {
 
-    let reuseIdentifier = "CityViewCell"
+    let reuseIdentifier = "CountryViewCell"
     
-    var country: Country?
+    var continent: Continent?
     var selectedCell: IndexPath?
-    var cityList = Array<City>()
+    var countryList = Array<Country>()
+    var cellwidth: CGFloat = 0.0
     
     @IBOutlet weak var navigationTitle: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -29,17 +30,18 @@ class CityViewController: UICollectionViewController {
         
         // Do any additional setup after loading the view.
 
-        if let cnty = country {
-            navigationTitle.title = cnty.name
-            cityList = getCityList(country: cnty.key)
+        if let cnt = continent {
+            navigationTitle.title = cnt.name
+            countryList = getCountryList(continent: cnt.key)
+
             let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
             layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-            let imagewidth = (self.view.frame.width - 40)/3 - 1
-            layout.itemSize = CGSize(width: imagewidth, height: imagewidth)
+            cellwidth = (self.view.frame.width - 40)/3 - 1
+            layout.itemSize = CGSize(width: cellwidth, height: cellwidth)
             collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
             collectionView!.dataSource = self
             collectionView!.delegate = self
-            collectionView!.register(CityViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+            collectionView!.register(CountryViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
             collectionView!.backgroundColor = UIColor.white
             self.view.addSubview(collectionView!)
         }
@@ -49,25 +51,6 @@ class CityViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    override func viewWillAppear(animated: Bool) {
-        
-        super.viewWillAppear(animated)
-        
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        let imagewidth = (self.view.frame.width - 40)/3 - 1
-        layout.itemSize = CGSize(width: imagewidth, height: imagewidth)
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-        collectionView!.dataSource = self
-        collectionView!.delegate = self
-        collectionView!.registerClass(CityViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        collectionView!.backgroundColor = UIColor.whiteColor()
-        self.view.addSubview(collectionView!)
-        
-    }*/
-
     
     // MARK: - Navigation
 
@@ -75,9 +58,9 @@ class CityViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        if segue.identifier == "toCityDetail" {
-            if let cityDetailViewController = segue.destination as? CityDetailViewController {
-                cityDetailViewController.city = cityList[selectedCell!.item]
+        if segue.identifier == "toCity" {
+            if let cityViewController = segue.destination as? CityViewController {
+                cityViewController.country = countryList[selectedCell!.item]
             }
         }
     }
@@ -92,21 +75,23 @@ class CityViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
-        return cityList.count
+        
+        return countryList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let city = cityList[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CityViewCell
-        cell.textLabel.text = city.name
-        cell.imageView.image = UIImage(named: city.image)
-        
+        // Configure the cell
+        let country = countryList[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CountryViewCell
+        cell.txtName.text = country.name
+        cell.txtDetails.text = "\(country.locations)"
+        cell.imageView.image = UIImage(named: country.image)
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedCell = indexPath
-        performSegue(withIdentifier: "toCityDetail", sender: self)
+        performSegue(withIdentifier: "toCity", sender: self)
     }
 
     // MARK: UICollectionViewDelegate

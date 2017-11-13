@@ -1,15 +1,15 @@
 //
 //  RZHUANG_TourItineraryTests.swift
-//  RZHUANG.TourItineraryTests
+//  johnny.portfolio.tripplannerTests
 //
 //  Created by Johnny on 5/13/15.
-//  Copyright (c) 2015 CDM of DePaul University. All rights reserved.
+//  Copyright (c) 2015 JoJoStudio. All rights reserved.
 //
 
 import UIKit
 import XCTest
 
-class RZHUANG_TourItineraryTests: XCTestCase {
+class johnny_portfolio_tripplannerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -28,7 +28,7 @@ class RZHUANG_TourItineraryTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measure() {
             // Put the code you want to measure the time of here.
         }
     }
