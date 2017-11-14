@@ -1,36 +1,36 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using DataServer.Models;
+using Johnny.Portfolio.Restaurant.DataServer.Models;
 
-namespace DataServer.Controllers
+namespace Johnny.Portfolio.Restaurant.DataServer.Controllers
 {
     public class RestaurantController : ApiController
     {
         private RestaurantRespository repo = RestaurantRespository.Current;
 
-        public IEnumerable<Restaurant> GetAll()
+        public IEnumerable<RestaurantInfo> GetAll()
         {
             return repo.GetList();
         }
 
-        public IEnumerable<Restaurant> GetAll(string keyword)
+        public IEnumerable<RestaurantInfo> GetAll(string keyword)
         {
             return repo.GetList(keyword);
         }
 
-        public Restaurant Get(int id)
+        public RestaurantInfo Get(int id)
         {
             return repo.Get(id);
         }
 
         [HttpPost]
-        public Restaurant Create(Restaurant item)
+        public RestaurantInfo Create(RestaurantInfo item)
         {
             return repo.Add(item);
         }
 
         [HttpPut]
-        public bool Update(Restaurant item)
+        public bool Update(RestaurantInfo item)
         {
             return repo.Update(item);
         }

@@ -109,7 +109,7 @@ public class RestaurantDetailFragment extends Fragment {
 
                         AsyncSetRating setRatingTask = new AsyncSetRating();
                         setRatingTask.params = params;
-                        setRatingTask.execute("http://10.0.3.2:8080/api/Restaurant/SetRate");
+                        setRatingTask.execute("http://10.0.2.2:8080/api/Restaurant/SetRate");
 
                     } catch (Exception e) {
                         // response body is no valid JSON string
@@ -157,7 +157,7 @@ public class RestaurantDetailFragment extends Fragment {
 
             try {
                 Log.d("Get comment", "restid=" + restaurant.getId());
-                new AsyncCommentList().execute("http://10.0.3.2:8080/api/comment/GetListByRestaurant?restid="+restaurant.getId());
+                new AsyncCommentList().execute("http://10.0.2.2:8080/api/comment/GetListByRestaurant?restid="+restaurant.getId());
             } catch (Exception e1) {
                 // TODO Auto-generated catch block
                 e1.printStackTrace();
@@ -174,7 +174,7 @@ public class RestaurantDetailFragment extends Fragment {
             if (resultCode == getActivity().RESULT_OK) {
                 try {
                     Log.d("Get comment", "restid=" + restaurant.getId());
-                    new AsyncCommentList().execute("http://10.0.3.2:8080/api/comment/GetListByRestaurant?restid="+restaurant.getId());
+                    new AsyncCommentList().execute("http://10.0.2.2:8080/api/comment/GetListByRestaurant?restid="+restaurant.getId());
                 } catch (Exception e1) {
                     // TODO Auto-generated catch block
                     e1.printStackTrace();

@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="DataServer.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Johnny.Portfolio.Restaurant.DataServer.Global" Language="C#" %>

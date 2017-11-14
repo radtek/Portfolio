@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace DataServer.Controllers
+namespace Johnny.Portfolio.Restaurant.DataServer.Controllers
 {
     public class HomeController : Controller
     {

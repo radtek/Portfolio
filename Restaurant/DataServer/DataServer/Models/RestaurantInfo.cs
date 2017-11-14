@@ -4,19 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace DataServer.Models
+namespace Johnny.Portfolio.Restaurant.DataServer.Models
 {
     //[DataContractAttribute]
-    public class Restaurant
+    public class RestaurantInfo
     {
         //[DataContractAttribute]
         public enum CategoryType {Restaurant, Dessert, CoffeeTea, Bakeries, IceCream}
 
-        public Restaurant()
+        public RestaurantInfo()
         {
 
         }
-        public Restaurant(int id, String name, CategoryType category, String location, float rating, int reviews, String image, String image1, String image2, String image3)
+        public RestaurantInfo(int id, String name, CategoryType category, String location, float rating, int reviews, String image, String image1, String image2, String image3)
         //public Restaurant(String name, String location, float rating, int reviews, String image, String image1, String image2, String image3)
         {
             this.Id = id;

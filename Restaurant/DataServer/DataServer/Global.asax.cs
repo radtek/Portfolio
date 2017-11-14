@@ -5,7 +5,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Optimization;
 
-namespace DataServer
+namespace Johnny.Portfolio.Restaurant.DataServer
 {
     public class Global : HttpApplication
     {

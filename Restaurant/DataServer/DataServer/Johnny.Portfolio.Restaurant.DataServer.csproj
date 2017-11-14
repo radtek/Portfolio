@@ -11,7 +11,7 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataServer</RootNamespace>
+    <RootNamespace>Johnny.Portfolio.Restaurant.DataServer</RootNamespace>
     <AssemblyName>DataServer</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
@@ -97,7 +97,7 @@
     <Compile Include="Models\CommentInfo.cs" />
     <Compile Include="Models\LogoutInfo.cs" />
     <Compile Include="Models\RatingInfo.cs" />
-    <Compile Include="Models\Restaurant.cs" />
+    <Compile Include="Models\RestaurantInfo.cs" />
     <Compile Include="Models\CommentRespository.cs" />
     <Compile Include="Models\RestaurantRespository.cs" />
     <Compile Include="Models\LoginInfo.cs" />

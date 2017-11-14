@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace DataServer.Models
+namespace Johnny.Portfolio.Restaurant.DataServer.Models
 {
     //[DataContractAttribute]
     public class Comment

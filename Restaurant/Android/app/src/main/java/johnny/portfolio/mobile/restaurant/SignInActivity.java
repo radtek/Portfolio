@@ -61,7 +61,7 @@ public class SignInActivity extends AppCompatActivity {
 
                     AsyncSignIn signInTask = new AsyncSignIn();
                     signInTask.params = params;
-                    signInTask.execute("http://10.0.3.2:8080/api/User/Login");
+                    signInTask.execute("http://10.0.2.2:8080/api/User/Login");
 
                 } catch (Exception e) {
                     // response body is no valid JSON string

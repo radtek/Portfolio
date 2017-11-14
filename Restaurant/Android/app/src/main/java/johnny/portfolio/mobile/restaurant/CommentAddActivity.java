@@ -61,7 +61,7 @@ public class CommentAddActivity extends Activity {
 
                     AsyncSubmitComment submitTask = new AsyncSubmitComment();
                     submitTask.params = params;
-                    submitTask.execute("http://10.0.3.2:8080/api/comment/create");
+                    submitTask.execute("http://10.0.2.2:8080/api/comment/create");
 
                 } catch (Exception e) {
                     // response body is no valid JSON string

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace DataServer.Models
+namespace Johnny.Portfolio.Restaurant.DataServer.Models
 {
     public class HttpResult
     {

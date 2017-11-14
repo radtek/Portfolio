@@ -76,7 +76,7 @@ public class RestaurantListActivity extends AppCompatActivity
         }
 
         try {
-            new AsyncList().execute("http://10.0.3.2:8080/api/Restaurant/GetAll");
+            new AsyncList().execute("http://10.0.2.2:8080/api/Restaurant/GetAll");
         } catch (Exception e1) {
             // TODO Auto-generated catch block
             e1.printStackTrace();
@@ -142,9 +142,9 @@ public class RestaurantListActivity extends AppCompatActivity
                 try {
                     Log.d("callSearch", "query=" + query);
                     if (query == null || query.equals("")) {
-                        new AsyncList().execute("http://10.0.3.2:8080/api/Restaurant/GetAll");
+                        new AsyncList().execute("http://10.0.2.2:8080/api/Restaurant/GetAll");
                     } else {
-                        new AsyncList().execute("http://10.0.3.2:8080/api/Restaurant/GetAll?keyword=" + query);
+                        new AsyncList().execute("http://10.0.2.2:8080/api/Restaurant/GetAll?keyword=" + query);
                     }
                 } catch (Exception e1) {
                     // TODO Auto-generated catch block
@@ -186,7 +186,7 @@ public class RestaurantListActivity extends AppCompatActivity
 
                     AsyncLogout logoutTask = new AsyncLogout();
                     logoutTask.params = params;
-                    logoutTask.execute("http://10.0.3.2:8080/api/User/Logout");
+                    logoutTask.execute("http://10.0.2.2:8080/api/User/Logout");
 
                 } catch (Exception e) {
                     // response body is no valid JSON string

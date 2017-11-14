@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using DataServer.Models;
+using Johnny.Portfolio.Restaurant.DataServer.Models;
 
-namespace DataServer.Controllers
+namespace Johnny.Portfolio.Restaurant.DataServer.Controllers
 {
     public class UserController : ApiController
     {
