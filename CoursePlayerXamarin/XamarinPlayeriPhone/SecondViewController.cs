@@ -28,6 +28,7 @@ namespace TabbedAppiPhone
         public SecondViewController(IntPtr handle)
             : base(handle)
         {
+            Xamarin.Forms.Forms.Init();
             Title = NSBundle.MainBundle.LocalizedString("Second", "Second");
             TabBarItem.Image = UIImage.FromBundle("Images/second");
         }

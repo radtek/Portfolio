@@ -1,5 +1,0 @@
-D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\SharpZipLib\bin\Debug\SharpZipLib.dll
-D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\SharpZipLib\bin\Debug\SharpZipLib.pdb
-D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\SharpZipLib\obj\Debug\SharpZipLib.csprojResolveAssemblyReference.cache
-D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\SharpZipLib\obj\Debug\SharpZipLib.dll
-D:\WorkSpace\GitHub\Work\Prototypes\XamarinPlayeriPhone\SharpZipLib\obj\Debug\SharpZipLib.pdb

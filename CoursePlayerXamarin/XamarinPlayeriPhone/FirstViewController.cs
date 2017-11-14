@@ -12,6 +12,7 @@ namespace TabbedAppiPhone
         public FirstViewController(IntPtr handle)
             : base(handle)
         {
+            Xamarin.Forms.Forms.Init();
             Title = NSBundle.MainBundle.LocalizedString("First", "First");
             TabBarItem.Image = UIImage.FromBundle("Images/first");
         }

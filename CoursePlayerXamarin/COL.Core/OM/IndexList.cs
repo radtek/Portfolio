@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO.Compression;
+using ICSharpCode.SharpZipLib.Zip;
+using ICSharpCode.SharpZipLib.GZip;
 
 namespace COL.Core
 {
@@ -56,9 +59,9 @@ namespace COL.Core
         protected void SetIndexList(byte[] indexbuf)
         {
             _listIndex.Clear();
-            
+
             //unzip
-            ICSharpCode.SharpZipLib.Wrapper zipwrapper = new ICSharpCode.SharpZipLib.Wrapper();
+            Wrapper zipwrapper = new Wrapper();
             indexbuf = zipwrapper.Decompress(indexbuf);
 
             //read data to index list
