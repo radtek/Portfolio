@@ -74,18 +74,18 @@ namespace Johnny.Component.Utility
                 }
 
                 //Configure the log4net by reading config file
-                log4net.Config.DOMConfigurator.Configure(fInfo);
+                log4net.Config.XmlConfigurator.Configure(fInfo);
             }
             else
             {
-                log4net.Config.DOMConfigurator.Configure();
+                log4net.Config.XmlConfigurator.Configure();
             }
 
             //if there is AdoNetAppender, decrypt the connection            
-            log4net.Repository.Hierarchy.Hierarchy h = LogManager.GetLoggerRepository() as log4net.Repository.Hierarchy.Hierarchy;
+            log4net.Repository.Hierarchy.Hierarchy h = LogManager.GetRepository() as log4net.Repository.Hierarchy.Hierarchy;
             if (h != null)
             {
-                log4net.Appender.ADONetAppender adoAppender = (log4net.Appender.ADONetAppender)h.GetLogger("logger.database", h.LoggerFactory).GetAppender(appernder);
+                log4net.Appender.AdoNetAppender adoAppender = (log4net.Appender.AdoNetAppender)h.GetLogger("logger.database", h.LoggerFactory).GetAppender(appernder);
                 if (adoAppender != null)
                 {
                     EncryptUtility de = new EncryptUtility(EncryptUtility.SymmProvEnum.DES);

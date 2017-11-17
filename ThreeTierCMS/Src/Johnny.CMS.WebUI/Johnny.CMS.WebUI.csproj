@@ -47,13 +47,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\SourceCode\Ajax\AjaxControlToolkit\AjaxControlToolkit\bin\Debug\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="FredCK.FCKeditorV2, Version=2.2.2106.29420, Culture=neutral, PublicKeyToken=4f86767c9b519a06" />
+    <Reference Include="FredCK.FCKeditorV2">
+      <HintPath>..\packages\FredCK.FCKeditorV2.2.6.3.22451\lib\FredCK.FCKeditorV2.dll</HintPath>
+    </Reference>
     <Reference Include="FreeTextBox, Version=1.6.3.26073, Culture=neutral">
       <Private>False</Private>
     </Reference>
-    <Reference Include="OpenSmtp, Version=1.0.2654.25162, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ThirdPartyDll\OpenSmtp.dll</HintPath>
+    <Reference Include="OpenSmtp">
+      <HintPath>..\packages\OpenSmtp.1.11.0.34196\lib\OpenSmtp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -800,7 +801,9 @@
     <Content Include="script\sehome.js" />
     <Content Include="sehome.master" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

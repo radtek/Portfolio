@@ -8,3 +8,7 @@ D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.CMS.OM\bin\Johnny.CMS.OM.pdb
 D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.CMS.OM\obj\Debug\Johnny.CMS.OM.csprojResolveAssemblyReference.cache
 D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.CMS.OM\obj\Debug\Johnny.CMS.OM.dll
 D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.CMS.OM\obj\Debug\Johnny.CMS.OM.pdb
+D:\WorkSpace\GitHub\Portfolio\ThreeTierCMS\Src\Johnny.CMS.OM\bin\Johnny.CMS.OM.dll
+D:\WorkSpace\GitHub\Portfolio\ThreeTierCMS\Src\Johnny.CMS.OM\bin\Johnny.CMS.OM.pdb
+D:\WorkSpace\GitHub\Portfolio\ThreeTierCMS\Src\Johnny.CMS.OM\obj\Debug\Johnny.CMS.OM.dll
+D:\WorkSpace\GitHub\Portfolio\ThreeTierCMS\Src\Johnny.CMS.OM\obj\Debug\Johnny.CMS.OM.pdb

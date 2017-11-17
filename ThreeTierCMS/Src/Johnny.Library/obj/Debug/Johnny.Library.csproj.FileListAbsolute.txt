@@ -8,3 +8,9 @@ D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.Library\bin\Debug\Johnny.Library.
 D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.Library\obj\Debug\Johnny.Library.csprojResolveAssemblyReference.cache
 D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.Library\obj\Debug\Johnny.Library.dll
 D:\WorkSpace\GitHub\Projects\CMSWeb\Src\Johnny.Library\obj\Debug\Johnny.Library.pdb
+D:\WorkSpace\GitHub\Portfolio\ThreeTierCMS\Src\Johnny.Library\bin\Debug\Johnny.Library.dll
+D:\WorkSpace\GitHub\Portfolio\ThreeTierCMS\Src\Johnny.Library\bin\Debug\Johnny.Library.pdb
+D:\WorkSpace\GitHub\Portfolio\ThreeTierCMS\Src\Johnny.Library\bin\Debug\log4net.dll
+D:\WorkSpace\GitHub\Portfolio\ThreeTierCMS\Src\Johnny.Library\bin\Debug\log4net.xml
+D:\WorkSpace\GitHub\Portfolio\ThreeTierCMS\Src\Johnny.Library\obj\Debug\Johnny.Library.dll
+D:\WorkSpace\GitHub\Portfolio\ThreeTierCMS\Src\Johnny.Library\obj\Debug\Johnny.Library.pdb
