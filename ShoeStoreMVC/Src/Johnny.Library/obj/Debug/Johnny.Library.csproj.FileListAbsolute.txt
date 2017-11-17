@@ -1,4 +1,0 @@
-D:\WorkSpace\GitHub\Portfolio\ShoeStoreMVC\Src\Johnny.Library\bin\Debug\Johnny.Library.dll
-D:\WorkSpace\GitHub\Portfolio\ShoeStoreMVC\Src\Johnny.Library\bin\Debug\Johnny.Library.pdb
-D:\WorkSpace\GitHub\Portfolio\ShoeStoreMVC\Src\Johnny.Library\obj\Debug\Johnny.Library.dll
-D:\WorkSpace\GitHub\Portfolio\ShoeStoreMVC\Src\Johnny.Library\obj\Debug\Johnny.Library.pdb
