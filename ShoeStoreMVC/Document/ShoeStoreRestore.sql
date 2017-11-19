@@ -1,6 +1,7 @@
 USE [master]
 
 CREATE DATABASE [ShoeStore];
+GO /**remove 'GO' when running in sql server for linux**/
 
 USE [ShoeStore]
 

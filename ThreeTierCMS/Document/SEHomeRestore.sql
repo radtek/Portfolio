@@ -1,6 +1,8 @@
+/*This script only works for SQL Server on Windows, not for linux(Oracle SQL Developer)*/
 USE [master]
 
 CREATE DATABASE [SEHome];
+GO
 
 USE [SEHome]
 
