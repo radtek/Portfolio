@@ -1,5 +1,0 @@
-D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\ICSharpCode.TextEditor\bin\Debug\ICSharpCode.TextEditor.dll
-D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\ICSharpCode.TextEditor\bin\Debug\ICSharpCode.TextEditor.pdb
-D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\ICSharpCode.TextEditor\obj\Debug\ICSharpCode.TextEditor.csprojResolveAssemblyReference.cache
-D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\ICSharpCode.TextEditor\obj\Debug\ICSharpCode.TextEditor.dll
-D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\ICSharpCode.TextEditor\obj\Debug\ICSharpCode.TextEditor.pdb

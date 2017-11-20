@@ -1,4 +1,0 @@
-D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\System.Net.Json\bin\Debug\System.Net.Json.dll
-D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\System.Net.Json\bin\Debug\System.Net.Json.pdb
-D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\System.Net.Json\obj\Debug\System.Net.Json.dll
-D:\WorkSpace\GitHub\Projects\KaixinAssistant\Src\System.Net.Json\obj\Debug\System.Net.Json.pdb
