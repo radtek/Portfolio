@@ -1,8 +1,0 @@
-D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.CodeGenerator.DBEngine\bin\Release\Johnny.CodeGenerator.DBEngine.dll
-D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.CodeGenerator.DBEngine\bin\Release\Johnny.CodeGenerator.DBEngine.pdb
-D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.CodeGenerator.DBEngine\bin\Release\Johnny.Library.dll
-D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.CodeGenerator.DBEngine\bin\Release\log4net.dll
-D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.CodeGenerator.DBEngine\bin\Release\Johnny.Library.pdb
-D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.CodeGenerator.DBEngine\obj\Release\Johnny.CodeGenerator.DBEngine.csprojResolveAssemblyReference.cache
-D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.CodeGenerator.DBEngine\obj\Release\Johnny.CodeGenerator.DBEngine.dll
-D:\WorkSpace\GitHub\Projects\DeveloperAssistant\Src\Johnny.CodeGenerator.DBEngine\obj\Release\Johnny.CodeGenerator.DBEngine.pdb

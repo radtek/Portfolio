@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
 using WeifenLuo.WinFormsUI.Docking;
-using System.Net.Json;
+//using System.Net.Json;
 
 namespace Johnny.CodeGenerator.WinUI.Toolbox
 {
@@ -23,9 +23,9 @@ namespace Johnny.CodeGenerator.WinUI.Toolbox
         {
             try
             {
-                JsonTextParser parser = new JsonTextParser();
-                JsonArrayCollection arrayAllMyFriends = parser.Parse(txtSourceCode.Text) as JsonArrayCollection;
-                txtJsonCode.Text = arrayAllMyFriends.ToString();
+                //JsonTextParser parser = new JsonTextParser();
+                //JsonArrayCollection arrayAllMyFriends = parser.Parse(txtSourceCode.Text) as JsonArrayCollection;
+                //txtJsonCode.Text = arrayAllMyFriends.ToString();
                 //foreach (JsonObjectCollection item in arrayAllMyFriends)
                 //{
                 //    FriendInfo friend = new FriendInfo();
