@@ -8,7 +8,7 @@
     <ProjectGuid>{C75532C4-765B-418E-B09B-46D36B2ABDB1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WeifenLuo.WinFormsUI.Docking</RootNamespace>
+    <RootNamespace>WeifenLuo.WinFormsUI</RootNamespace>
     <AssemblyName>WeifenLuo.WinFormsUI.Docking</AssemblyName>
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>

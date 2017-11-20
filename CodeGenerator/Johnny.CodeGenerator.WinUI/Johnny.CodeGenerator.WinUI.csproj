@@ -49,10 +49,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.1.3643.38057, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutDialog.cs">
@@ -276,6 +272,8 @@
       <DependentUpon>ToolWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\ConfigCtrl.cs" />
+    <EmbeddedResource Include="Resources\DockPanel.config" />
+    <EmbeddedResource Include="Resources\log4net.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Johnny.CodeGenerator.Controls\Johnny.CodeGenerator.Controls.csproj">
@@ -297,6 +295,10 @@
     <ProjectReference Include="..\Johnny.Library\Johnny.Library.csproj">
       <Project>{44F4ADFD-CD68-48C8-961B-DC2F1A1BB8A9}</Project>
       <Name>Johnny.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinFormsUI\WeifenLuo.WinFormsUI.Docking.csproj">
+      <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
+      <Name>WeifenLuo.WinFormsUI.Docking</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -498,7 +500,9 @@
       <DependentUpon>FrmEntityCreator.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

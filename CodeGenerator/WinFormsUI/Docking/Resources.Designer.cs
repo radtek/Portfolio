@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WeifenLuo.WinFormsUI.Docking.Docking {
+namespace WeifenLuo.WinFormsUI.Docking {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace WeifenLuo.WinFormsUI.Docking.Docking {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WeifenLuo.WinFormsUI.Docking.Docking.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WeifenLuo.WinFormsUI.Docking.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
