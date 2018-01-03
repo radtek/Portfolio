@@ -1,6 +1,8 @@
-﻿body {
-    padding-top: 50px;
+﻿html, body {
+    background-color: #ccffff;
+    padding-top: 20px;
     padding-bottom: 20px;
+    text-align: center;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -9,26 +11,23 @@
     padding-right: 15px;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.playercontainer {
+    background-color: #99bbff;
+    border: thick solid #808080;
+    padding: 20px;
+    margin: 20px;
 }
 
 canvas {
 	background: #fff;
-	margin: 20px auto;
+    margin: 0;
+    padding: 0;
 	border: 5px solid #E8E8E8;
-	display: block;
+    display: block;
+    
 }
 table, th, td {
     /*border: 1px solid black;*/
     padding: 0px;
     margin: 0px;
-}
-
-canvas, video {
-    margin: 0;
-    padding: 0;
 }
