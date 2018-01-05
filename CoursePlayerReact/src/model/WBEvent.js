@@ -1,9 +1,9 @@
 class WBEvent {
-  constructor (x, y, timestamp, reserved) {
-    this.x = x;
-    this.y = y;
+  constructor (timestamp, reserved, x, y) {
     this.timestamp = timestamp;
     this.reserved = reserved;
+    this.x = x;
+    this.y = y;
   }
 }
 

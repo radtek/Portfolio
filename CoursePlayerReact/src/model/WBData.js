@@ -6,5 +6,4 @@ class WBData {
   }
 }
 
-
 export default WBData;
