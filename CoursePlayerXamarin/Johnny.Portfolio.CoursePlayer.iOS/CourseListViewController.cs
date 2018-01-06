@@ -7,13 +7,12 @@ using UIKit;
 
 namespace Johnny.Portfolio.CoursePlayer.iOS
 {
-    public partial class ThirdViewController : UIViewController
+    public partial class CourseListViewController : UIViewController
     {
-        public ThirdViewController(IntPtr handle)
+        public CourseListViewController(IntPtr handle)
             : base(handle)
         {
-            //Title = NSBundle.MainBundle.LocalizedString("Third", "Third");
-            //TabBarItem.Image = UIImage.FromBundle("Images/playlist");
+            Xamarin.Forms.Forms.Init();
         }
 
         public override void DidReceiveMemoryWarning()

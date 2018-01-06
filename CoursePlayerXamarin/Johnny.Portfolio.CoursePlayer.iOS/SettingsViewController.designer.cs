@@ -11,8 +11,8 @@ using UIKit;
 
 namespace Johnny.Portfolio.CoursePlayer.iOS
 {
-	[Register ("SecondViewController")]
-	partial class SecondViewController
+    [Register ("SettingsViewController")]
+	partial class SettingsViewController
 	{
 		void ReleaseDesignerOutlets ()
 		{

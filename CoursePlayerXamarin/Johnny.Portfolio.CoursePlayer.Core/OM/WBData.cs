@@ -4,25 +4,13 @@ namespace Johnny.Portfolio.CoursePlayer.Core
 {
     public class WBData
     {
-        private List<WBLine> _wblines;
-        private List<WBEvent> _wbevents;
-        
-        public WBData()
+        public WBData(List<WBLine> lines, List<WBEvent> events)
         {
-            _wblines = new List<WBLine>();
-            _wbevents = new List<WBEvent>();
+            WBLines = lines;
+            WBEvents = events;
         }
 
-        public List<WBLine> WBLines
-        {
-            get { return _wblines; }
-            set { _wblines = value; }
-        }
-
-        public List<WBEvent> WBEvents
-        {
-            get { return _wbevents; }
-            set { _wbevents = value; }
-        }
+        public List<WBLine> WBLines { get; set; }
+        public List<WBEvent> WBEvents { get; set; }
     }
 }

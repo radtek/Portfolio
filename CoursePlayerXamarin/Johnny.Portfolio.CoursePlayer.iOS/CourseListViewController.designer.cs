@@ -11,8 +11,8 @@ using UIKit;
 
 namespace Johnny.Portfolio.CoursePlayer.iOS
 {
-	[Register ("FirstViewController")]
-	partial class FirstViewController
+    [Register ("CourseListViewController")]
+	partial class CourseListViewController
 	{
 		void ReleaseDesignerOutlets ()
 		{

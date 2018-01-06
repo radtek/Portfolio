@@ -63,7 +63,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             BinaryReader breader = new BinaryReader(stream);
             for (int i = 0; i < indexbuf.Length / Index.StreamSize; i++)
             {
-                Index item = new Index(breader);
+                Index item = new Index((ushort)breader.ReadInt16(), breader.ReadByte(), breader.ReadInt32(), (uint)breader.ReadInt32());
 
                 _listIndex.Add(item);
             }

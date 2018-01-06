@@ -61,7 +61,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
 
                 return ret;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -72,9 +72,9 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         }
         public WBData GetWhiteBoardData(DataType dt, int second)
         {
-            WBData wb = new WBData();
-            wb.WBLines = GetWhiteBoardImage(dt, second);
-            wb.WBEvents = GetWhiteBoardSequence(dt, second);
+            List<WBLine> lines = GetWhiteBoardImage(dt, second);
+            List<WBEvent> events = GetWhiteBoardSequence(dt, second);
+            WBData wb = new WBData(lines, events);
             return wb;
         }
         private List<WBLine> GetWhiteBoardImage(DataType dt, int second)
@@ -98,7 +98,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
 
                 return lines;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -130,7 +130,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
                 return events;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -176,8 +176,9 @@ namespace Johnny.Portfolio.CoursePlayer.Core
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
+                 
 
             }
 
@@ -201,7 +202,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
                     list.Add(t);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }

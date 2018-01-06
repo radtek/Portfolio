@@ -107,17 +107,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FirstViewController.cs" />
-    <Compile Include="FirstViewController.designer.cs">
-      <DependentUpon>FirstViewController.cs</DependentUpon>
+    <Compile Include="CourseListViewController.cs" />
+    <Compile Include="CourseListViewController.designer.cs">
+      <DependentUpon>CourseListViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThirdViewController.cs" />
-    <Compile Include="ThirdViewController.designer.cs">
-      <DependentUpon>ThirdViewController.cs</DependentUpon>
+    <Compile Include="SettingsViewController.cs" />
+    <Compile Include="SettingsViewController.designer.cs">
+      <DependentUpon>SettingsViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SecondViewController.cs" />
-    <Compile Include="SecondViewController.designer.cs">
-      <DependentUpon>SecondViewController.cs</DependentUpon>
+    <Compile Include="PlayViewController.cs" />
+    <Compile Include="PlayViewController.designer.cs">
+      <DependentUpon>PlayViewController.cs</DependentUpon>
     </Compile>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <BundleResource Include="Resources\first.png" />

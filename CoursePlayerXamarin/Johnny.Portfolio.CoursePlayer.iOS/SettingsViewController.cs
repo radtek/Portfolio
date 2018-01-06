@@ -7,12 +7,11 @@ using UIKit;
 
 namespace Johnny.Portfolio.CoursePlayer.iOS
 {
-    public partial class FirstViewController : UIViewController
+    public partial class SettingsViewController : UIViewController
     {
-        public FirstViewController(IntPtr handle)
+        public SettingsViewController(IntPtr handle)
             : base(handle)
         {
-            Xamarin.Forms.Forms.Init();
         }
 
         public override void DidReceiveMemoryWarning()

@@ -51,7 +51,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                 return breader.ReadBytes((int)indexstream.Length);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -68,7 +68,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                 datastream.Read(buf, 0, length);
                 return buf;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }            

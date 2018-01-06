@@ -5,59 +5,26 @@ namespace Johnny.Portfolio.CoursePlayer.Core
 {
     public class Index : IComparable<Index>
     {
-        private ushort _usTimeStamp; //in minute for whiteboard, in second for screenshot
-        private byte _bGrid;
-        private int _iOffset;
-        private uint _uiLength;
-
-        public Index()
-        {
-            setvalue(0, 0, 0, 0);
-        }
-        public Index(ushort timestamp, int offset, uint length)
-        {
-            setvalue(timestamp, 0, offset, length);
-        }
         public Index(ushort timestamp, byte grid, int offset, uint length)
         {
-            setvalue(timestamp, grid, offset, length);
-        }
-        public Index(BinaryReader breader)
-        {
-            setvalue((ushort)breader.ReadInt16(), breader.ReadByte(), breader.ReadInt32(), (uint)breader.ReadInt32());
-        }
-
-        private void setvalue(ushort timestamp, byte grid, int offset, uint length)
-        {
-            _usTimeStamp = timestamp;
-            _bGrid = grid;
-            _iOffset = offset;
-            _uiLength = length;
+            TimeStamp = timestamp;
+            Grid = grid;
+            DataOffset = offset;
+            DataLength = length;
         }
 
-        public ushort TimeStamp
-        {
-            get { return _usTimeStamp; }
-        }
-        public byte Grid
-        {
-            get { return _bGrid; }
-        }
-        public int DataOffset
-        {
-            get { return _iOffset; }
-        }
-        public uint DataLength
-        {
-            get { return _uiLength; }
-        }
+        public ushort TimeStamp { get; } //in minute for whiteboard, in second for screenshot
+        public byte Grid { get; }
+        public int DataOffset { get; set; }
+        public uint DataLength { get; set; }
+
         public byte Row
         {
-            get { return (byte)(_bGrid >> 4); }
+            get { return (byte)(Grid >> 4); }
         }
         public byte Col
         {
-            get { return (byte)(_bGrid & 0xf); }
+            get { return (byte)(Grid & 0xf); }
         }
 
         public static int StreamSize
@@ -67,18 +34,18 @@ namespace Johnny.Portfolio.CoursePlayer.Core
 
         public void ChangeDataOffsetLength(int dwOffset, uint dwLength)
         {
-            _iOffset = dwOffset;
-            _uiLength = dwLength;
+            DataOffset = dwOffset;
+            DataLength = dwLength;
         }
 
         public int CompareTo(Index obj)
         {
-            int ret = TimeStamp.CompareTo(obj.TimeStamp);
-            if (ret == 0)
+            int compare = TimeStamp.CompareTo(obj.TimeStamp);
+            if (compare == 0)
             {
-                ret = Grid.CompareTo(obj.Grid);
+                compare = Grid.CompareTo(obj.Grid);
             }
-            return ret;
+            return compare;
         }
     }
 }

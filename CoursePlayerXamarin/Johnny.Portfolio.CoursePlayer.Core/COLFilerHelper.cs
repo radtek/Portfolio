@@ -4,7 +4,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
 {
     class COLFilerHelper
     {
-        private FileHelper _fileHelper;
+        private readonly FileHelper _fileHelper;
         private string _indexfilename;
         private string _datafilename;
 
@@ -22,7 +22,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
                 byte[] indexData = _fileHelper.ReadBytes(_indexfilename);
                 return new IndexList(indexData);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -34,7 +34,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             {
                 return _fileHelper.Seek(_datafilename, offset, length);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -45,7 +45,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             {
                 _fileHelper.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             } 
         }

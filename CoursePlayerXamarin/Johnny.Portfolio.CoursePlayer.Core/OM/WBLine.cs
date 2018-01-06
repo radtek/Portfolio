@@ -11,9 +11,6 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         private short _sColor;
         private ushort _usReserved;
 
-        public WBLine()
-        {
-        }
         public WBLine(ushort wx0, ushort wy0, ushort wx1, ushort wy1, short wcolor, ushort wreserver)
         {
             SetValue(wx0, wy0, wx1, wy1, wcolor, wreserver);

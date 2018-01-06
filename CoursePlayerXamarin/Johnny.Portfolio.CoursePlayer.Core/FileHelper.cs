@@ -6,7 +6,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
 {
     class FileHelper : IFileHelper
     {
-        IFileHelper fileHelper = DependencyService.Get<IFileHelper>(DependencyFetchTarget.NewInstance);  //create new instance each time
+        readonly IFileHelper fileHelper = DependencyService.Get<IFileHelper>(DependencyFetchTarget.NewInstance);  //create new instance each time
 
         public bool Exists(string filename)
         {

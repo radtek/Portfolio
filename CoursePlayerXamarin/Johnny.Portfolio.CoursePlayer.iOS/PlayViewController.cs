@@ -11,7 +11,7 @@ using Xamarin;
 
 namespace Johnny.Portfolio.CoursePlayer.iOS
 {
-    public partial class SecondViewController : UIViewController
+    public partial class PlayViewController : UIViewController
     {
         UISlider sliderTimeline;
         UILabel lblCurrentTime;
@@ -25,7 +25,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
         Timer drawerTimer = new Timer();
         Timer imagerTimer = new Timer();
 
-        public SecondViewController(IntPtr handle)
+        public PlayViewController(IntPtr handle)
             : base(handle)
         {
             Xamarin.Forms.Forms.Init();
