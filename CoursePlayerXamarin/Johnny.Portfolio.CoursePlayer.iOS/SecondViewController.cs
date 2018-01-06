@@ -29,8 +29,6 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             : base(handle)
         {
             Xamarin.Forms.Forms.Init();
-            Title = NSBundle.MainBundle.LocalizedString("Second", "Second");
-            TabBarItem.Image = UIImage.FromBundle("Images/second");
         }
 
         public override void DidReceiveMemoryWarning()
@@ -50,10 +48,15 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             try
             {
                 // Perform any additional setup after loading the view, typically from a nib.
-                Title = "Course Player";
                 View.BackgroundColor = UIColor.White;
 
-                sliderTimeline = new UISlider(new CGRect(0, 20, 320, 34));
+                btnPlay = UIButton.FromType(UIButtonType.RoundedRect);
+                btnPlay.SetTitle("Play", UIControlState.Normal);
+                btnPlay.Frame = new CGRect(0, 20, 320, 30);
+                btnPlay.TouchUpInside += button_TouchUpInside;
+                View.AddSubview(btnPlay);
+
+                sliderTimeline = new UISlider(new CGRect(0, 40, 320, 34));
                 View.Add(sliderTimeline);
 
                 int timeframe = 4*60*60-30*60;
@@ -64,16 +67,10 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                 sliderTimeline.TouchUpInside += slider_TouchUpInside;
                 sliderTimeline.TouchDown += slider_TouchDown;
 
-                lblCurrentTime = new UILabel(new CGRect(0, 54, 320, 20));
+                lblCurrentTime = new UILabel(new CGRect(0, 74, 320, 20));
                 lblCurrentTime.Text = "00:00:00";
                 lblCurrentTime.TextAlignment = UITextAlignment.Center;
                 View.Add(lblCurrentTime);
-
-                btnPlay = UIButton.FromType(UIButtonType.RoundedRect);
-                btnPlay.SetTitle("Play", UIControlState.Normal);
-                btnPlay.Frame = new CGRect(0, 74, 320, 30);
-                btnPlay.TouchUpInside += button_TouchUpInside;
-                View.AddSubview(btnPlay);
 
                 canvasSS = new ScreenShotCanvasView(new CGRect(0, 104, 320, 200));
                 View.Add(canvasSS);
@@ -127,6 +124,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             if (playStatus == PlayerState.Stopped)
             {
                 btnPlay.SetTitle("Stop", UIControlState.Normal);
+                btnPlay.SetTitleColor(UIColor.Red, UIControlState.Normal);
                 playerTimer.Elapsed += playerTimer_Elapsed;
                 playerTimer.Interval = 1000;             // Timer will tick every 1 seconds
                 playerTimer.Enabled = true;                       // Enable the timer
@@ -146,7 +144,8 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             }
             else if (playStatus == PlayerState.Playing)
             {
-                btnPlay.SetTitle("Play", UIControlState.Normal);                
+                btnPlay.SetTitle("Play", UIControlState.Normal);
+                btnPlay.SetTitleColor(UIColor.Blue, UIControlState.Normal);
                 playerTimer.Elapsed -= playerTimer_Elapsed;
                 drawerTimer.Elapsed -= drawerTimer_Elapsed;
                 imagerTimer.Elapsed -= imagerTimer_Elapsed;

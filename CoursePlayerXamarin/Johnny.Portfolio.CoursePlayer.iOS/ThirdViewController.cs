@@ -12,8 +12,8 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
         public ThirdViewController(IntPtr handle)
             : base(handle)
         {
-            Title = NSBundle.MainBundle.LocalizedString("Third", "Third");
-            TabBarItem.Image = UIImage.FromBundle("Images/second");
+            //Title = NSBundle.MainBundle.LocalizedString("Third", "Third");
+            //TabBarItem.Image = UIImage.FromBundle("Images/playlist");
         }
 
         public override void DidReceiveMemoryWarning()

@@ -13,8 +13,6 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             : base(handle)
         {
             Xamarin.Forms.Forms.Init();
-            Title = NSBundle.MainBundle.LocalizedString("First", "First");
-            TabBarItem.Image = UIImage.FromBundle("Images/first");
         }
 
         public override void DidReceiveMemoryWarning()

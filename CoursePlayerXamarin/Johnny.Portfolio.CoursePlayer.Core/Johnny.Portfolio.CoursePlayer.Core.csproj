@@ -44,7 +44,6 @@
     <Compile Include="OM\Index.cs" />
     <Compile Include="OM\IndexList.cs" />
     <Compile Include="OM\ScreenData.cs" />
-    <Compile Include="OM\WBLineStyle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OM\WBData.cs" />
     <Compile Include="OM\WBEvent.cs" />
