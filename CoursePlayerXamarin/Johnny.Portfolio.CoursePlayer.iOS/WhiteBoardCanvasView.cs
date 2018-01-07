@@ -96,7 +96,6 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
 
                         foreach (WBEvent wbevent in wbevents)
                         {
-
                             if (wbevent.X >= 0)
                             {
                                 if (lastPoint == null)
@@ -140,18 +139,11 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
         {
             needclear = true;
         }
-        public WBData WhiteBoardData
-        {
-            get;
-            set;
-        }
-        public int CurrentMilliseconds //in Milliseconds
-        {
-            get;
-            set;
-        }
 
-        private System.Collections.Hashtable GroupWBEventsBySecond(List<WBEvent> lstEvents)
+        public WBData WhiteBoardData { get; set; }
+        public int CurrentMilliseconds { get; set; }
+
+        private Hashtable GroupWBEventsBySecond(List<WBEvent> lstEvents)
         {
             Hashtable ht = new Hashtable();
             foreach (WBEvent item in lstEvents)

@@ -6,7 +6,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
 {
     public class IndexList
     {
-        protected TimeSpan _duration;
+        //protected TimeSpan _duration;
         protected List<Index> _listIndex = new List<Index>();
         IDictionary<int, int> _mapIndex = new Dictionary<int, int>();
 
@@ -14,10 +14,10 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         {
         }
 
-        TimeSpan Duration
+        /*TimeSpan Duration
         {
             get { return _duration; }
-        }
+        }*/
 
         public List<int> TimePoints
         {
@@ -39,7 +39,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
 
             if (_listIndex.Count > 0)
             {
-                _duration = TimeSpan.FromSeconds(_listIndex[_listIndex.Count - 1].TimeStamp);
+                //_duration = TimeSpan.FromSeconds(_listIndex[_listIndex.Count - 1].TimeStamp);
             }
             for (int i = 0; i < _listIndex.Count; i++)
             {

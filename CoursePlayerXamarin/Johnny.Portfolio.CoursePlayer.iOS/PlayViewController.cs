@@ -8,6 +8,7 @@ using CoreGraphics;
 using System.Timers;
 using Johnny.Portfolio.CoursePlayer.Core;
 using Xamarin;
+using Johnny.Portfolio.CoursePlayer.Core.OM;
 
 namespace Johnny.Portfolio.CoursePlayer.iOS
 {
@@ -19,6 +20,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
         WhiteBoardCanvasView canvasWB;
         ScreenShotCanvasView canvasSS;
         COLDataSource _ds;
+        CourseApi _api;
         private PlayerState playStatus = PlayerState.Stopped;
 
         Timer playerTimer = new Timer();
@@ -80,6 +82,8 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
 
                 _ds = new COLDataSource();
                 _ds.LectureId = "204304";
+                _api = new CourseApi();
+                _api.LectureId = "204304";
             }
             catch (Exception ex)
             {
@@ -155,6 +159,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                 sliderTimeline.Value = 0f;
                 lblCurrentTime.Text = "00:00:00";
                 _ds.Close();
+                _api.Close();
                 canvasWB.Clear();
                 canvasWB.SetNeedsDisplay();
                 canvasSS.Clear();
@@ -177,6 +182,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                     sliderTimeline.Value = 0f;
                     lblCurrentTime.Text = "00:00:00";
                     _ds.Close();
+                    _api.Close();
                     canvasWB.Clear();
                     canvasWB.SetNeedsDisplay();
                 }
@@ -194,8 +200,10 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             {
                 int second = Convert.ToInt32(sliderTimeline.Value);
                 //int ts = 2367000/1000;
-                WBData wb = _ds.GetWhiteBoardData(Johnny.Portfolio.CoursePlayer.Core.DataType.WB_1, second);
-                canvasWB.WhiteBoardData = wb;
+                /*WBData wb = _ds.GetWhiteBoardData(Johnny.Portfolio.CoursePlayer.Core.DataType.WB_1, second);
+                canvasWB.WhiteBoardData = wb;*/
+                WBData wbData = _api.GetWhiteboardData(second);
+                canvasWB.WhiteBoardData = wbData;
                 canvasWB.CurrentMilliseconds = second * 1000;
                 canvasWB.SetNeedsDisplay();
             });
@@ -207,8 +215,10 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             {
                 int second = Convert.ToInt32(sliderTimeline.Value);
                 //int ts = 2367000/1000;
-                ScreenData screen = _ds.GetScreenshotData(Johnny.Portfolio.CoursePlayer.Core.DataType.ScreenShot, second);
-                canvasSS.ScreenShotData = screen;
+                //ScreenshotData screen = _ds.GetScreenshotData(Johnny.Portfolio.CoursePlayer.Core.DataType.ScreenShot, second);
+                //canvasSS.ScreenShotData = screen;
+                List<SSImage> ssData = _api.GetScreenshotData(second);
+                canvasSS.SSData = ssData;
                 canvasSS.SetNeedsDisplay();
             });
         }

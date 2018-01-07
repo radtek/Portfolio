@@ -11,7 +11,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         NarrowEraserDown = -10,
         PenUp = -100,
         FunctionClear = -200
-    };
+    }
 
     public enum WBPenColor
     {
@@ -19,13 +19,13 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         Blue = -2,
         Green = -3,
         Black = -8,
-    };
+    }
 
     public enum WBEraserPenWidth
     {
         NarrowEraserWidth = 8 * 10 / 12,
         WideEraserWidth = 39 * 10 / 12
-    };
+    }
 
     public enum DataType
     {
@@ -33,6 +33,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         WB_1 = 1,
         WB_2 = 2
     }
+
     public enum FileType
     {
         ScreenshotImageIndex = 0,

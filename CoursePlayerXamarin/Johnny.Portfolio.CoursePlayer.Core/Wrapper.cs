@@ -85,17 +85,9 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         public byte[] Compress(byte[] bytData, params int[] ratio)
         {
             int compRatio = 9;
-            try
+            if (ratio[0] > 0)
             {
-                if (ratio[0] > 0)
-
-                {
-                    compRatio = ratio[0];
-                }
-            }
-            catch
-            {
-                throw;
+                compRatio = ratio[0];
             }
 
 

@@ -10,6 +10,7 @@ using CoreGraphics;
 using Johnny.Portfolio.CoursePlayer.Core;
 using Xamarin.Forms;
 using System.IO;
+using Johnny.Portfolio.CoursePlayer.Core.OM;
 
 namespace Johnny.Portfolio.CoursePlayer.iOS
 {
@@ -47,6 +48,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             gctx.SetLineWidth(2);
             gctx.StrokeRect(rect);
 
+            /*
             if (ScreenShotData != null)
             {
                 if (ScreenShotData.Images != null && ScreenShotData.Images.Count > 0)
@@ -60,6 +62,14 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                         uiImage.Draw(GetRect(rect.Size.Width, rect.Size.Height, row, col));
                     }
                 }                
+            }*/
+            if (SSData != null && SSData.Count > 0)
+            {
+                foreach (SSImage item in SSData)
+                {
+                    UIImage uiImage = ToImage(item.Image);
+                    uiImage.Draw(GetRect(rect.Size.Width, rect.Size.Height, item.Row, item.Col));
+                }
             }
 		}
 
@@ -96,11 +106,8 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
 
         }
         
-        public ScreenData ScreenShotData
-        {
-            get;
-            set;
-        }
+        public ScreenshotData ScreenShotData { get; set; }
+        public List<SSImage> SSData { get; set; }
 
         public void Clear()
         {

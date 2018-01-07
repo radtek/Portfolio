@@ -45,7 +45,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
         {
             try
             {
-                FileStream indexstream = new System.IO.FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read);
+                FileStream indexstream = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read);
                 BinaryReader breader = new BinaryReader(indexstream);
 
                 return breader.ReadBytes((int)indexstream.Length);

@@ -31,9 +31,9 @@ namespace Johnny.Portfolio.CoursePlayer.Core
                 colhelperScreenImage.Close();
         }
 
-        public ScreenData GetScreenshotData(DataType dt, int second)
+        public ScreenshotData GetScreenshotData(DataType dt, int second)
         {
-            ScreenData sd = new ScreenData();
+            ScreenshotData sd = new ScreenshotData();
             sd.Images = GetImages(dt, second);
             return sd;
         }
@@ -70,6 +70,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
 
             }
         }
+
         public WBData GetWhiteBoardData(DataType dt, int second)
         {
             List<WBLine> lines = GetWhiteBoardImage(dt, second);
