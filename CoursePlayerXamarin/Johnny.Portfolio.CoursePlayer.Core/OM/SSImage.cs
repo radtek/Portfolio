@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace Johnny.Portfolio.CoursePlayer.Core.OM
 {
     public class SSImage

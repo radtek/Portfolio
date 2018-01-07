@@ -25,6 +25,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             //Opaque = false;
             currentLineStyle = new WBLineStyle();
         }
+
         public WhiteBoardCanvasView(CGRect cgrect)
 		{
             base.Frame = cgrect;
@@ -61,7 +62,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                 UIColor.Clear.SetFill();
                 UIColor.Black.SetStroke();
 
-                int currentMin = Utility.GetMinute(CurrentMilliseconds);
+                int currentMin = GetMinute(CurrentSecond);
                 if (previousMin != currentMin)
                 {
                     previousMin = currentMin;
@@ -72,7 +73,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                 {
                     foreach (WBLine line in WhiteBoardData.WBLines)
                     {
-                        WBLineStyle linestyle = Utility.GetLineStyle(line.UColor);
+                        WBLineStyle linestyle = WBLineStyle.Create(line.Color);
                         linestyle.Color.SetStroke();
                         gctx.SetLineWidth(linestyle.Width);
                         gctx.MoveTo(line.X0 * xRate, line.Y0 * yRate);
@@ -85,7 +86,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                 {
                     Hashtable group = GroupWBEventsBySecond(WhiteBoardData.WBEvents);
 
-                    int endMilliseconds = CurrentMilliseconds % 60000;
+                    int endMilliseconds = CurrentSecond * 1000 % 60000;
                     int ix;
                     for (ix = currentEventTs; ix <= endMilliseconds; ix++)
                     {
@@ -124,7 +125,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                                         lastPoint = null;
                                         break;
                                     default:
-                                        currentLineStyle = Utility.GetLineStyle(wbevent.X);
+                                        currentLineStyle = WBLineStyle.Create(wbevent.X);
                                         break;
                                 }
                                 lastPoint = null;
@@ -139,9 +140,6 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
         {
             needclear = true;
         }
-
-        public WBData WhiteBoardData { get; set; }
-        public int CurrentMilliseconds { get; set; }
 
         private Hashtable GroupWBEventsBySecond(List<WBEvent> lstEvents)
         {
@@ -163,5 +161,17 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
 
             return ht;
         }
+
+        private int GetMinute(int ts)
+        {
+            if (ts <= 0)
+                return -1;
+
+            TimeSpan tspan = TimeSpan.FromSeconds(ts);
+            return (int)tspan.TotalMinutes;
+        }
+
+        public WBData WhiteBoardData { get; set; }
+        public int CurrentSecond { get; set; }
     }
 }

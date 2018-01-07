@@ -27,26 +27,10 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         WideEraserWidth = 39 * 10 / 12
     }
 
-    public enum DataType
+    public enum PlayerState
     {
-        ScreenShot = 0,
-        WB_1 = 1,
-        WB_2 = 2
-    }
-
-    public enum FileType
-    {
-        ScreenshotImageIndex = 0,
-        ScreenshotImageData = 1,
-        ScreenshotSequenceIndex = 2,
-        ScreenshotSequenceData = 3,
-        Whiteboard1ImageIndex = 4,
-        Whiteboard1ImageData = 5,
-        Whiteboard1SequenceIndex = 6,
-        Whiteboard1SequenceData = 7,
-        Whiteboard2ImageIndex = 8,
-        Whiteboard2ImageData = 9,
-        Whiteboard2SequenceIndex = 10,
-        Whiteboard2SequenceData = 11
-    }
+        Stopped = 0,
+        Playing = 1,
+        Paused = 2
+    };
 }

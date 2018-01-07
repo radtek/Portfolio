@@ -22,6 +22,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
         {
             BackgroundColor = UIColor.Clear;
         }
+
         public ScreenShotCanvasView(CGRect cgrect)
 		{
             base.Frame = cgrect;
@@ -32,7 +33,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
 		{
 			base.Draw (rect);
 			
-			var gctx = UIGraphics.GetCurrentContext ();
+			var gctx = UIGraphics.GetCurrentContext();
 
             if (needclear)
             {
@@ -48,21 +49,6 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             gctx.SetLineWidth(2);
             gctx.StrokeRect(rect);
 
-            /*
-            if (ScreenShotData != null)
-            {
-                if (ScreenShotData.Images != null && ScreenShotData.Images.Count > 0)
-                {
-                    foreach (KeyValuePair<int, byte[]> item in ScreenShotData.Images)
-                    {
-                        //row 0~7, col 0~7
-                        int row = item.Key / Constants.MAX_ROW_NO;
-                        int col = item.Key % Constants.MAX_COL_NO;
-                        UIImage uiImage = ToImage(item.Value);
-                        uiImage.Draw(GetRect(rect.Size.Width, rect.Size.Height, row, col));
-                    }
-                }                
-            }*/
             if (SSData != null && SSData.Count > 0)
             {
                 foreach (SSImage item in SSData)
@@ -106,7 +92,6 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
 
         }
         
-        public ScreenshotData ScreenShotData { get; set; }
         public List<SSImage> SSData { get; set; }
 
         public void Clear()

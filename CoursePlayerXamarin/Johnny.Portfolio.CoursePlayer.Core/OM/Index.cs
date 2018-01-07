@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace Johnny.Portfolio.CoursePlayer.Core
 {
@@ -9,13 +8,13 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         {
             TimeStamp = timestamp;
             Grid = grid;
-            DataOffset = offset;
+            Offset = offset;
             DataLength = length;
         }
 
         public ushort TimeStamp { get; } //in minute for whiteboard, in second for screenshot
         public byte Grid { get; }
-        public int DataOffset { get; set; }
+        public int Offset { get; set; }
         public uint DataLength { get; set; }
 
         public byte Row
@@ -30,12 +29,6 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         public static int StreamSize
         {
             get { return 2 + 1 + 4 + 4; }
-        }
-
-        public void ChangeDataOffsetLength(int dwOffset, uint dwLength)
-        {
-            DataOffset = dwOffset;
-            DataLength = dwLength;
         }
 
         public int CompareTo(Index obj)

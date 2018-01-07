@@ -93,12 +93,10 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Enums.cs" />
     <Compile Include="FileHelper.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="OM\WBLineStyle.cs" />
-    <Compile Include="Utility.cs" />
     <Compile Include="ScreenShotCanvasView.cs" />
     <Compile Include="WhiteBoardCanvasView.cs" />
     <None Include="GettingStarted.Xamarin" />

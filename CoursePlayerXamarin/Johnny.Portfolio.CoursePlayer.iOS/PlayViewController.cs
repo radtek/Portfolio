@@ -14,18 +14,19 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
 {
     public partial class PlayViewController : UIViewController
     {
+        UIButton btnPlay;
         UISlider sliderTimeline;
         UILabel lblCurrentTime;
-        UIButton btnPlay;
+
         WhiteBoardCanvasView canvasWB;
         ScreenShotCanvasView canvasSS;
-        COLDataSource _ds;
+
         CourseApi _api;
         private PlayerState playStatus = PlayerState.Stopped;
 
-        Timer playerTimer = new Timer();
-        Timer drawerTimer = new Timer();
-        Timer imagerTimer = new Timer();
+        Timer timerVideo = new Timer();
+        Timer timerSS = new Timer();
+        Timer timerWB = new Timer();
 
         public PlayViewController(IntPtr handle)
             : base(handle)
@@ -55,7 +56,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                 btnPlay = UIButton.FromType(UIButtonType.RoundedRect);
                 btnPlay.SetTitle("Play", UIControlState.Normal);
                 btnPlay.Frame = new CGRect(0, 20, 320, 30);
-                btnPlay.TouchUpInside += button_TouchUpInside;
+                btnPlay.TouchUpInside += BtnPlay_TouchUpInside;
                 View.AddSubview(btnPlay);
 
                 sliderTimeline = new UISlider(new CGRect(0, 40, 320, 34));
@@ -65,13 +66,15 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                 sliderTimeline.MinValue = 0f;
                 sliderTimeline.MaxValue = Convert.ToSingle(timeframe);
                 sliderTimeline.Value = 0f;
-                sliderTimeline.ValueChanged += sliderTimeline_ValueChanged;
-                sliderTimeline.TouchUpInside += slider_TouchUpInside;
-                sliderTimeline.TouchDown += slider_TouchDown;
+                sliderTimeline.ValueChanged += SliderTimeline_ValueChanged;
+                sliderTimeline.TouchUpInside += SliderTimeline_TouchUpInside;
+                sliderTimeline.TouchDown += SliderTimeline_TouchDown;
 
-                lblCurrentTime = new UILabel(new CGRect(0, 74, 320, 20));
-                lblCurrentTime.Text = "00:00:00";
-                lblCurrentTime.TextAlignment = UITextAlignment.Center;
+                lblCurrentTime = new UILabel(new CGRect(0, 74, 320, 20))
+                {
+                    Text = "00:00:00",
+                    TextAlignment = UITextAlignment.Center
+                };
                 View.Add(lblCurrentTime);
 
                 canvasSS = new ScreenShotCanvasView(new CGRect(0, 104, 320, 200));
@@ -80,10 +83,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                 canvasWB = new WhiteBoardCanvasView(new CGRect(0, 310, 320, 200));
                 View.Add(canvasWB);
 
-                _ds = new COLDataSource();
-                _ds.LectureId = "204304";
                 _api = new CourseApi();
-                _api.LectureId = "204304";
             }
             catch (Exception ex)
             {
@@ -91,100 +91,52 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             }
         }
 
-        void sliderTimeline_ValueChanged(object sender, EventArgs e)
+        void SliderTimeline_ValueChanged(object sender, EventArgs e)
         {
             lblCurrentTime.Text = GetReadableTimeText(sliderTimeline.Value);
         }
 
-        void slider_TouchDown(object sender, EventArgs e)
+        void SliderTimeline_TouchDown(object sender, EventArgs e)
         {
             if (playStatus == PlayerState.Playing)
             {
-                playerTimer.Elapsed -= playerTimer_Elapsed;
-                playerTimer.Enabled = false;
-                imagerTimer.Elapsed -= imagerTimer_Elapsed;
-                imagerTimer.Enabled = false;
+                // disable all events when touching down
+                timerVideo.Elapsed -= TimerVideo_Elapsed;
+                timerVideo.Enabled = false;
+                timerSS.Elapsed -= TimerSS_Elapsed;
+                timerSS.Enabled = false;
+                timerWB.Elapsed -= TimerWB_Elapsed;
+                timerWB.Enabled = false;
             }
         }
 
-        void slider_TouchUpInside(object sender, EventArgs e)
+        void SliderTimeline_TouchUpInside(object sender, EventArgs e)
         {
             if (playStatus == PlayerState.Playing)
             {
-                playerTimer.Elapsed += playerTimer_Elapsed;
-                playerTimer.Enabled = true;
-                playerTimer.Interval = 1000;
-                playerTimer.Start();
-
-                imagerTimer.Elapsed += imagerTimer_Elapsed;
-                imagerTimer.Interval = 1000;
-                imagerTimer.Enabled = true;
-                imagerTimer.Start();
+                StartPlayer();
             }
         }
 
-        void button_TouchUpInside(object sender, EventArgs e)
+        void BtnPlay_TouchUpInside(object sender, EventArgs e)
         {
             if (playStatus == PlayerState.Stopped)
             {
-                btnPlay.SetTitle("Stop", UIControlState.Normal);
-                btnPlay.SetTitleColor(UIColor.Red, UIControlState.Normal);
-                playerTimer.Elapsed += playerTimer_Elapsed;
-                playerTimer.Interval = 1000;             // Timer will tick every 1 seconds
-                playerTimer.Enabled = true;                       // Enable the timer
-                playerTimer.Start();
-
-                drawerTimer.Elapsed += drawerTimer_Elapsed;
-                drawerTimer.Interval = 2000;             // Timer will tick every 2 seconds
-                drawerTimer.Enabled = true;                       // Enable the timer
-                drawerTimer.Start();
-
-                imagerTimer.Elapsed += imagerTimer_Elapsed;
-                imagerTimer.Interval = 1000;
-                imagerTimer.Enabled = true;
-                imagerTimer.Start();
-
-                playStatus = PlayerState.Playing;
+                StartPlayer();
             }
             else if (playStatus == PlayerState.Playing)
             {
-                btnPlay.SetTitle("Play", UIControlState.Normal);
-                btnPlay.SetTitleColor(UIColor.Blue, UIControlState.Normal);
-                playerTimer.Elapsed -= playerTimer_Elapsed;
-                drawerTimer.Elapsed -= drawerTimer_Elapsed;
-                imagerTimer.Elapsed -= imagerTimer_Elapsed;
-                playerTimer.Enabled = false;
-                drawerTimer.Enabled = false;
-                imagerTimer.Enabled = false;
-                sliderTimeline.Value = 0f;
-                lblCurrentTime.Text = "00:00:00";
-                _ds.Close();
-                _api.Close();
-                canvasWB.Clear();
-                canvasWB.SetNeedsDisplay();
-                canvasSS.Clear();
-                canvasSS.SetNeedsDisplay();
-                playStatus = PlayerState.Stopped;
+                StopPlayer();
             }
         }
 
-        void playerTimer_Elapsed(object sender, ElapsedEventArgs e)
+        void TimerVideo_Elapsed(object sender, ElapsedEventArgs e)
         {
             InvokeOnMainThread(delegate
             {
                 if (sliderTimeline.Value >= sliderTimeline.MaxValue)
                 {
-                    btnPlay.SetTitle("Play", UIControlState.Normal);
-                    playerTimer.Elapsed -= playerTimer_Elapsed;
-                    drawerTimer.Elapsed -= drawerTimer_Elapsed;
-                    playerTimer.Enabled = false;
-                    drawerTimer.Enabled = false;
-                    sliderTimeline.Value = 0f;
-                    lblCurrentTime.Text = "00:00:00";
-                    _ds.Close();
-                    _api.Close();
-                    canvasWB.Clear();
-                    canvasWB.SetNeedsDisplay();
+                    StopPlayer();
                 }
                 else
                 {
@@ -194,33 +146,69 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             });
         }
 
-        void drawerTimer_Elapsed(object sender, ElapsedEventArgs e)
+        void TimerSS_Elapsed(object sender, ElapsedEventArgs e)
         {
             InvokeOnMainThread(delegate
             {
                 int second = Convert.ToInt32(sliderTimeline.Value);
-                //int ts = 2367000/1000;
-                /*WBData wb = _ds.GetWhiteBoardData(Johnny.Portfolio.CoursePlayer.Core.DataType.WB_1, second);
-                canvasWB.WhiteBoardData = wb;*/
-                WBData wbData = _api.GetWhiteboardData(second);
-                canvasWB.WhiteBoardData = wbData;
-                canvasWB.CurrentMilliseconds = second * 1000;
-                canvasWB.SetNeedsDisplay();
-            });
-        }
-
-        void imagerTimer_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            InvokeOnMainThread(delegate
-            {
-                int second = Convert.ToInt32(sliderTimeline.Value);
-                //int ts = 2367000/1000;
-                //ScreenshotData screen = _ds.GetScreenshotData(Johnny.Portfolio.CoursePlayer.Core.DataType.ScreenShot, second);
-                //canvasSS.ScreenShotData = screen;
                 List<SSImage> ssData = _api.GetScreenshotData(second);
                 canvasSS.SSData = ssData;
                 canvasSS.SetNeedsDisplay();
             });
+        }
+
+        void TimerWB_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            InvokeOnMainThread(delegate
+            {
+                int second = Convert.ToInt32(sliderTimeline.Value);
+                WBData wbData = _api.GetWhiteboardData(second);
+                canvasWB.WhiteBoardData = wbData;
+                canvasWB.CurrentSecond = second;
+                canvasWB.SetNeedsDisplay();
+            });
+        }
+
+        private void StartPlayer() {
+            btnPlay.SetTitle("Stop", UIControlState.Normal);
+            btnPlay.SetTitleColor(UIColor.Red, UIControlState.Normal);
+
+            // enable all events
+            timerVideo.Elapsed += TimerVideo_Elapsed;
+            timerVideo.Interval = 1000; // Timer will tick every 1 seconds
+            timerVideo.Enabled = true;  // Enable the timer
+            timerVideo.Start();
+
+            timerSS.Elapsed += TimerSS_Elapsed;
+            timerSS.Interval = 1000; // Timer will tick every 1 seconds
+            timerSS.Enabled = true;  // Enable the timer
+            timerSS.Start();
+
+            timerWB.Elapsed += TimerWB_Elapsed;
+            timerWB.Interval = 1000; // Timer will tick every 2 seconds
+            timerWB.Enabled = true;  // Enable the timer
+            timerWB.Start();
+
+            playStatus = PlayerState.Playing;
+        }
+
+        private void StopPlayer() {
+            btnPlay.SetTitle("Play", UIControlState.Normal);
+            btnPlay.SetTitleColor(UIColor.Blue, UIControlState.Normal);
+            timerVideo.Elapsed -= TimerVideo_Elapsed;
+            timerSS.Elapsed -= TimerSS_Elapsed;
+            timerWB.Elapsed -= TimerWB_Elapsed;
+            timerVideo.Enabled = false;
+            timerSS.Enabled = false;
+            timerWB.Enabled = false;
+            sliderTimeline.Value = 0f;
+            lblCurrentTime.Text = "00:00:00";
+            _api.Close();
+            canvasWB.Clear();
+            canvasWB.SetNeedsDisplay();
+            canvasSS.Clear();
+            canvasSS.SetNeedsDisplay();
+            playStatus = PlayerState.Stopped;
         }
 
         private string GetReadableTimeText(float input)

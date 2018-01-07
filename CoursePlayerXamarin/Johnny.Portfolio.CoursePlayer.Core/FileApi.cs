@@ -8,33 +8,18 @@ namespace Johnny.Portfolio.CoursePlayer.Core
     public class FileApi
     {
         private readonly FileHelper _fileHelper;
-        //private string _indexfilename;
-        //private string _datafilename;
-        //private byte[] _decompressedBytes;
 
         public FileApi()
         {
             _fileHelper = new FileHelper();
-           // _indexfilename = indexfilename;
-           // _datafilename = datafilename;
         }
 
         public byte[] GetIndexFile(string originalFile) {
-            //if (_decompressedBytes == null || _decompressedBytes.Length == 0)
-            //{
-            byte[] decompressedBytes = UnzipIndexFile(originalFile);
-            //}
-            return decompressedBytes;
-        }
-
-        private byte[] UnzipIndexFile(string originalFile)
-        {
             byte[] bytes = _fileHelper.ReadBytes(originalFile);
             //unzip
             Wrapper zipwrapper = new Wrapper();
-            byte[] indexbuf = zipwrapper.Decompress(bytes);
-
-            return indexbuf;
+            byte[] decompressedBytes = zipwrapper.Decompress(bytes);
+            return decompressedBytes;
         }
 
         public List<Index> GetIndexList(byte[] indexbuf)
@@ -49,27 +34,22 @@ namespace Johnny.Portfolio.CoursePlayer.Core
                 listIndex.Add(item);
             }
 
-            //dataffset ==-1 is the point to same block as previous one
             for (int i = 0; i < listIndex.Count; i++)
             {
-                if (listIndex[i].DataOffset == -1 && i > 0)
+                //dataffset ==-1 is the point to same block as previous one
+                if (listIndex[i].Offset == -1 && i > 0)
                 {
-                    listIndex[i].DataOffset = listIndex[i - 1].DataOffset;
+                    listIndex[i].Offset = listIndex[i - 1].Offset;
                     listIndex[i].DataLength = listIndex[i - 1].DataLength;
                 }
             }
 
             listIndex.Sort();
-
-            //if (listIndex.Count > 0)
-            //{
-            //    _duration = TimeSpan.FromSeconds(_listIndex[_listIndex.Count - 1].TimeStamp);
-            //}
            
             return listIndex;
         }
 
-        //used by the Screenshot Data index
+        // screenshot
         public List<Index> GetSSIndex(List<Index> ssIndexList, IDictionary<int, int> mapIndex, int second)
         {
             bool[] foundset = new bool[Constants.MAX_ROW_NO * Constants.MAX_COL_NO];
@@ -116,7 +96,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             List<SSImage> imageList = new List<SSImage>();
             foreach (Index index in ssIndex)
             {
-                byte[] buf = _fileHelper.Seek(imagedatafile, index.DataOffset, (int)index.DataLength);
+                byte[] buf = _fileHelper.Seek(imagedatafile, index.Offset, (int)index.DataLength);
                 imageList.Add(new SSImage(index.Row, index.Col, buf));
             }
 
@@ -153,7 +133,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             {
                 if (indeximage != null && indeximage.DataLength > 0)
                 {
-                    byte[] buf = _fileHelper.Seek(wbImageDataFile, indeximage.DataOffset, (int)indeximage.DataLength);
+                    byte[] buf = _fileHelper.Seek(wbImageDataFile, indeximage.Offset, (int)indeximage.DataLength);
                     if (buf.Length == indeximage.DataLength)
                     {
                         //read data to index list
@@ -169,7 +149,6 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             }
             catch (Exception)
             {
-
 
             }
 
@@ -187,7 +166,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             {
                 if (indeximage != null && indeximage.DataLength > 0)
                 {
-                    byte[] buf = _fileHelper.Seek(wbSequenceDataFile, indeximage.DataOffset, (int)indeximage.DataLength);
+                    byte[] buf = _fileHelper.Seek(wbSequenceDataFile, indeximage.Offset, (int)indeximage.DataLength);
                     if (buf.Length == indeximage.DataLength)
                     {
                         //read data to index list
@@ -203,38 +182,10 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             catch (Exception)
             {
 
-
             }
 
             return wbEvents;
         }
-
-
-        static public List<T> Read<T>(int TStreamSize, byte[] databuf)
-        {
-            List<T> list = new List<T>();
-
-            MemoryStream stream = new MemoryStream(databuf);
-            BinaryReader breader = new BinaryReader(stream);
-
-            try
-            {
-                for (int i = 0; i < databuf.Length / TStreamSize; i++)
-                {
-                    object[] args = new Object[1];
-                    args[0] = breader;
-                    T t = (T)Activator.CreateInstance(typeof(T), args);
-
-                    list.Add(t);
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-
-            return list;
-        }      
 
         public void Close()
         {
