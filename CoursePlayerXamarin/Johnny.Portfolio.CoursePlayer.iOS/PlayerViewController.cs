@@ -163,7 +163,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             {
                 int second = Convert.ToInt32(sliderTimeline.Value);
                 WBData wbData = CourseApi.GetWhiteboardData(second);
-                canvasWB.WhiteBoardData = wbData;
+                canvasWB.WBData = wbData;
                 canvasWB.CurrentSecond = second;
                 canvasWB.SetNeedsDisplay();
             });

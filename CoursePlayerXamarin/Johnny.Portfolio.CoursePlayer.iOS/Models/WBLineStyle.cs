@@ -1,6 +1,6 @@
 using UIKit;
 
-namespace Johnny.Portfolio.CoursePlayer.iOS
+namespace Johnny.Portfolio.CoursePlayer.iOS.Models
 {
     public class WBLineStyle
     {

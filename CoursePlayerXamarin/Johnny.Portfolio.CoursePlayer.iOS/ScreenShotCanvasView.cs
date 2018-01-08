@@ -18,16 +18,16 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
         }
 
         public ScreenShotCanvasView(CGRect cgrect)
-		{
+        {
             base.Frame = cgrect;
-			BackgroundColor = UIColor.Clear;
-		}
-		
-		public override void Draw (CGRect rect)
-		{
-			base.Draw (rect);
-			
-			var gctx = UIGraphics.GetCurrentContext();
+            BackgroundColor = UIColor.Clear;
+        }
+
+        public override void Draw(CGRect rect)
+        {
+            base.Draw(rect);
+
+            var gctx = UIGraphics.GetCurrentContext();
 
             if (needclear)
             {
@@ -51,7 +51,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                     uiImage.Draw(GetRect(rect.Size.Width, rect.Size.Height, item.Row, item.Col));
                 }
             }
-		}
+        }
 
         public static UIImage ToImage(byte[] data)
         {
@@ -85,7 +85,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             return new CGRect(left, top, width, height);
 
         }
-        
+
         public List<SSImage> SSData { get; set; }
 
         public void Clear()

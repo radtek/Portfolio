@@ -5,6 +5,7 @@ using System.Collections;
 using UIKit;
 using CoreGraphics;
 using Johnny.Portfolio.CoursePlayer.Core.Models;
+using Johnny.Portfolio.CoursePlayer.iOS.Models;
 
 namespace Johnny.Portfolio.CoursePlayer.iOS
 {
@@ -24,18 +25,18 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
         }
 
         public WhiteBoardCanvasView(CGRect cgrect)
-		{
+        {
             base.Frame = cgrect;
-			BackgroundColor = UIColor.Clear;
-			//Opaque = false;
+            BackgroundColor = UIColor.Clear;
+            //Opaque = false;
             currentLineStyle = new WBLineStyle();
-		}
-		
-		public override void Draw (CGRect rect)
-		{
-			base.Draw (rect);
-			
-			var gctx = UIGraphics.GetCurrentContext ();
+        }
+
+        public override void Draw(CGRect rect)
+        {
+            base.Draw(rect);
+
+            var gctx = UIGraphics.GetCurrentContext();
 
             if (needclear)
             {
@@ -49,9 +50,9 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
 
             gctx.SetStrokeColor(UIColor.Green.CGColor);
             gctx.SetLineWidth(2);
-            gctx.StrokeRect(rect);            
+            gctx.StrokeRect(rect);
 
-            if (WhiteBoardData != null)
+            if (WBData != null)
             {
                 var xRate = rect.Size.Width / 9600;
                 var yRate = rect.Size.Height / 4800;
@@ -66,9 +67,9 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                     currentEventTs = -1;
                 }
 
-                if (WhiteBoardData.WBLines != null && WhiteBoardData.WBLines.Count > 0)
+                if (WBData.WBLines != null && WBData.WBLines.Count > 0)
                 {
-                    foreach (WBLine line in WhiteBoardData.WBLines)
+                    foreach (WBLine line in WBData.WBLines)
                     {
                         WBLineStyle linestyle = WBLineStyle.Create(line.Color);
                         linestyle.Color.SetStroke();
@@ -78,10 +79,10 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                         gctx.StrokePath();
                     }
                 }
-                
-                if (WhiteBoardData.WBEvents != null && WhiteBoardData.WBEvents.Count > 0)
+
+                if (WBData.WBEvents != null && WBData.WBEvents.Count > 0)
                 {
-                    Hashtable group = GroupWBEventsBySecond(WhiteBoardData.WBEvents);
+                    Hashtable group = GroupWBEventsBySecond(WBData.WBEvents);
 
                     int endMilliseconds = CurrentSecond * 1000 % 60000;
                     int ix;
@@ -131,7 +132,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                     }
                 }
             }
-		}
+        }
 
         public void Clear()
         {
@@ -168,7 +169,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             return (int)tspan.TotalMinutes;
         }
 
-        public WBData WhiteBoardData { get; set; }
+        public WBData WBData { get; set; }
         public int CurrentSecond { get; set; }
     }
 }

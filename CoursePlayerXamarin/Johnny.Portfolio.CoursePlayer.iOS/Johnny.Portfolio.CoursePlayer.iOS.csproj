@@ -117,7 +117,7 @@
     <Compile Include="PlayerViewController.designer.cs">
       <DependentUpon>PlayerViewController.cs</DependentUpon>
     </Compile>
-    <InterfaceDefinition Include="MainStoryboard.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
     <BundleResource Include="Resources\first.png" />
     <BundleResource Include="Resources\first@2x.png" />
     <BundleResource Include="Resources\second.png" />
