@@ -56,12 +56,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="655" y="-363"/>
+            <point key="canvasLocation" x="598" y="154"/>
         </scene>
         <!--Second-->
         <scene sceneID="ot8-2e-RuS">
             <objects>
-                <viewController title="Second" id="QUy-BD-bpt" customClass="PlayViewController" sceneMemberID="viewController">
+                <viewController title="Second" id="QUy-BD-bpt" customClass="PlayerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7"/>
                         <viewControllerLayoutGuide type="bottom" id="8"/>
@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="698" y="258"/>
+            <point key="canvasLocation" x="1043" y="154"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -97,7 +97,7 @@
             </objects>
             <point key="canvasLocation" x="125" y="154"/>
         </scene>
-        <!--Third-->
+        <!--Settings-->
         <scene sceneID="13">
             <objects>
                 <viewController title="Settings" id="14" customClass="SettingsViewController" sceneMemberID="viewController">
@@ -139,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664" y="893"/>
+            <point key="canvasLocation" x="1476" y="154"/>
         </scene>
     </scenes>
     <resources>

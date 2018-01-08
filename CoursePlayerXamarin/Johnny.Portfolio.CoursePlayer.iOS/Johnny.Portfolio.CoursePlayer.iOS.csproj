@@ -96,7 +96,7 @@
     <Compile Include="FileHelper.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="OM\WBLineStyle.cs" />
+    <Compile Include="Models\WBLineStyle.cs" />
     <Compile Include="ScreenShotCanvasView.cs" />
     <Compile Include="WhiteBoardCanvasView.cs" />
     <None Include="GettingStarted.Xamarin" />
@@ -113,9 +113,9 @@
     <Compile Include="SettingsViewController.designer.cs">
       <DependentUpon>SettingsViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlayViewController.cs" />
-    <Compile Include="PlayViewController.designer.cs">
-      <DependentUpon>PlayViewController.cs</DependentUpon>
+    <Compile Include="PlayerViewController.cs" />
+    <Compile Include="PlayerViewController.designer.cs">
+      <DependentUpon>PlayerViewController.cs</DependentUpon>
     </Compile>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <BundleResource Include="Resources\first.png" />

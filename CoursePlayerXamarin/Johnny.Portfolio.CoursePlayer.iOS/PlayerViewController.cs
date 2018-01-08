@@ -10,7 +10,7 @@ using Johnny.Portfolio.CoursePlayer.Core.Models;
 
 namespace Johnny.Portfolio.CoursePlayer.iOS
 {
-    public partial class PlayViewController : UIViewController
+    public partial class PlayerViewController : UIViewController
     {
         UIButton btnPlay;
         UISlider sliderTimeline;
@@ -25,7 +25,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
         Timer timerSS = new Timer();
         Timer timerWB = new Timer();
 
-        public PlayViewController(IntPtr handle)
+        public PlayerViewController(IntPtr handle)
             : base(handle)
         {
             Xamarin.Forms.Forms.Init();
