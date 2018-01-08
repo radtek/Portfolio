@@ -4,7 +4,7 @@ using Johnny.Portfolio.CoursePlayer.Core.OM;
 
 namespace Johnny.Portfolio.CoursePlayer.Core
 {
-    public class CourseApi
+    public static class CourseApi
     {
         const string ssIndexFile = "204304/ScreenShot/High/package.pak";
         const string ssDataFile = "204304/ScreenShot/High/1.pak";
@@ -13,27 +13,20 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         const string wbSequenceIndexFile = "204304/WB/1/VectorSequence/package.pak";
         const string wbSequenceDataFile = "204304/WB/1/VectorSequence/1.pak";
 
-        private FileApi fileApi = new FileApi();
-        private FileApi file2Api = new FileApi();
-        private FileApi file3Api = new FileApi();
         // Screenshot
-        private List<Index> ssIndexList = new List<Index>();
-        private IDictionary<int, int> ssIndexMap = new Dictionary<int, int>();
+        private static List<Index> ssIndexList = new List<Index>();
+        private static IDictionary<int, int> ssIndexMap = new Dictionary<int, int>();
         // Whiteboard
-        private List<Index> wbImageIndexList;
-        private IDictionary<int, int> wbImageIndex;
-        private List<Index> wbSequenceIndexList;
-        private IDictionary<int, int> wbSequenceIndex;
+        private static List<Index> wbImageIndexList;
+        private static IDictionary<int, int> wbImageIndex;
+        private static List<Index> wbSequenceIndexList;
+        private static IDictionary<int, int> wbSequenceIndex;
 
-        public CourseApi()
-        {
-        }
-
-        public List<SSImage> GetScreenshotData(int second) {
+        public static List<SSImage> GetScreenshotData(int second) {
             if (ssIndexList == null || ssIndexList.Count == 0)
             {
-                var buffer = fileApi.GetIndexFile(ssIndexFile);
-                ssIndexList = fileApi.GetIndexList(buffer);
+                var buffer = FileApi.GetIndexFile(ssIndexFile);
+                ssIndexList = FileApi.GetIndexList(buffer);
 
                 ssIndexMap.Clear();
                 for (int i = 0; i < ssIndexList.Count; i++)
@@ -45,11 +38,11 @@ namespace Johnny.Portfolio.CoursePlayer.Core
                 }
             }
 
-            var ssIndex = fileApi.GetSSIndex(ssIndexList, ssIndexMap, second);
-            return fileApi.GetSSData(ssDataFile, ssIndex);
+            var ssIndex = FileApi.GetSSIndex(ssIndexList, ssIndexMap, second);
+            return FileApi.GetSSData(ssDataFile, ssIndex);
         }
 
-        public WBData GetWhiteboardData(int second)
+        public static WBData GetWhiteboardData(int second)
         {
             // get lines
             List<WBLine> lines = GetWBImageData(second);
@@ -60,19 +53,19 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             return wb;
         }
 
-        private List<WBLine> GetWBImageData(int second)
+        private static List<WBLine> GetWBImageData(int second)
         {
             try
             {
                 if (wbImageIndex == null)
                 {
-                    var buffer = file2Api.GetIndexFile(wbImageIndexFile);
-                    wbImageIndexList = file2Api.GetIndexList(buffer);
-                    wbImageIndex = file2Api.GetWBIndex(wbImageIndexList);
+                    var buffer = FileApi.GetIndexFile(wbImageIndexFile);
+                    wbImageIndexList = FileApi.GetIndexList(buffer);
+                    wbImageIndex = FileApi.GetWBIndex(wbImageIndexList);
                 }
 
                 TimeSpan tspan = TimeSpan.FromSeconds(second);
-                List<WBLine> lines = file2Api.GetWBImageData(wbImageDataFile, wbImageIndexList, wbImageIndex, WBLine.StreamSize, tspan);
+                List<WBLine> lines = FileApi.GetWBImageData(wbImageDataFile, wbImageIndexList, wbImageIndex, WBLine.StreamSize, tspan);
                 return lines;
             }
             catch (Exception)
@@ -81,19 +74,19 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             }
         }
 
-        private List<WBEvent> GetWBSequenceData(int second)
+        private static List<WBEvent> GetWBSequenceData(int second)
         {
             try
             {
                 if (wbSequenceIndex == null)
                 {
-                    var buffer = file3Api.GetIndexFile(wbSequenceIndexFile);
-                    wbSequenceIndexList = file3Api.GetIndexList(buffer);
-                    wbSequenceIndex = file3Api.GetWBIndex(wbSequenceIndexList);
+                    var buffer = FileApi.GetIndexFile(wbSequenceIndexFile);
+                    wbSequenceIndexList = FileApi.GetIndexList(buffer);
+                    wbSequenceIndex = FileApi.GetWBIndex(wbSequenceIndexList);
                 }
 
                 TimeSpan tspan = TimeSpan.FromSeconds(second);
-                List<WBEvent> events = file3Api.GetWBSequenceData(wbSequenceDataFile, wbSequenceIndexList, wbSequenceIndex, WBEvent.StreamSize, tspan);
+                List<WBEvent> events = FileApi.GetWBSequenceData(wbSequenceDataFile, wbSequenceIndexList, wbSequenceIndex, WBEvent.StreamSize, tspan);
                 return events;
 
             }
@@ -103,14 +96,9 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             }
         }
 
-        public void Close()
+        public static void Close()
         {
-            if (fileApi != null)
-                fileApi.Close();
-            if (file2Api != null)
-                file2Api.Close();
-            if (file3Api != null)
-                file3Api.Close();
+             FileApi.Close();
         }
     }
 }

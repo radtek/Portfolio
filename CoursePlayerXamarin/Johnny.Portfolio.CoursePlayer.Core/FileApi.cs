@@ -5,16 +5,11 @@ using Johnny.Portfolio.CoursePlayer.Core.OM;
 
 namespace Johnny.Portfolio.CoursePlayer.Core
 {
-    public class FileApi
+    public static class FileApi
     {
-        private readonly FileHelper _fileHelper;
+        private static readonly FileHelper _fileHelper = new FileHelper();
 
-        public FileApi()
-        {
-            _fileHelper = new FileHelper();
-        }
-
-        public byte[] GetIndexFile(string originalFile) {
+        public static byte[] GetIndexFile(string originalFile) {
             byte[] bytes = _fileHelper.ReadBytes(originalFile);
             //unzip
             Wrapper zipwrapper = new Wrapper();
@@ -22,7 +17,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             return decompressedBytes;
         }
 
-        public List<Index> GetIndexList(byte[] indexbuf)
+        public static List<Index> GetIndexList(byte[] indexbuf)
         {
             List<Index> listIndex = new List<Index>();
             //read data to index list
@@ -50,7 +45,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         }
 
         // screenshot
-        public List<Index> GetSSIndex(List<Index> ssIndexList, IDictionary<int, int> mapIndex, int second)
+        public static List<Index> GetSSIndex(List<Index> ssIndexList, IDictionary<int, int> mapIndex, int second)
         {
             bool[] foundset = new bool[Constants.MAX_ROW_NO * Constants.MAX_COL_NO];
 
@@ -91,7 +86,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             return res;
         }
 
-        public List<SSImage> GetSSData(string imagedatafile, List<Index> ssIndex)
+        public static List<SSImage> GetSSData(string imagedatafile, List<Index> ssIndex)
         {
             List<SSImage> imageList = new List<SSImage>();
             foreach (Index index in ssIndex)
@@ -104,7 +99,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         }
 
         // whiteboard
-        public IDictionary<int, int> GetWBIndex(List<Index> indexs)
+        public static IDictionary<int, int> GetWBIndex(List<Index> indexs)
         {
             if (indexs == null || indexs.Count == 0)
                 return null;
@@ -122,7 +117,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             return minute_index_map;
         }
 
-        public List<WBLine> GetWBImageData(string wbImageDataFile, List<Index> wbIndexList, IDictionary<int, int> wbImageIndex, int streamSize, TimeSpan tspan)
+        public static List<WBLine> GetWBImageData(string wbImageDataFile, List<Index> wbIndexList, IDictionary<int, int> wbImageIndex, int streamSize, TimeSpan tspan)
         {
             List<WBLine> wblines = new List<WBLine>();
 
@@ -155,7 +150,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             return wblines;
         }
 
-        public List<WBEvent> GetWBSequenceData(string wbSequenceDataFile, List<Index> wbIndexList, IDictionary<int, int> wbSequenceIndex, int streamSize, TimeSpan tspan)
+        public static List<WBEvent> GetWBSequenceData(string wbSequenceDataFile, List<Index> wbIndexList, IDictionary<int, int> wbSequenceIndex, int streamSize, TimeSpan tspan)
         {
             List<WBEvent> wbEvents = new List<WBEvent>();
 
@@ -187,7 +182,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             return wbEvents;
         }
 
-        public void Close()
+        public static void Close()
         {
             if (_fileHelper != null)
                 _fileHelper.Close();

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Drawing;
 using System.Collections.Generic;
 
-using Foundation;
 using UIKit;
 using CoreGraphics;
 using System.Timers;
@@ -21,7 +19,6 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
         WhiteBoardCanvasView canvasWB;
         ScreenShotCanvasView canvasSS;
 
-        CourseApi _api;
         private PlayerState playStatus = PlayerState.Stopped;
 
         Timer timerVideo = new Timer();
@@ -53,12 +50,14 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                 // Perform any additional setup after loading the view, typically from a nib.
                 View.BackgroundColor = UIColor.White;
 
+                // play button
                 btnPlay = UIButton.FromType(UIButtonType.RoundedRect);
                 btnPlay.SetTitle("Play", UIControlState.Normal);
                 btnPlay.Frame = new CGRect(0, 20, 320, 30);
                 btnPlay.TouchUpInside += BtnPlay_TouchUpInside;
                 View.AddSubview(btnPlay);
 
+                // slider bar
                 sliderTimeline = new UISlider(new CGRect(0, 40, 320, 34));
                 View.Add(sliderTimeline);
 
@@ -70,6 +69,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                 sliderTimeline.TouchUpInside += SliderTimeline_TouchUpInside;
                 sliderTimeline.TouchDown += SliderTimeline_TouchDown;
 
+                // time label
                 lblCurrentTime = new UILabel(new CGRect(0, 74, 320, 20))
                 {
                     Text = "00:00:00",
@@ -77,13 +77,13 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
                 };
                 View.Add(lblCurrentTime);
 
+                // canvas for screenshot
                 canvasSS = new ScreenShotCanvasView(new CGRect(0, 104, 320, 200));
                 View.Add(canvasSS);
 
+                // canvas for whiteboard
                 canvasWB = new WhiteBoardCanvasView(new CGRect(0, 310, 320, 200));
                 View.Add(canvasWB);
-
-                _api = new CourseApi();
             }
             catch (Exception ex)
             {
@@ -151,7 +151,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             InvokeOnMainThread(delegate
             {
                 int second = Convert.ToInt32(sliderTimeline.Value);
-                List<SSImage> ssData = _api.GetScreenshotData(second);
+                List<SSImage> ssData = CourseApi.GetScreenshotData(second);
                 canvasSS.SSData = ssData;
                 canvasSS.SetNeedsDisplay();
             });
@@ -162,7 +162,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             InvokeOnMainThread(delegate
             {
                 int second = Convert.ToInt32(sliderTimeline.Value);
-                WBData wbData = _api.GetWhiteboardData(second);
+                WBData wbData = CourseApi.GetWhiteboardData(second);
                 canvasWB.WhiteBoardData = wbData;
                 canvasWB.CurrentSecond = second;
                 canvasWB.SetNeedsDisplay();
@@ -203,11 +203,11 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             timerWB.Enabled = false;
             sliderTimeline.Value = 0f;
             lblCurrentTime.Text = "00:00:00";
-            _api.Close();
             canvasWB.Clear();
             canvasWB.SetNeedsDisplay();
             canvasSS.Clear();
             canvasSS.SetNeedsDisplay();
+            CourseApi.Close(); // close file
             playStatus = PlayerState.Stopped;
         }
 

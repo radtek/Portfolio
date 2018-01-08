@@ -11,7 +11,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
 {
     public class FileHelper : IFileHelper
     {
-        FileStream datastream;
+        IDictionary<string, FileStream> fs = new Dictionary<string, FileStream>();
 
         public bool Exists(string filename)
         {
@@ -62,8 +62,17 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             try
             {
                 byte[] buf = new byte[length];
-                if (datastream == null || datastream.CanRead == false) //make sure DependencyFetchTarget.NewInstance is set
-                    datastream = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read);                
+                FileStream datastream = null;
+                if (fs.ContainsKey(filename))
+                {
+                    datastream = fs[filename];
+                }
+                else
+                {
+                    //make sure DependencyFetchTarget.NewInstance is set
+                    datastream = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read);
+                    fs.Add(filename, datastream);
+                }
                 datastream.Seek(offset, SeekOrigin.Begin);
                 datastream.Read(buf, 0, length);
                 return buf;
@@ -76,13 +85,16 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
 
         public void Close()
         {
-            if (datastream != null)
+            foreach (KeyValuePair<string, FileStream> entry in fs)
             {
-                datastream.Close();
+                if (entry.Value != null)
+                {
+                    entry.Value.Close();
+                }
             }
+            fs.Clear();
         }
 
-        // Private methods.
         private string GetFilePath(string filename)
         {
             return Path.Combine(GetDocsPath(), filename);
