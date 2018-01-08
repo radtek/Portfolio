@@ -11,7 +11,7 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
 {
     public class FileHelper : IFileHelper
     {
-        IDictionary<string, FileStream> fs = new Dictionary<string, FileStream>();
+        IDictionary<string, FileStream> dictionary = new Dictionary<string, FileStream>();
 
         public bool Exists(string filename)
         {
@@ -62,19 +62,19 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
             try
             {
                 byte[] buf = new byte[length];
-                FileStream datastream = null;
-                if (fs.ContainsKey(filename))
+                FileStream fs = null;
+                if (dictionary.ContainsKey(filename))
                 {
-                    datastream = fs[filename];
+                    fs = dictionary[filename];
                 }
                 else
                 {
                     //make sure DependencyFetchTarget.NewInstance is set
-                    datastream = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read);
-                    fs.Add(filename, datastream);
+                    fs = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read);
+                    dictionary.Add(filename, fs);
                 }
-                datastream.Seek(offset, SeekOrigin.Begin);
-                datastream.Read(buf, 0, length);
+                fs.Seek(offset, SeekOrigin.Begin);
+                fs.Read(buf, 0, length);
                 return buf;
             }
             catch (Exception)
@@ -85,14 +85,14 @@ namespace Johnny.Portfolio.CoursePlayer.iOS
 
         public void Close()
         {
-            foreach (KeyValuePair<string, FileStream> entry in fs)
+            foreach (KeyValuePair<string, FileStream> entry in dictionary)
             {
                 if (entry.Value != null)
                 {
                     entry.Value.Close();
                 }
             }
-            fs.Clear();
+            dictionary.Clear();
         }
 
         private string GetFilePath(string filename)
