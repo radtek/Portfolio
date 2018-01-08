@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Johnny.Portfolio.CoursePlayer.Core.OM;
+using Johnny.Portfolio.CoursePlayer.Core.Models;
 
 namespace Johnny.Portfolio.CoursePlayer.Core
 {
@@ -11,9 +11,8 @@ namespace Johnny.Portfolio.CoursePlayer.Core
 
         public static byte[] GetIndexFile(string originalFile) {
             byte[] bytes = _fileHelper.ReadBytes(originalFile);
-            //unzip
-            Wrapper zipwrapper = new Wrapper();
-            byte[] decompressedBytes = zipwrapper.Decompress(bytes);
+            // decompress
+            byte[] decompressedBytes = CompressHelper.Decompress(bytes);
             return decompressedBytes;
         }
 

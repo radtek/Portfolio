@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Johnny.Portfolio.CoursePlayer.Core.OM
+﻿namespace Johnny.Portfolio.CoursePlayer.Core.Models
 {
     public class SSImage
     {

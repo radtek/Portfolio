@@ -1,13 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Collections;
 
-using Foundation;
 using UIKit;
 using CoreGraphics;
-using Johnny.Portfolio.CoursePlayer.Core;
+using Johnny.Portfolio.CoursePlayer.Core.Models;
 
 namespace Johnny.Portfolio.CoursePlayer.iOS
 {

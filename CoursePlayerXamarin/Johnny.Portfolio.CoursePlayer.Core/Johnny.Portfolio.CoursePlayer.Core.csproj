@@ -39,15 +39,15 @@
     <Compile Include="Enums.cs" />
     <Compile Include="FileHelper.cs" />
     <Compile Include="IFileHelper.cs" />
-    <Compile Include="OM\Index.cs" />
+    <Compile Include="Models\Index.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="OM\WBData.cs" />
-    <Compile Include="OM\WBEvent.cs" />
-    <Compile Include="OM\WBLine.cs" />
-    <Compile Include="Wrapper.cs" />
+    <Compile Include="Models\WBData.cs" />
+    <Compile Include="Models\WBEvent.cs" />
+    <Compile Include="Models\WBLine.cs" />
+    <Compile Include="CompressHelper.cs" />
     <Compile Include="FileApi.cs" />
     <Compile Include="CourseApi.cs" />
-    <Compile Include="OM\SSImage.cs" />
+    <Compile Include="Models\SSImage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Johnny.Portfolio.CoursePlayer.Core.OM;
+using Johnny.Portfolio.CoursePlayer.Core.Models;
 
 namespace Johnny.Portfolio.CoursePlayer.Core
 {

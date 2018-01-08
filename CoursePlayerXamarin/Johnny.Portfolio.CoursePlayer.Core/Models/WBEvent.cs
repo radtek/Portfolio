@@ -1,13 +1,11 @@
-﻿using System.IO;
-
-namespace Johnny.Portfolio.CoursePlayer.Core
+﻿namespace Johnny.Portfolio.CoursePlayer.Core.Models
 {
     public class WBEvent
     {
         public WBEvent(uint timestamp, ushort reserved, int x, int y)
         {
             TimeStamp = timestamp;
-            Reserved = 0;
+            Reserved = reserved; // 0 by default
             X = x;
             Y = y;
         }
@@ -21,6 +19,5 @@ namespace Johnny.Portfolio.CoursePlayer.Core
         {
             get { return 2 * 4; }
         }
-
     }
 }

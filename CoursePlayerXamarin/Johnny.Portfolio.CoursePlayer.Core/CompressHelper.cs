@@ -7,12 +7,9 @@ using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 
 namespace Johnny.Portfolio.CoursePlayer.Core
 {
-    /// <summary>
-    /// Summary description for Wrapper.
-    /// </summary>
-    public class Wrapper
+    public static class CompressHelper
     {
-        public byte[] Serialize(Object inst)
+        public static byte[] Serialize(Object inst)
         {
             Type t = inst.GetType();
             var dcs = new DataContractSerializer(t);
@@ -21,29 +18,28 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             return ms.ToArray();
         }
 
-        public Object Deserialize(Type t, byte[] objectData)
+        public static Object Deserialize(Type t, byte[] objectData)
         {
             var dcs = new DataContractSerializer(t);
             var ms = new MemoryStream(objectData);
             return dcs.ReadObject(ms);
         }
 
-        public byte[] SerializeAndCompress(Object inst)
+        public static byte[] SerializeAndCompress(Object inst)
         {
             byte[] b = Serialize(inst);
             byte[] b2 = Compress(b);
             return b2;
         }
 
-        public Object DecompressAndDeserialize(Type t, byte[] bytData)
+        public static Object DecompressAndDeserialize(Type t, byte[] bytData)
         {
             byte[] b = Decompress(bytData);
             Object o = Deserialize(t, b);
             return o;
         }
 
-
-        public byte[] Compress(string strInput)
+        public static byte[] Compress(string strInput)
         {
             try
             {
@@ -62,7 +58,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             }
         }
 
-        public byte[] Compress(byte[] bytData)
+        public static byte[] Compress(byte[] bytData)
         {
             try
             {
@@ -76,20 +72,17 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             }
             catch
             {
-               
                 throw;
             }
         }
 
-
-        public byte[] Compress(byte[] bytData, params int[] ratio)
+        public static byte[] Compress(byte[] bytData, params int[] ratio)
         {
             int compRatio = 9;
             if (ratio[0] > 0)
             {
                 compRatio = ratio[0];
             }
-
 
             try
             {
@@ -99,27 +92,24 @@ namespace Johnny.Portfolio.CoursePlayer.Core
                 s.Write(bytData, 0, bytData.Length);
                 //s.Close();
                 byte[] compressedData = ms.ToArray();
-                 return compressedData;
+                return compressedData;
             }
             catch
             {
                 throw;
-               
             }
         }
 
-
-        public byte[] Decompress(byte[] bytInput)
+        public static byte[] Decompress(byte[] bytInput)
         {
             var ms = new MemoryStream(bytInput, 0, bytInput.Length);
             byte[] bytResult = null;
             string strResult = String.Empty;
             var writeData = new byte[4096];
-            Stream s2 = new InflaterInputStream(ms);
+            Stream steam = new InflaterInputStream(ms);
             try
             {
-                bytResult = ReadFullStream(s2);
-                //s2.Close();
+                bytResult = ReadFullStream(steam);
                 return bytResult;
             }
             catch 
@@ -128,7 +118,7 @@ namespace Johnny.Portfolio.CoursePlayer.Core
             }
         }
 
-        public byte[] ReadFullStream(Stream stream)
+        public static byte[] ReadFullStream(Stream stream)
         {
             var buffer = new byte[32768];
             using (var ms = new MemoryStream())

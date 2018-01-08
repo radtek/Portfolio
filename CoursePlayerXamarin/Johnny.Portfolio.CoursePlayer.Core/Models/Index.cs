@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Johnny.Portfolio.CoursePlayer.Core
+namespace Johnny.Portfolio.CoursePlayer.Core.Models
 {
     public class Index : IComparable<Index>
     {

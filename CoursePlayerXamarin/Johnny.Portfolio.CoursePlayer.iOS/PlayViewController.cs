@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UIKit;
 using CoreGraphics;
 using System.Timers;
-using Johnny.Portfolio.CoursePlayer.Core;
 using Xamarin;
-using Johnny.Portfolio.CoursePlayer.Core.OM;
+using Johnny.Portfolio.CoursePlayer.Core;
+using Johnny.Portfolio.CoursePlayer.Core.Models;
 
 namespace Johnny.Portfolio.CoursePlayer.iOS
 {

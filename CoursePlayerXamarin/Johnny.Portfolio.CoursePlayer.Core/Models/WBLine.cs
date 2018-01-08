@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace Johnny.Portfolio.CoursePlayer.Core
+﻿namespace Johnny.Portfolio.CoursePlayer.Core.Models
 {
     public class WBLine
     {
