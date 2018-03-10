@@ -12,11 +12,10 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-//var port = normalizePort(process.env.PORT || '3000');
+console.log('process.env.PORT:' + process.env.PORT);
 var port = normalizePort(process.env.PORT || '12301');
-console.log(port);
+console.log('port:' + port);
 app.set('port', port);
-console.log(port);
 /**
  * Create HTTP server.
  */
@@ -27,12 +26,9 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-console.log('www->server.listen' + port)
 server.listen(port);
-console.log('www->server.listen')
 server.on('error', onError);
 server.on('listening', onListening);
-console.log('www->server.listen3')
 /**
  * Normalize a port into a number, string, or false.
  */
