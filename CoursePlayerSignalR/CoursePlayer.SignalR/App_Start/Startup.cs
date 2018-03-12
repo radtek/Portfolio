@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-[assembly: OwinStartup(typeof(SignalR.Startup))]
-namespace SignalR
+[assembly: OwinStartup(typeof(CoursePlayer.SignalR.Startup))]
+namespace CoursePlayer.SignalR
 {
     public class Startup
     {

@@ -100,7 +100,7 @@ namespace CoursePlayer.Core
         private string GetDocsPath()
         {
             //return Environment.CurrentDirectory;
-            return @"D:\Johnny\GitHub\Portfolio\CoursePlayerSignalR\SignalR";
+            return @"D:\Johnny\GitHub\Portfolio\CoursePlayerSignalR\CoursePlayer.SignalR";
         }
     }
 }

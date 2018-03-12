@@ -1,33 +1,15 @@
 ﻿using CoursePlayer.Core;
 using CoursePlayer.Core.Models;
+using CoursePlayer.SignalR.Models;
 using Microsoft.AspNet.SignalR;
-using SignalR.Models;
-using SignalR.Utility;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Timers;
-using System.Web;
 using System.Web.Script.Serialization;
 
-namespace SignalR
+namespace CoursePlayer.SignalR
 {
     public class PlayerHub : Hub
     {
-        //COLDataSource _ds = new COLDataSource();
-        //static int currenttime = 0;
-       // static bool forcerefresh = false;
-        private int currentEventTs = -1;
-        private int previousMin;
-        //private WBEvent lastPoint;
-        //private WBLineStyle currentLineStyle;
-        //private bool needclear = false;
-        //static Timer playerTimer = new Timer();
-        //static Dictionary<string, CourseTimer> dicTimer = new Dictionary<string, CourseTimer>();
-        //static Dictionary<string, int> dicCurrent = new Dictionary<string, int>();
-        //static Dictionary<string, bool> dicForceRefresh = new Dictionary<string, bool>();
-
         public void JoinGroup(string groupName)
         {
             Groups.Add(Context.ConnectionId, groupName);

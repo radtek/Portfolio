@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SignalR</RootNamespace>
-    <AssemblyName>SignalR</AssemblyName>
+    <RootNamespace>CoursePlayer.SignalR</RootNamespace>
+    <AssemblyName>CoursePlayer.SignalR</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -167,7 +167,6 @@
     <None Include="Properties\PublishProfiles\CoursePlayer.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\player.js" />
-    <Content Include="scripts\draw.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\jquery.event.drag-2.2.js" />
@@ -181,20 +180,15 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
-    <Compile Include="Controllers\ChatController.cs" />
-    <Compile Include="Controllers\SliderController.cs" />
+    <Compile Include="Controllers\DummyPlayerController.cs" />
     <Compile Include="Controllers\CoursePlayerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\WhiteboardController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BoardLine.cs" />
     <Compile Include="Models\ScreenImage.cs" />
-    <Compile Include="Models\WBLineStyle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignalR\PlayerHub.cs" />
-    <Compile Include="Utility\Helper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -209,7 +203,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Slider\Index.cshtml" />
+    <Content Include="Views\DummyPlayer\Index.cshtml" />
     <Content Include="Views\CoursePlayer\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -220,7 +214,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Player\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoursePlayer.Core\CoursePlayer.Core.csproj">

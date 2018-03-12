@@ -1,4 +1,4 @@
-﻿function playCourse(hub, playerHub, playstate, btnplay, processbar, currenttime, workingss, ss, workingwb, wb) {
+﻿function playCourse(hub, playerHub, playstate, btnplay, processbar, currenttime, videoplayer, workingss, ss, workingwb, wb) {
     if (playstate == 'stopped') {
         hub.start().done(function () {
             playerHub.server.joinGroup($("#groupName").val());
@@ -9,6 +9,10 @@
             }, 1000);
             btnplay.prop('value', 'Stop');
             playstate = "playing";
+            if (videoplayer) { 
+                console.log('play video go')
+                videoplayer.play();
+            }
         });
     } else if (playstate == 'playing') {
         hub.stop($("#groupName").val());
@@ -21,6 +25,10 @@
         clearScreenshot(workingss, ss);
         clearWhiteboard(workingwb, wb);
         btnplay.prop('value', 'Play');
+        if (videoplayer) {
+            videoplayer.currentTime(0);
+            videoplayer.pause();
+        }
     }
     return playstate;
 }

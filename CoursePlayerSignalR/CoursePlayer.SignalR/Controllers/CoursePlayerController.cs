@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SignalR.Controllers
+namespace CoursePlayer.SignalR.Controllers
 {
-    public class SliderController : Controller
+    public class CoursePlayerController : Controller
     {
-        // GET: Course
+        // GET: CoursePlayer
         public ActionResult Index()
         {
             return View();
