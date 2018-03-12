@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
-namespace COL.Core
+namespace CoursePlayer.Core
 {
-    class FileHelper : IFileHelper
+    public class FileHelper
     {
-        FileStream datastream;
+        IDictionary<string, FileStream> dictionary = new Dictionary<string, FileStream>();
 
         public bool Exists(string filename)
         {
@@ -43,7 +40,8 @@ namespace COL.Core
         {
             try
             {
-                FileStream indexstream = new System.IO.FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read);
+                string path = GetFilePath(filename);
+                FileStream indexstream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
                 BinaryReader breader = new BinaryReader(indexstream);
 
                 return breader.ReadBytes((int)indexstream.Length);
@@ -55,18 +53,28 @@ namespace COL.Core
             }
         }
 
-        public byte[] Seek(string filename, int offset, int length)
+        public byte[] Seek(string path,int offset, int length)
         {
             try
             {
                 byte[] buf = new byte[length];
-                if (datastream == null || datastream.CanRead == false) //make sure DependencyFetchTarget.NewInstance is set
-                    datastream = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read);
-                datastream.Seek(offset, SeekOrigin.Begin);
-                datastream.Read(buf, 0, length);
+                FileStream fs = null;
+                string filename = GetFilePath(path);
+                if (dictionary.ContainsKey(filename))
+                {
+                    fs = dictionary[filename];
+                }
+                else
+                {
+                    //make sure DependencyFetchTarget.NewInstance is set
+                    fs = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read);
+                    dictionary.Add(filename, fs);
+                }
+                fs.Seek(offset, SeekOrigin.Begin);
+                fs.Read(buf, 0, length);
                 return buf;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -74,13 +82,16 @@ namespace COL.Core
 
         public void Close()
         {
-            if (datastream != null)
+            foreach (KeyValuePair<string, FileStream> entry in dictionary)
             {
-                datastream.Close();
+                if (entry.Value != null)
+                {
+                    entry.Value.Close();
+                }
             }
+            dictionary.Clear();
         }
 
-        // Private methods.
         private string GetFilePath(string filename)
         {
             return Path.Combine(GetDocsPath(), filename);
@@ -88,7 +99,8 @@ namespace COL.Core
 
         private string GetDocsPath()
         {
-            return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            //return Environment.CurrentDirectory;
+            return @"D:\Johnny\GitHub\Portfolio\CoursePlayerSignalR\SignalR";
         }
     }
 }

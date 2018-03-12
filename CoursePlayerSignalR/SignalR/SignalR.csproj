@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -165,6 +166,7 @@
     <Content Include="204304\WB\1\VectorSequence\package.pak" />
     <None Include="Properties\PublishProfiles\CoursePlayer.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\player.js" />
     <Content Include="scripts\draw.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -175,8 +177,6 @@
     <Content Include="sliderbar.html" />
     <Content Include="videojs.html" />
     <Content Include="Web.config" />
-    <Content Include="Views\Chat\Index.cshtml" />
-    <Content Include="Views\WhiteBoard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -192,13 +192,8 @@
     <Compile Include="Models\BoardLine.cs" />
     <Compile Include="Models\ScreenImage.cs" />
     <Compile Include="Models\WBLineStyle.cs" />
-    <Compile Include="Player\CourseTimer.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignalR\PlayerHub.cs" />
-    <Compile Include="SignalR\WhiteboardHub.cs" />
-    <Compile Include="SignalR\ChatHub.cs" />
     <Compile Include="Utility\Helper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -225,11 +220,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Player\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\COL.Core\COL.Core.csproj">
-      <Project>{d3963068-f9d5-4edf-9f3e-cb0e7613421f}</Project>
-      <Name>COL.Core</Name>
+    <ProjectReference Include="..\CoursePlayer.Core\CoursePlayer.Core.csproj">
+      <Project>{22f974ba-7492-47de-81a6-ec67038aff0d}</Project>
+      <Name>CoursePlayer.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -243,7 +239,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>22962</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
