@@ -8,7 +8,7 @@ namespace CoursePlayer.SignalR.Controllers
 {
     public class DummyPlayerController : Controller
     {
-        // GET: Course
+        // GET: Dummy Player
         public ActionResult Index()
         {
             return View();

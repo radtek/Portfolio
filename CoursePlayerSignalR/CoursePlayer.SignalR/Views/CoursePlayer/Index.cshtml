@@ -4,7 +4,7 @@
 }
 
 <h2>Course Player</h2>
-<div class="chatcontainer">
+<div class="playercontainer">
     <table width="100%">
         <tr>
             <td><label for="currenttime">Current Time:</label><input type="text" id="currenttime" readonly style="border:0; color:#f6931f; font-weight:bold;"></td>
@@ -76,7 +76,7 @@
                 $("#currenttime").val(getReadableTimeText(ui.value));
                 clearScreenshot($('#workingss'), $('#playerss'));
                 clearWhiteboard($('#workingwb'), $('#playerwb'));
-                videoplayer.currentTime(ui.value);
+                //videoplayer.currentTime(ui.value);
             }
         });
         $("#currenttime").val(getReadableTimeText($("#processbar").slider("value")));
