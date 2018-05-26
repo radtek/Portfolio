@@ -13,7 +13,7 @@ import java.net.Socket;
  * server can handle multiple requests simultaneously. The main functions
  * provided by this web server include: explore files/directories in the root
  * folder of the webserver; display content of a single file from server;
- * handle fake-cgi request, eg. add number.
+ * handle fake-cgi request, eg. add numbers.
  */
 public class WebServer {
     /**
