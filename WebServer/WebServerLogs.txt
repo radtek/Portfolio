@@ -1,0 +1,177 @@
+2018-05-25 21:33:14 
+2018-05-25 21:33:14 Http Worker is working...
+2018-05-25 21:33:14 GET /images HTTP/1.1
+2018-05-25 21:33:14 > New request received: GET /images HTTP/1.1
+2018-05-25 21:33:14 > This is a [DIRECTORY EXPLORE] request..
+2018-05-25 21:33:14 >> Explore the content under folder: images
+2018-05-25 21:33:14 >>> File: class.png
+2018-05-25 21:33:14 >>> File: file.png
+2018-05-25 21:33:14 >>> File: folder.png
+2018-05-25 21:33:14 >>> File: html.png
+2018-05-25 21:33:14 >>> File: java.png
+2018-05-25 21:33:14 >>> File: text.png
+2018-05-25 21:33:14 >>> File: xml.png
+2018-05-25 21:33:14 
+2018-05-25 21:33:14 Http Worker is working...
+2018-05-25 21:33:14 GET /images/folder.png HTTP/1.1
+2018-05-25 21:33:15 
+2018-05-25 21:33:15 Http Worker is working...
+2018-05-25 21:33:15 GET /images/file.png HTTP/1.1
+2018-05-25 21:33:15 
+2018-05-25 21:33:15 Http Worker is working...
+2018-05-25 21:33:15 GET /favicon.ico HTTP/1.1
+2018-05-25 21:33:15 
+2018-05-25 21:33:15 Http Worker is working...
+2018-05-25 21:33:15 GET / HTTP/1.1
+2018-05-25 21:33:15 > New request received: GET / HTTP/1.1
+2018-05-25 21:33:15 > This is a [DIRECTORY EXPLORE] request..
+2018-05-25 21:33:15 >> Explore the content under folder: WebServer
+2018-05-25 21:33:15 >>> Directory: bin
+2018-05-25 21:33:15 >>> Directory: images
+2018-05-25 21:33:15 >>> Directory: src
+2018-05-25 21:33:15 >>> File: .classpath
+2018-05-25 21:33:15 >>> File: .gitignore
+2018-05-25 21:33:15 >>> File: .project
+2018-05-25 21:33:15 >>> File: WebServerLogs.txt
+2018-05-25 21:33:15 >>> File: addnums.html
+2018-05-25 21:33:15 >>> File: cat.html
+2018-05-25 21:33:15 >>> File: dog.txt
+2018-05-25 21:33:15 >>> File: favicon.ico
+2018-05-25 21:33:15 
+2018-05-25 21:33:15 Http Worker is working...
+2018-05-25 21:33:15 GET /images/folder.png HTTP/1.1
+2018-05-25 21:33:15 
+2018-05-25 21:33:15 Http Worker is working...
+2018-05-25 21:33:15 GET /images/file.png HTTP/1.1
+2018-05-25 21:33:15 
+2018-05-25 21:33:15 Http Worker is working...
+2018-05-25 21:33:15 GET /images/text.png HTTP/1.1
+2018-05-25 21:33:15 
+2018-05-25 21:33:15 Http Worker is working...
+2018-05-25 21:33:15 GET /images/html.png HTTP/1.1
+2018-05-25 21:33:17 
+2018-05-25 21:33:17 Http Worker is working...
+2018-05-25 21:33:17 GET /WebServerLogs.txt HTTP/1.1
+2018-05-25 21:33:17 > New request received: GET /WebServerLogs.txt HTTP/1.1
+2018-05-25 21:33:17 > This is a [SINGLE FILE] request..
+2018-05-25 21:33:17 >> Seek the content of file: WebServerLogs.txt
+2018-05-25 21:33:46 
+2018-05-25 21:33:46 Http Worker is working...
+2018-05-25 21:33:46 GET /dog.txt HTTP/1.1
+2018-05-25 21:33:46 > New request received: GET /dog.txt HTTP/1.1
+2018-05-25 21:33:46 > This is a [SINGLE FILE] request..
+2018-05-25 21:33:46 >> Seek the content of file: dog.txt
+2018-05-25 21:33:48 
+2018-05-25 21:33:48 Http Worker is working...
+2018-05-25 21:33:48 GET /WebServerLogs.txt HTTP/1.1
+2018-05-25 21:33:48 > New request received: GET /WebServerLogs.txt HTTP/1.1
+2018-05-25 21:33:48 > This is a [SINGLE FILE] request..
+2018-05-25 21:33:48 >> Seek the content of file: WebServerLogs.txt
+2018-05-25 21:35:21 
+2018-05-25 21:35:21 Http Worker is working...
+2018-05-25 21:35:21 GET /WebServerLogs.txt HTTP/1.1
+2018-05-25 21:35:21 > This is a [SINGLE FILE] request..
+2018-05-25 21:35:21 >> Seek the content of file: WebServerLogs.txt
+2018-05-25 21:35:21 
+2018-05-25 21:35:21 Http Worker is working...
+2018-05-25 21:35:21 GET /favicon.ico HTTP/1.1
+2018-05-25 21:35:23 
+2018-05-25 21:35:23 Http Worker is working...
+2018-05-25 21:35:23 GET / HTTP/1.1
+2018-05-25 21:35:23 > This is a [DIRECTORY EXPLORE] request..
+2018-05-25 21:35:23 >> Explore the content under folder: WebServer
+2018-05-25 21:35:23 >>> Directory: bin
+2018-05-25 21:35:23 >>> Directory: images
+2018-05-25 21:35:23 >>> Directory: src
+2018-05-25 21:35:23 >>> File: .classpath
+2018-05-25 21:35:23 >>> File: .gitignore
+2018-05-25 21:35:23 >>> File: .project
+2018-05-25 21:35:23 >>> File: WebServerLogs.txt
+2018-05-25 21:35:23 >>> File: addnums.html
+2018-05-25 21:35:23 >>> File: cat.html
+2018-05-25 21:35:23 >>> File: dog.txt
+2018-05-25 21:35:23 >>> File: favicon.ico
+2018-05-25 21:35:23 
+2018-05-25 21:35:23 Http Worker is working...
+2018-05-25 21:35:23 GET /images/folder.png HTTP/1.1
+2018-05-25 21:35:23 
+2018-05-25 21:35:23 Http Worker is working...
+2018-05-25 21:35:23 GET /images/file.png HTTP/1.1
+2018-05-25 21:35:23 
+2018-05-25 21:35:23 Http Worker is working...
+2018-05-25 21:35:23 GET /images/text.png HTTP/1.1
+2018-05-25 21:35:23 
+2018-05-25 21:35:23 Http Worker is working...
+2018-05-25 21:35:23 GET /images/html.png HTTP/1.1
+2018-05-25 21:35:23 
+2018-05-25 21:35:23 Http Worker is working...
+2018-05-25 21:35:23 GET /favicon.ico HTTP/1.1
+2018-05-25 21:35:24 
+2018-05-25 21:35:24 Http Worker is working...
+2018-05-25 21:35:24 GET /WebServerLogs.txt HTTP/1.1
+2018-05-25 21:35:24 > This is a [SINGLE FILE] request..
+2018-05-25 21:35:24 >> Seek the content of file: WebServerLogs.txt
+2018-05-25 21:35:39 
+2018-05-25 21:35:39 Http Worker is working...
+2018-05-25 21:35:39 GET /images HTTP/1.1
+2018-05-25 21:35:39 > This is a [DIRECTORY EXPLORE] request..
+2018-05-25 21:35:39 >> Explore the content under folder: images
+2018-05-25 21:35:39 >>> File: class.png
+2018-05-25 21:35:39 >>> File: file.png
+2018-05-25 21:35:39 >>> File: folder.png
+2018-05-25 21:35:39 >>> File: html.png
+2018-05-25 21:35:39 >>> File: java.png
+2018-05-25 21:35:39 >>> File: text.png
+2018-05-25 21:35:39 >>> File: xml.png
+2018-05-25 21:35:39 
+2018-05-25 21:35:39 Http Worker is working...
+2018-05-25 21:35:39 GET /images/folder.png HTTP/1.1
+2018-05-25 21:35:39 
+2018-05-25 21:35:39 Http Worker is working...
+2018-05-25 21:35:39 GET /images/file.png HTTP/1.1
+2018-05-25 21:35:42 
+2018-05-25 21:35:42 Http Worker is working...
+2018-05-25 21:35:42 GET /WebServerLogs.txt HTTP/1.1
+2018-05-25 21:35:42 > This is a [SINGLE FILE] request..
+2018-05-25 21:35:42 >> Seek the content of file: WebServerLogs.txt
+2018-05-25 21:35:49 
+2018-05-25 21:35:49 Http Worker is working...
+2018-05-25 21:35:49 GET /WebServerLogs.txt HTTP/1.1
+2018-05-25 21:35:49 > This is a [SINGLE FILE] request..
+2018-05-25 21:35:49 >> Seek the content of file: WebServerLogs.txt
+2018-05-25 21:35:53 
+2018-05-25 21:35:53 Http Worker is working...
+2018-05-25 21:35:53 GET / HTTP/1.1
+2018-05-25 21:35:53 > This is a [DIRECTORY EXPLORE] request..
+2018-05-25 21:35:53 >> Explore the content under folder: WebServer
+2018-05-25 21:35:53 >>> Directory: bin
+2018-05-25 21:35:53 >>> Directory: images
+2018-05-25 21:35:53 >>> Directory: src
+2018-05-25 21:35:53 >>> File: .classpath
+2018-05-25 21:35:53 >>> File: .gitignore
+2018-05-25 21:35:53 >>> File: .project
+2018-05-25 21:35:53 >>> File: WebServerLogs.txt
+2018-05-25 21:35:53 >>> File: addnums.html
+2018-05-25 21:35:53 >>> File: cat.html
+2018-05-25 21:35:53 >>> File: dog.txt
+2018-05-25 21:35:53 >>> File: favicon.ico
+2018-05-25 21:35:53 
+2018-05-25 21:35:53 Http Worker is working...
+2018-05-25 21:35:53 GET /images/folder.png HTTP/1.1
+2018-05-25 21:35:53 
+2018-05-25 21:35:53 Http Worker is working...
+2018-05-25 21:35:53 GET /images/file.png HTTP/1.1
+2018-05-25 21:35:53 
+2018-05-25 21:35:53 Http Worker is working...
+2018-05-25 21:35:53 GET /images/text.png HTTP/1.1
+2018-05-25 21:35:53 
+2018-05-25 21:35:53 Http Worker is working...
+2018-05-25 21:35:53 GET /images/html.png HTTP/1.1
+2018-05-25 21:35:53 
+2018-05-25 21:35:53 Http Worker is working...
+2018-05-25 21:35:53 GET /favicon.ico HTTP/1.1
+2018-05-25 21:35:54 
+2018-05-25 21:35:54 Http Worker is working...
+2018-05-25 21:35:54 GET /WebServerLogs.txt HTTP/1.1
+2018-05-25 21:35:54 > This is a [SINGLE FILE] request..
+2018-05-25 21:35:54 >> Seek the content of file: WebServerLogs.txt
