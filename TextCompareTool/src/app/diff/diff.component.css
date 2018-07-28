@@ -1,0 +1,11 @@
+#editor1,
+#editor2 {
+  height: 500px;
+}
+#diffeditor {
+  /*margin-top: 100px;*/
+  height: 500px;
+}
+.editor {
+  border: 1px solid grey;
+}
