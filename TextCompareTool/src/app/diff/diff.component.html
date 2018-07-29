@@ -1,8 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid diff">
   <h1>Diff Editor</h1>
   <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
+    <div class="col-md-12">
       <form class="form-inline" role="form">
         <label for="lang" class="mb-2 mr-sm-2">Language:</label>
         <select id="lang" name="lang" class="form-control mb-2 mr-sm-2" [(ngModel)]="selectedLang" (change)="onChangeLanguage($event.target.value)">
@@ -19,29 +18,28 @@
         </div>
       </form>
     </div>
-    <div class="col-md-1"></div>
   </div>
   <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10 editor">
+    <div class="col-md-12 editor">
       <ngx-monaco-diff-editor id="diffeditor" [options]="diffOptions" [originalModel]="originalModel" [modifiedModel]="modifiedModel"></ngx-monaco-diff-editor>
     </div>
-    <div class="col-md-1"></div>
   </div>
   <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-5">
-      <label>Original Text:</label>
+    <div class="col-md-6">
+      <div class="title">
+        <label>Original Text</label>
+      </div>
       <ngx-monaco-editor id="editor1" [options]="inputOptions" [(ngModel)]="text1"></ngx-monaco-editor>
     </div>
-    <div class="col-sm-5">
-      <label>Changed Text:</label>
+    <div class="col-md-6">
+      <div class="title">
+        <label>Changed Text</label>
+      </div>
       <ngx-monaco-editor id="editor2" [options]="inputOptions" [(ngModel)]="text2"></ngx-monaco-editor>
     </div>
-    <div class="col-sm-1"></div>
   </div>
   <div class="row">
-    <div class="col-sm-12" style="text-align:center">
+    <div class="col-md-12" style="text-align:center">
       <button type="button" class="btn btn-primary" (click)="onCompare()">Find Difference</button>
     </div>
   </div>

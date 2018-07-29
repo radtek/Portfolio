@@ -93,7 +93,7 @@ export class DiffComponent implements OnInit {
   // input
   inputOptions = { theme: "vs", language: 'text/plain' };
   // compare, output
-  diffOptions = { theme: "vs", language: "xml", renderSideBySide: true };
+  diffOptions = { theme: "vs", language: "text/plain", readOnly: true, renderSideBySide: true };
   originalModel: DiffEditorModel = {
     code: 'heLLo world!',
     language: 'text/plain' 

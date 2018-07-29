@@ -1,3 +1,6 @@
+.diff {
+  width: 90%;
+}
 #editor1,
 #editor2 {
   height: 500px;
@@ -6,6 +9,20 @@
   /*margin-top: 100px;*/
   height: 500px;
 }
-.editor {
-  border: 1px solid grey;
+
+.editor-container {
+  border: 1px solid #ddd;
+}
+.title {
+  vertical-align: middle;
+  text-align: center;
+  color: #585858;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  background-color: #ecebeb;
+}
+.title label {
+  margin-top: 6px;
 }
